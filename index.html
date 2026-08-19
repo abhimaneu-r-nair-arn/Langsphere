@@ -21,21 +21,21 @@
     <style>
         /* Design Tokens — Combat HUD / Shooter Theme */
         :root {
-            --bg-dark: #0a0705;
-            --bg-darker: #050302;
-            --bg-card: rgba(18, 12, 8, 0.62);
-            --bg-card-hover: rgba(32, 20, 12, 0.78);
-            --border-color: rgba(255, 120, 40, 0.14);
-            --border-hover: rgba(255, 160, 60, 0.38);
-            --text-main: #f5e6d8;
-            --text-muted: #b8956e;
-            --text-dark: #7a6048;
+            --bg-dark: #07181b;
+            --bg-darker: #041012;
+            --bg-card: rgba(7, 31, 35, 0.72);
+            --bg-card-hover: rgba(10, 48, 51, 0.86);
+            --border-color: rgba(72, 224, 207, 0.18);
+            --border-hover: rgba(100, 245, 224, 0.48);
+            --text-main: #e3fff8;
+            --text-muted: #91c9c3;
+            --text-dark: #558b87;
 
-            --accent-default: #ff7a18;
-            --accent-glow: rgba(255, 122, 24, 0.22);
-            --hud-amber: #ff9a2e;
-            --hud-red: #ff3b2e;
-            --hud-dim: rgba(255, 154, 46, 0.45);
+            --accent-default: #22d3c5;
+            --accent-glow: rgba(34, 211, 197, 0.24);
+            --hud-amber: #6fffea;
+            --hud-red: #ff6b8a;
+            --hud-dim: rgba(111, 255, 234, 0.48);
 
             --transition-smooth: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
             --font-sans: 'Outfit', sans-serif;
@@ -52,9 +52,9 @@
         body {
             background-color: var(--bg-dark);
             background-image:
-                radial-gradient(at 15% 10%, rgba(80, 30, 8, 0.45) 0px, transparent 45%),
-                radial-gradient(at 85% 90%, rgba(120, 20, 5, 0.35) 0px, transparent 50%),
-                radial-gradient(at 50% 50%, rgba(8, 5, 3, 1) 0px, transparent 100%);
+                radial-gradient(at 15% 10%, rgba(0, 207, 190, 0.2) 0px, transparent 45%),
+                radial-gradient(at 85% 90%, rgba(43, 112, 255, 0.2) 0px, transparent 50%),
+                radial-gradient(at 50% 50%, rgba(4, 18, 22, 1) 0px, transparent 100%);
             background-attachment: fixed;
             color: var(--text-main);
             font-family: var(--font-sans);
@@ -100,7 +100,7 @@
             content: "";
             position: fixed;
             inset: 0;
-            background-image: linear-gradient(rgba(255, 120, 40, 0.035) 1px, transparent 1px), linear-gradient(90deg, rgba(255, 120, 40, 0.035) 1px, transparent 1px);
+            background-image: linear-gradient(rgba(72, 224, 207, 0.045) 1px, transparent 1px), linear-gradient(90deg, rgba(72, 224, 207, 0.045) 1px, transparent 1px);
             background-size: 28px 28px;
             mask-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.8), transparent 92%);
             pointer-events: none;
@@ -476,6 +476,50 @@
             transform: translateY(0) scale(1);
         }
 
+        .scroll-more-btn {
+            position: fixed;
+            right: max(1.25rem, calc((100vw - 950px) / 2 + 1.25rem));
+            bottom: 1.25rem;
+            z-index: 12;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 42px;
+            height: 42px;
+            margin: 0;
+            border: 1px solid rgba(111, 255, 234, 0.55);
+            border-radius: 50%;
+            background: rgba(4, 28, 31, 0.92);
+            color: var(--hud-amber);
+            cursor: pointer;
+            opacity: 0;
+            pointer-events: none;
+            transform: translateY(-6px);
+            transition: opacity 0.25s ease, transform 0.25s ease, background 0.25s ease;
+            box-shadow: 0 0 18px rgba(34, 211, 197, 0.24);
+        }
+
+        .scroll-more-btn.visible {
+            opacity: 1;
+            pointer-events: auto;
+            transform: translateY(0);
+            animation: scrollCuePulse 1.8s ease-in-out infinite;
+        }
+
+        .scroll-more-btn:hover {
+            background: rgba(34, 211, 197, 0.24);
+        }
+
+        .scroll-more-btn svg {
+            width: 20px;
+            height: 20px;
+        }
+
+        @keyframes scrollCuePulse {
+            0%, 100% { box-shadow: 0 0 12px rgba(34, 211, 197, 0.2); }
+            50% { box-shadow: 0 0 24px rgba(34, 211, 197, 0.5); }
+        }
+
         .modal-close-btn {
             position: absolute;
             top: 1.25rem;
@@ -781,6 +825,67 @@
 
         .beginner-example.visible {
             display: block;
+        }
+
+        .beginner-code-box {
+            background: rgba(2, 15, 18, 0.72);
+            border: 1px solid rgba(72, 224, 207, 0.2);
+            border-radius: 10px;
+            overflow: hidden;
+        }
+
+        .beginner-code-toolbar {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 0.75rem;
+            padding: 0.65rem 0.8rem;
+            border-bottom: 1px solid rgba(72, 224, 207, 0.14);
+        }
+
+        .beginner-code-label {
+            color: var(--text-muted);
+            font-family: var(--font-mono);
+            font-size: 0.75rem;
+        }
+
+        .beginner-code-editor {
+            display: block;
+            width: 100%;
+            min-height: 150px;
+            resize: vertical;
+            padding: 0.9rem;
+            border: 0;
+            outline: 0;
+            background: rgba(0, 0, 0, 0.2);
+            color: #d9fff7;
+            font: 0.78rem/1.6 var(--font-mono);
+            tab-size: 4;
+        }
+
+        .beginner-code-output {
+            min-height: 2.5rem;
+            margin: 0;
+            padding: 0.75rem 0.9rem;
+            border-top: 1px solid rgba(72, 224, 207, 0.12);
+            color: #9fffea;
+            font: 0.75rem/1.5 var(--font-mono);
+            white-space: pre-wrap;
+            overflow-wrap: anywhere;
+        }
+
+        .beginner-run-btn {
+            border: 1px solid rgba(111, 255, 234, 0.38);
+            border-radius: 5px;
+            padding: 0.35rem 0.7rem;
+            background: rgba(34, 211, 197, 0.14);
+            color: var(--text-main);
+            cursor: pointer;
+            font: 600 0.75rem var(--font-sans);
+        }
+
+        .beginner-run-btn:hover {
+            background: rgba(34, 211, 197, 0.28);
         }
 
         /* Tab Content - Code Syntax */
@@ -1095,6 +1200,86 @@
         body.modal-open {
             overflow: hidden;
         }
+
+        @media (max-width: 768px) {
+            .container {
+                padding: 1rem;
+            }
+
+            .details-overlay {
+                align-items: flex-start;
+                padding: 0.75rem;
+            }
+
+            .modal-container {
+                max-height: 96vh;
+                border-radius: 6px;
+            }
+
+            .scroll-more-btn {
+                right: 1.25rem;
+                bottom: 1.25rem;
+            }
+
+            .modal-hero,
+            .modal-body {
+                padding: 1.15rem;
+            }
+
+            .modal-hero {
+                align-items: flex-start;
+                gap: 0.85rem;
+                padding-right: 3.5rem;
+            }
+
+            .modal-logo {
+                width: 54px;
+                height: 54px;
+                padding: 0.55rem;
+                flex: 0 0 auto;
+            }
+
+            .modal-meta h2 {
+                font-size: 1.45rem;
+            }
+
+            .modal-meta p {
+                font-size: 0.8rem;
+                overflow-wrap: anywhere;
+            }
+
+            .modal-tabs {
+                display: grid;
+                grid-template-columns: repeat(2, minmax(0, 1fr));
+                gap: 0.35rem;
+                margin-right: 0;
+                padding-right: 0;
+                overflow-x: visible;
+            }
+
+            .tab-btn {
+                font-size: 0.82rem;
+                min-width: 0;
+                padding: 0.65rem 0.25rem;
+                white-space: normal;
+            }
+
+            .specs-panel {
+                padding: 1rem;
+                border-radius: 10px;
+            }
+
+            .spec-row {
+                align-items: flex-start;
+                gap: 0.75rem;
+            }
+
+            .spec-val {
+                max-width: 58%;
+                text-align: right;
+                overflow-wrap: anywhere;
+            }
+        }
     </style>
 </head>
 
@@ -1310,6 +1495,12 @@
                 </div>
             </div>
         </div>
+        <button class="scroll-more-btn" id="scroll-more-btn" type="button" aria-label="Scroll for more details" title="Scroll for more details">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <path d="M12 5v14"></path>
+                <path d="m6 13 6 6 6-6"></path>
+            </svg>
+        </button>
     </div>
     <script>
         // Language Database
@@ -3293,6 +3484,7 @@ func greet(name: String) {
         const modalClose = document.getElementById("modal-close");
         const modalHero = document.getElementById("modal-hero");
         const modalLogo = document.getElementById("modal-logo");
+        const scrollMoreBtn = document.getElementById("scroll-more-btn");
         const modalTitle = document.getElementById("modal-title");
         const modalCreator = document.getElementById("modal-creator");
         const modalYear = document.getElementById("modal-year");
@@ -3321,6 +3513,7 @@ func greet(name: String) {
         let currentFilter = "all";
         let searchQuery = "";
         let activeLanguage = null;
+        let scrollIdleTimer = null;
 
         const prefersFinePointer = window.matchMedia("(hover: hover) and (pointer: fine)").matches;
 
@@ -3940,6 +4133,18 @@ func greet(name: String) {
             <p>${beginnerGuide.syntax}</p>
         </div>
         <div class="beginner-card">
+            <h4>Code Writer</h4>
+            <p>Write a small example and run it in the browser or through a supported online runtime.</p>
+            <div class="beginner-code-box">
+                <div class="beginner-code-toolbar">
+                    <span class="beginner-code-label">${lang.name}</span>
+                    <button class="beginner-run-btn" id="beginner-run-btn" type="button">Run Code</button>
+                </div>
+                <textarea class="beginner-code-editor" id="beginner-code-editor" spellcheck="false" aria-label="${lang.name} code editor">${lang.rawCode}</textarea>
+                <pre class="beginner-code-output" id="beginner-code-output" aria-live="polite">Ready to run.</pre>
+            </div>
+        </div>
+        <div class="beginner-card">
             <h4>Common Keywords</h4>
             <div class="beginner-pill-list">
                 ${beginnerGuide.keywords.map(item => `<button class="beginner-pill" data-type="keyword" data-detail="${escapeAttribute(item.detail)}" data-example="${escapeAttribute(item.example)}">${item.name}</button>`).join("")}
@@ -3996,6 +4201,11 @@ func greet(name: String) {
                     });
                 });
             }, 0);
+
+            const beginnerCodeEditor = beginnerGuideContent.querySelector("#beginner-code-editor");
+            const beginnerRunBtn = beginnerGuideContent.querySelector("#beginner-run-btn");
+            const beginnerCodeOutput = beginnerGuideContent.querySelector("#beginner-code-output");
+            beginnerRunBtn.addEventListener("click", () => runBeginnerCode(lang, beginnerCodeEditor.value, beginnerCodeOutput));
 
             // Tab Content: Syntax
             codeLangLabel.textContent = lang.id;
@@ -4158,6 +4368,8 @@ func greet(name: String) {
             // Show modal
             modal.classList.add("active");
             document.body.classList.add("modal-open");
+            modalContainer.scrollTop = 0;
+            resetScrollIdleTimer();
             // Set hero gradient using its own property so it's not inherited
             modalHero.style.setProperty("--hero-glow", lang.accentGlow);
 
@@ -4175,11 +4387,81 @@ func greet(name: String) {
             switchTab("overview");
         }
 
+        const runtimeMap = {
+            python: "python", javascript: "javascript", typescript: "typescript", rust: "rust",
+            go: "go", cpp: "c++", c: "c", java: "java", swift: "swift", kotlin: "kotlin",
+            ruby: "ruby", php: "php", scala: "scala", r: "r", dart: "dart", lua: "lua",
+            elixir: "elixir", julia: "julia", haskell: "haskell"
+        };
+
+        async function runBeginnerCode(lang, source, output) {
+            output.textContent = "Running...";
+
+            if (lang.id === "javascript") {
+                const logs = [];
+                try {
+                    const result = Function("console", `"use strict";\n${source}`)({
+                        log: (...values) => logs.push(values.join(" "))
+                    });
+                    if (result !== undefined) logs.push(String(result));
+                    output.textContent = logs.join("\n") || "Finished without output.";
+                } catch (error) {
+                    output.textContent = `Error: ${error.message}`;
+                }
+                return;
+            }
+
+            const runtime = runtimeMap[lang.id];
+            if (!runtime) {
+                output.textContent = "This language needs its native compiler or interpreter. The editor is ready for copying.";
+                return;
+            }
+
+            try {
+                const response = await fetch("https://emkc.org/api/v2/piston/execute", {
+                    method: "POST",
+                    headers: { "Content-Type": "application/json" },
+                    body: JSON.stringify({ language: runtime, version: "*", files: [{ content: source }] })
+                });
+                if (!response.ok) throw new Error(`Runtime service returned ${response.status}`);
+                const result = await response.json();
+                output.textContent = result.run?.output || result.run?.stderr || "Finished without output.";
+            } catch (error) {
+                output.textContent = `Could not reach the online runtime. ${error.message}`;
+            }
+        }
+
         function closeModal() {
             modal.classList.remove("active");
             document.body.classList.remove("modal-open");
             activeLanguage = null;
+            clearTimeout(scrollIdleTimer);
+            scrollMoreBtn.classList.remove("visible");
         }
+
+        function updateScrollCue() {
+            const hasMoreContent = modalContainer.scrollHeight - modalContainer.clientHeight > 12;
+            const isNearBottom = modalContainer.scrollTop + modalContainer.clientHeight >= modalContainer.scrollHeight - 12;
+            scrollMoreBtn.classList.toggle("visible", hasMoreContent && !isNearBottom && modal.classList.contains("active"));
+        }
+
+        function resetScrollIdleTimer() {
+            clearTimeout(scrollIdleTimer);
+            scrollMoreBtn.classList.remove("visible");
+            if (!modal.classList.contains("active")) return;
+            scrollIdleTimer = setTimeout(updateScrollCue, 5000);
+        }
+
+        scrollMoreBtn.addEventListener("click", () => {
+            modalContainer.scrollBy({ top: Math.max(modalContainer.clientHeight * 0.72, 240), behavior: "smooth" });
+            resetScrollIdleTimer();
+        });
+
+        ["pointermove", "keydown", "wheel", "touchstart", "scroll"].forEach(eventName => {
+            modalContainer.addEventListener(eventName, resetScrollIdleTimer, { passive: eventName !== "keydown" });
+        });
+        modalContainer.addEventListener("scroll", updateScrollCue, { passive: true });
+        window.addEventListener("resize", updateScrollCue);
 
         // Modal Tabs Management
         const tabButtons = document.querySelectorAll(".tab-btn");

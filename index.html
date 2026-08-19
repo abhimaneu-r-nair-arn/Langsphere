@@ -42,6 +42,23 @@
             --font-mono: 'Fira Code', monospace;
         }
 
+        body.light-theme {
+            --bg-dark: #f4f8f7;
+            --bg-darker: #dfeae8;
+            --bg-card: rgba(255, 255, 255, 0.82);
+            --bg-card-hover: rgba(255, 255, 255, 0.98);
+            --border-color: rgba(18, 92, 87, 0.2);
+            --border-hover: rgba(18, 92, 87, 0.48);
+            --text-main: #102d2d;
+            --text-muted: #52706d;
+            --text-dark: #76918e;
+            --accent-default: #0b8f83;
+            --accent-glow: rgba(11, 143, 131, 0.2);
+            --hud-amber: #0b766e;
+            --hud-red: #d6405b;
+            --hud-dim: rgba(11, 118, 110, 0.48);
+        }
+
         /* Core Styles */
         * {
             box-sizing: border-box;
@@ -62,6 +79,19 @@
             line-height: 1.6;
             overflow-x: hidden;
             position: relative;
+        }
+
+        body.light-theme {
+            background-image:
+                radial-gradient(at 15% 10%, rgba(34, 211, 197, 0.18) 0px, transparent 45%),
+                radial-gradient(at 85% 90%, rgba(255, 154, 46, 0.14) 0px, transparent 50%),
+                linear-gradient(135deg, #f4f8f7 0%, #e9f2f0 100%);
+        }
+
+        body.light-theme::after {
+            background:
+                repeating-linear-gradient(0deg, rgba(18, 92, 87, 0.035) 0px, rgba(18, 92, 87, 0.035) 1px, transparent 1px, transparent 3px),
+                radial-gradient(ellipse at center, transparent 55%, rgba(18, 92, 87, 0.08) 100%);
         }
 
         .page-canvas {
@@ -149,6 +179,38 @@
             text-align: center;
             margin-bottom: 3.5rem;
             position: relative;
+        }
+
+        .view-controls {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 0.65rem;
+            margin: 0 auto 1.25rem;
+        }
+
+        .view-btn,
+        .theme-toggle {
+            border: 1px solid var(--border-color);
+            border-radius: 5px;
+            padding: 0.5rem 0.8rem;
+            background: rgba(255, 255, 255, 0.05);
+            color: var(--text-muted);
+            cursor: pointer;
+            font: 600 0.78rem var(--font-mono);
+            transition: var(--transition-smooth);
+        }
+
+        .view-btn:hover,
+        .theme-toggle:hover,
+        .view-btn.active {
+            color: var(--text-main);
+            border-color: var(--accent-default);
+            background: var(--accent-glow);
+        }
+
+        .theme-toggle {
+            min-width: 92px;
         }
 
         header::before {
@@ -291,6 +353,128 @@
             grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
             gap: 1.5rem;
             margin-top: 3rem;
+        }
+
+        .timeline-view {
+            display: none;
+            margin-top: 3rem;
+        }
+
+        .timeline-view.active {
+            display: block;
+            animation: fadeIn 0.35s ease-out;
+        }
+
+        .timeline-heading {
+            display: flex;
+            justify-content: space-between;
+            align-items: end;
+            gap: 1rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .timeline-heading h2 {
+            font-size: clamp(1.5rem, 3vw, 2.25rem);
+            color: var(--text-main);
+        }
+
+        .timeline-heading p {
+            color: var(--text-muted);
+            max-width: 520px;
+        }
+
+        .timeline-track {
+            position: relative;
+            display: grid;
+            gap: 0.85rem;
+            padding-left: 1.3rem;
+        }
+
+        .timeline-track::before {
+            content: '';
+            position: absolute;
+            top: 0.5rem;
+            bottom: 0.5rem;
+            left: 0.35rem;
+            width: 2px;
+            background: linear-gradient(var(--accent-default), rgba(34, 211, 197, 0.05));
+        }
+
+        .timeline-entry {
+            position: relative;
+            display: grid;
+            grid-template-columns: 82px 52px 1fr auto;
+            align-items: center;
+            gap: 1rem;
+            padding: 0.95rem 1rem;
+            background: var(--bg-card);
+            border: 1px solid var(--border-color);
+            clip-path: polygon(0 7px, 7px 0, 100% 0, 100% calc(100% - 7px), calc(100% - 7px) 100%, 0 100%);
+            cursor: pointer;
+            transition: var(--transition-smooth);
+        }
+
+        .timeline-entry::before {
+            content: '';
+            position: absolute;
+            left: -1.3rem;
+            width: 0.65rem;
+            height: 0.65rem;
+            border: 2px solid var(--accent-default);
+            background: var(--bg-dark);
+            transform: rotate(45deg);
+        }
+
+        .timeline-entry:hover {
+            transform: translateX(5px);
+            border-color: var(--border-hover);
+            background: var(--bg-card-hover);
+        }
+
+        .timeline-year {
+            color: var(--accent-default);
+            font: 600 0.9rem var(--font-mono);
+        }
+
+        .timeline-entry img,
+        .timeline-logo {
+            width: 42px;
+            height: 42px;
+            padding: 0.45rem;
+            background: rgba(0, 0, 0, 0.14);
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+        }
+
+        .timeline-logo svg { width: 100%; height: 100%; }
+        .timeline-name { color: var(--text-main); font-size: 1.05rem; font-weight: 700; }
+        .timeline-creator { color: var(--text-muted); font-size: 0.82rem; }
+        .timeline-open { color: var(--accent-default); font: 0.72rem var(--font-mono); }
+
+        .profile-summary {
+            display: grid;
+            grid-template-columns: repeat(3, minmax(0, 1fr));
+            gap: 0.75rem;
+            margin-bottom: 1.25rem;
+        }
+
+        .profile-stat {
+            padding: 0.85rem;
+            background: rgba(0, 0, 0, 0.15);
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+        }
+
+        .profile-stat strong { display: block; color: var(--lang-accent, var(--accent-default)); font: 600 1.15rem var(--font-mono); }
+        .profile-stat span { color: var(--text-muted); font-size: 0.76rem; }
+
+        .profile-tags { display: flex; flex-wrap: wrap; gap: 0.45rem; margin: 0.9rem 0 1.2rem; }
+
+        @media (max-width: 640px) {
+            .timeline-entry { grid-template-columns: 64px 42px 1fr; gap: 0.65rem; }
+            .timeline-open { display: none; }
+            .timeline-heading { display: block; }
+            .profile-summary { grid-template-columns: 1fr; }
         }
 
         /* Language Card */
@@ -470,6 +654,11 @@
             display: flex;
             flex-direction: column;
             position: relative;
+        }
+
+        body.light-theme .modal-container {
+            background: #f7fbfa;
+            box-shadow: 0 25px 50px -12px rgba(18, 55, 52, 0.28);
         }
 
         .details-overlay.active .modal-container {
@@ -1292,6 +1481,12 @@
             </div>
             <p>Lock onto programming languages. Fire to inspect specs, syntax, and combat-ready metrics.</p>
 
+            <div class="view-controls" aria-label="Directory views">
+                <button class="view-btn active" id="directory-view-btn" type="button">Directory</button>
+                <button class="view-btn" id="timeline-view-btn" type="button">History Timeline</button>
+                <button class="theme-toggle" id="theme-toggle" type="button" aria-pressed="false">Light Mode</button>
+            </div>
+
             <!-- Search & Filters -->
             <div class="controls-wrapper">
                 <div class="search-box">
@@ -1328,6 +1523,16 @@
             </div>
         </main>
 
+        <section class="timeline-view" id="timeline-view" aria-labelledby="timeline-title">
+            <div class="timeline-heading">
+                <div>
+                    <h2 id="timeline-title">Language History</h2>
+                    <p>Trace the milestones of the languages in the directory, from foundational systems tools to modern application platforms.</p>
+                </div>
+            </div>
+            <div class="timeline-track" id="timeline-track"></div>
+        </section>
+
         <footer>
             <p>&copy; 2026 LangSphere. Designed for developers, researchers, and computer scientists.</p>
         </footer>
@@ -1359,12 +1564,24 @@
                 <!-- Left: Details Tabs & Content -->
                 <div class="modal-left">
                     <nav class="modal-tabs">
-                        <button class="tab-btn active" data-tab="overview">Overview</button>
+                        <button class="tab-btn active" data-tab="profile">Profile</button>
+                        <button class="tab-btn" data-tab="overview">Overview</button>
                         <button class="tab-btn" data-tab="beginner">Beginner Guide</button>
                         <button class="tab-btn" data-tab="syntax">Syntax Highlight</button>
                         <button class="tab-btn" data-tab="ecosystem">Ecosystem</button>
                         <button class="tab-btn" data-tab="proscons">Pros & Cons</button>
                     </nav>
+
+                    <!-- Tab: Profile -->
+                    <div class="tab-pane" id="tab-profile">
+                        <div class="profile-summary" id="profile-summary"></div>
+                        <p id="profile-description" class="tab-overview"></p>
+                        <div class="profile-tags" id="profile-tags"></div>
+                        <div class="overview-bullets">
+                            <h4>Profile Highlights</h4>
+                            <ul id="profile-highlights"></ul>
+                        </div>
+                    </div>
 
                     <!-- Tab: Overview -->
                     <div class="tab-pane active" id="tab-overview">
@@ -3466,6 +3683,12 @@ func greet(name: String) {
         const searchInput = document.getElementById("search-input");
         const filtersContainer = document.getElementById("filters-container");
         const emptyState = document.getElementById("empty-state");
+        const directoryView = document.getElementById("languages-grid");
+        const timelineView = document.getElementById("timeline-view");
+        const timelineTrack = document.getElementById("timeline-track");
+        const directoryViewBtn = document.getElementById("directory-view-btn");
+        const timelineViewBtn = document.getElementById("timeline-view-btn");
+        const themeToggle = document.getElementById("theme-toggle");
 
         // Modal Elements
         const modal = document.getElementById("details-overlay");
@@ -3498,6 +3721,10 @@ func greet(name: String) {
         const specExecution = document.getElementById("spec-execution");
         const specConcurrency = document.getElementById("spec-concurrency");
         const metricsContainer = document.getElementById("metrics-container");
+        const profileSummary = document.getElementById("profile-summary");
+        const profileDescription = document.getElementById("profile-description");
+        const profileTags = document.getElementById("profile-tags");
+        const profileHighlights = document.getElementById("profile-highlights");
 
         let currentFilter = "all";
         let searchQuery = "";
@@ -3904,6 +4131,48 @@ func greet(name: String) {
             });
         }
 
+        function renderTimeline() {
+            const timelineLanguages = [...languages].sort((first, second) => first.year - second.year || first.name.localeCompare(second.name));
+            timelineTrack.innerHTML = timelineLanguages.map(lang => `
+                <article class="timeline-entry" data-language-id="${lang.id}" tabindex="0" role="button" aria-label="Open ${lang.name} profile">
+                    <span class="timeline-year">${lang.year}</span>
+                    <span class="timeline-logo">${lang.logoSvg}</span>
+                    <span><strong class="timeline-name">${lang.name}</strong><br><span class="timeline-creator">${lang.creator}</span></span>
+                    <span class="timeline-open">VIEW PROFILE</span>
+                </article>
+            `).join("");
+
+            timelineTrack.querySelectorAll(".timeline-entry").forEach(entry => {
+                const openEntry = () => {
+                    const language = languages.find(item => item.id === entry.dataset.languageId);
+                    if (language) openModal(language);
+                };
+                entry.addEventListener("click", openEntry);
+                entry.addEventListener("keydown", event => {
+                    if (event.key === "Enter" || event.key === " ") {
+                        event.preventDefault();
+                        openEntry();
+                    }
+                });
+            });
+        }
+
+        function setView(view) {
+            const showTimeline = view === "timeline";
+            directoryView.style.display = showTimeline ? "none" : "grid";
+            timelineView.classList.toggle("active", showTimeline);
+            directoryViewBtn.classList.toggle("active", !showTimeline);
+            timelineViewBtn.classList.toggle("active", showTimeline);
+            if (showTimeline) renderTimeline();
+        }
+
+        function setTheme(isLight) {
+            document.body.classList.toggle("light-theme", isLight);
+            themeToggle.textContent = isLight ? "Dark Mode" : "Light Mode";
+            themeToggle.setAttribute("aria-pressed", String(isLight));
+            localStorage.setItem("langsphere-theme", isLight ? "light" : "dark");
+        }
+
 
         // Modal Control Logic
         function escapeAttribute(value) {
@@ -4109,6 +4378,15 @@ func greet(name: String) {
             modalTitle.textContent = lang.name;
             modalCreator.textContent = lang.creator;
             modalYear.textContent = lang.year;
+
+            profileSummary.innerHTML = `
+                <div class="profile-stat"><strong>${lang.year}</strong><span>First released</span></div>
+                <div class="profile-stat"><strong>${lang.categories.length}</strong><span>Directory disciplines</span></div>
+                <div class="profile-stat"><strong>${lang.metrics[0].value}%</strong><span>Performance signal</span></div>
+            `;
+            profileDescription.textContent = lang.fullDesc;
+            profileTags.innerHTML = lang.categories.map(category => `<span class="tag">${category.replace(/-/g, " ")}</span>`).join("");
+            profileHighlights.innerHTML = lang.features.map(feature => `<li>${feature}</li>`).join("");
 
             // Tab Content: Overview
             overviewDesc.textContent = lang.fullDesc;
@@ -4370,8 +4648,8 @@ func greet(name: String) {
                 });
             }, 100);
 
-            // Reset Tab position to default "overview"
-            switchTab("overview");
+            // Reset Tab position to the full profile view
+            switchTab("profile");
         }
 
         const compilerSiteMap = {
@@ -4516,6 +4794,13 @@ func greet(name: String) {
                 closeModal();
             }
         });
+
+        directoryViewBtn.addEventListener("click", () => setView("directory"));
+        timelineViewBtn.addEventListener("click", () => setView("timeline"));
+        themeToggle.addEventListener("click", () => setTheme(!document.body.classList.contains("light-theme")));
+
+        const savedTheme = localStorage.getItem("langsphere-theme");
+        setTheme(savedTheme === "light");
 
         // Initial render
         renderCards();

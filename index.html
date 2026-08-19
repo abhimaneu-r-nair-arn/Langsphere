@@ -863,17 +863,6 @@
             tab-size: 4;
         }
 
-        .beginner-code-output {
-            min-height: 2.5rem;
-            margin: 0;
-            padding: 0.75rem 0.9rem;
-            border-top: 1px solid rgba(72, 224, 207, 0.12);
-            color: #9fffea;
-            font: 0.75rem/1.5 var(--font-mono);
-            white-space: pre-wrap;
-            overflow-wrap: anywhere;
-        }
-
         .beginner-run-btn {
             border: 1px solid rgba(111, 255, 234, 0.38);
             border-radius: 5px;
@@ -4134,14 +4123,13 @@ func greet(name: String) {
         </div>
         <div class="beginner-card">
             <h4>Code Writer</h4>
-            <p>Write a small example and run it in the browser or through a supported online runtime.</p>
+            <p>Write or copy your example, then open the free online compiler for this language.</p>
             <div class="beginner-code-box">
                 <div class="beginner-code-toolbar">
                     <span class="beginner-code-label">${lang.name}</span>
-                    <button class="beginner-run-btn" id="beginner-run-btn" type="button">Run Code</button>
+                    <button class="beginner-run-btn" id="beginner-run-btn" type="button">Open Compiler</button>
                 </div>
                 <textarea class="beginner-code-editor" id="beginner-code-editor" spellcheck="false" aria-label="${lang.name} code editor">${lang.rawCode}</textarea>
-                <pre class="beginner-code-output" id="beginner-code-output" aria-live="polite">Ready to run.</pre>
             </div>
         </div>
         <div class="beginner-card">
@@ -4202,10 +4190,9 @@ func greet(name: String) {
                 });
             }, 0);
 
-            const beginnerCodeEditor = beginnerGuideContent.querySelector("#beginner-code-editor");
             const beginnerRunBtn = beginnerGuideContent.querySelector("#beginner-run-btn");
-            const beginnerCodeOutput = beginnerGuideContent.querySelector("#beginner-code-output");
-            beginnerRunBtn.addEventListener("click", () => runBeginnerCode(lang, beginnerCodeEditor.value, beginnerCodeOutput));
+            beginnerRunBtn.textContent = `Open ${lang.name} Compiler`;
+            beginnerRunBtn.addEventListener("click", () => openOnlineCompiler(lang, beginnerGuideContent.querySelector("#beginner-code-editor").value));
 
             // Tab Content: Syntax
             codeLangLabel.textContent = lang.id;
@@ -4387,48 +4374,38 @@ func greet(name: String) {
             switchTab("overview");
         }
 
-        const runtimeMap = {
-            python: "python", javascript: "javascript", typescript: "typescript", rust: "rust",
-            go: "go", cpp: "c++", c: "c", java: "java", swift: "swift", kotlin: "kotlin",
-            ruby: "ruby", php: "php", scala: "scala", r: "r", dart: "dart", lua: "lua",
-            elixir: "elixir", julia: "julia", haskell: "haskell"
+        const compilerSiteMap = {
+            python: "https://www.programiz.com/python-programming/online-compiler/",
+            javascript: "https://onecompiler.com/javascript",
+            typescript: "https://onecompiler.com/typescript",
+            rust: "https://play.rust-lang.org/",
+            go: "https://go.dev/play/",
+            cpp: "https://www.onlinegdb.com/online_c++_compiler",
+            c: "https://www.onlinegdb.com/online_c_compiler",
+            java: "https://www.programiz.com/java-programming/online-compiler/",
+            swift: "https://onecompiler.com/swift",
+            kotlin: "https://play.kotlinlang.org/",
+            ruby: "https://www.programiz.com/ruby-programming/online-compiler/",
+            php: "https://www.programiz.com/php/online-compiler/",
+            scala: "https://onecompiler.com/scala",
+            r: "https://www.programiz.com/r/online-compiler/",
+            dart: "https://dartpad.dev/",
+            lua: "https://onecompiler.com/lua",
+            elixir: "https://onecompiler.com/elixir",
+            julia: "https://onecompiler.com/julia",
+            haskell: "https://onecompiler.com/haskell",
+            sql: "https://www.programiz.com/sql/online-compiler/"
         };
 
-        async function runBeginnerCode(lang, source, output) {
-            output.textContent = "Running...";
-
-            if (lang.id === "javascript") {
-                const logs = [];
-                try {
-                    const result = Function("console", `"use strict";\n${source}`)({
-                        log: (...values) => logs.push(values.join(" "))
-                    });
-                    if (result !== undefined) logs.push(String(result));
-                    output.textContent = logs.join("\n") || "Finished without output.";
-                } catch (error) {
-                    output.textContent = `Error: ${error.message}`;
-                }
-                return;
-            }
-
-            const runtime = runtimeMap[lang.id];
-            if (!runtime) {
-                output.textContent = "This language needs its native compiler or interpreter. The editor is ready for copying.";
-                return;
-            }
-
+        async function openOnlineCompiler(lang, source) {
+            const compilerUrl = compilerSiteMap[lang.id] || `https://www.google.com/search?q=${encodeURIComponent(`${lang.name} free online compiler`)}`;
             try {
-                const response = await fetch("https://emkc.org/api/v2/piston/execute", {
-                    method: "POST",
-                    headers: { "Content-Type": "application/json" },
-                    body: JSON.stringify({ language: runtime, version: "*", files: [{ content: source }] })
-                });
-                if (!response.ok) throw new Error(`Runtime service returned ${response.status}`);
-                const result = await response.json();
-                output.textContent = result.run?.output || result.run?.stderr || "Finished without output.";
+                await navigator.clipboard.writeText(source);
+                beginnerGuideContent.querySelector("#beginner-run-btn").textContent = "Code Copied - Open Compiler";
             } catch (error) {
-                output.textContent = `Could not reach the online runtime. ${error.message}`;
+                // The external compiler still opens if clipboard access is unavailable.
             }
+            window.open(compilerUrl, "_blank", "noopener,noreferrer");
         }
 
         function closeModal() {

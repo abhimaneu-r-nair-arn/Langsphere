@@ -1278,6 +1278,103 @@
             font-size: 0.85rem;
         }
 
+        .overview-document-link {
+            display: inline-flex;
+            margin-top: 0.75rem;
+            padding: 0.45rem 0.75rem;
+            border: 1px solid var(--border-color);
+            border-radius: 5px;
+            background: rgba(34, 211, 197, 0.08);
+            color: var(--text-muted);
+            font: 600 0.78rem var(--font-mono);
+            text-decoration: none;
+            transition: var(--transition-smooth);
+        }
+
+        .overview-document-link:hover {
+            border-color: var(--accent-default);
+            background: var(--accent-glow);
+            color: var(--text-main);
+        }
+
+        .overview-overlay {
+            position: fixed;
+            inset: 0;
+            z-index: 1100;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 1.5rem;
+            background: rgba(4, 16, 18, 0.88);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            opacity: 0;
+            pointer-events: none;
+            transition: opacity 0.35s ease;
+        }
+
+        .overview-overlay.active {
+            opacity: 1;
+            pointer-events: auto;
+        }
+
+        .overview-document {
+            position: relative;
+            width: 100%;
+            max-width: 850px;
+            max-height: 90vh;
+            overflow-y: auto;
+            padding: 2.5rem;
+            background: #071f23;
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            box-shadow: 0 25px 50px rgba(0, 0, 0, 0.5);
+            transform: translateY(30px) scale(0.96);
+            transition: transform 0.4s ease;
+        }
+
+        .overview-overlay.active .overview-document {
+            transform: translateY(0) scale(1);
+        }
+
+        .overview-document h2 {
+            margin-bottom: 0.35rem;
+            color: var(--text-main);
+            font-size: 2rem;
+        }
+
+        .overview-document h3 {
+            margin: 1.75rem 0 0.6rem;
+            color: var(--accent-default);
+            font-size: 1rem;
+            font-family: var(--font-mono);
+        }
+
+        .overview-document p,
+        .overview-document li {
+            color: var(--text-muted);
+            line-height: 1.7;
+        }
+
+        .overview-document ul {
+            padding-left: 1.25rem;
+        }
+
+        .overview-document-meta {
+            color: var(--text-dark);
+            font: 0.78rem var(--font-mono);
+        }
+
+        @media (max-width: 640px) {
+            .overview-document {
+                padding: 1.5rem;
+            }
+
+            .overview-document h2 {
+                font-size: 1.55rem;
+            }
+        }
+
         footer a {
             color: var(--text-muted);
             text-decoration: none;
@@ -1493,6 +1590,7 @@
 
         <footer>
             <p>&copy; 2026 LangSphere. Designed for developers, researchers, and computer scientists.</p>
+            <a class="overview-document-link" id="overview-document-link" href="#overview-document">View overview document</a>
         </footer>
     </div>
 
@@ -1665,6 +1763,31 @@
                 <path d="m6 13 6 6 6-6"></path>
             </svg>
         </button>
+    </div>
+
+    <div class="overview-overlay" id="overview-overlay" aria-hidden="true">
+        <article class="overview-document" id="overview-document" role="document" aria-labelledby="overview-document-title">
+            <button class="modal-close-btn" id="overview-document-close" type="button" aria-label="Close overview document">
+                <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2"
+                    stroke-linecap="round" stroke-linejoin="round">
+                    <line x1="18" y1="6" x2="6" y2="18"></line>
+                    <line x1="6" y1="6" x2="18" y2="18"></line>
+                </svg>
+            </button>
+            <p class="overview-document-meta">LANGSPHERE / DIRECTORY BRIEF</p>
+            <h2 id="overview-document-title">Programming Languages Directory</h2>
+            <p>A reference guide for comparing languages by origin, programming model, execution strategy, and ecosystem.</p>
+            <h3>What this directory covers</h3>
+            <ul>
+                <li>Language profiles with history, creators, and practical descriptions.</li>
+                <li>Syntax examples, beginner guidance, technical specifications, and metrics.</li>
+                <li>Categories spanning systems, web, data and AI, mobile, functional, and scientific development.</li>
+            </ul>
+            <h3>How to explore</h3>
+            <p>Use the directory search and filters to narrow the collection, switch to History Timeline for a chronological view, or select any language card for its complete profile.</p>
+            <h3>Reference note</h3>
+            <p>The comparisons are educational signals intended to help frame trade-offs. Actual performance and suitability depend on the workload, runtime, libraries, and team context.</p>
+        </article>
     </div>
     <script>
         // Language Database
@@ -3654,6 +3777,9 @@ func greet(name: String) {
         const modalHero = document.getElementById("modal-hero");
         const modalLogo = document.getElementById("modal-logo");
         const scrollMoreBtn = document.getElementById("scroll-more-btn");
+        const overviewDocumentLink = document.getElementById("overview-document-link");
+        const overviewOverlay = document.getElementById("overview-overlay");
+        const overviewDocumentClose = document.getElementById("overview-document-close");
         const modalTitle = document.getElementById("modal-title");
         const modalCreator = document.getElementById("modal-creator");
         const modalYear = document.getElementById("modal-year");
@@ -4643,6 +4769,21 @@ func greet(name: String) {
             scrollMoreBtn.classList.remove("visible");
         }
 
+        function openOverviewDocument(event) {
+            event.preventDefault();
+            if (modal.classList.contains("active")) closeModal();
+            overviewOverlay.classList.add("active");
+            overviewOverlay.setAttribute("aria-hidden", "false");
+            document.body.classList.add("modal-open");
+            overviewDocumentClose.focus();
+        }
+
+        function closeOverviewDocument() {
+            overviewOverlay.classList.remove("active");
+            overviewOverlay.setAttribute("aria-hidden", "true");
+            document.body.classList.remove("modal-open");
+        }
+
         function updateScrollCue() {
             const hasMoreContent = modalContainer.scrollHeight - modalContainer.clientHeight > 12;
             const isNearBottom = modalContainer.scrollTop + modalContainer.clientHeight >= modalContainer.scrollHeight - 12;
@@ -4735,12 +4876,21 @@ func greet(name: String) {
             }
         });
 
+        overviewDocumentLink.addEventListener("click", openOverviewDocument);
+        overviewOverlay.addEventListener("click", (e) => {
+            if (e.target === overviewOverlay) closeOverviewDocument();
+        });
+        overviewDocumentClose.addEventListener("click", closeOverviewDocument);
+
         modalClose.addEventListener("click", closeModal);
 
         // Close modal with Escape key
         document.addEventListener("keydown", (e) => {
             if (e.key === "Escape" && modal.classList.contains("active")) {
                 closeModal();
+            }
+            if (e.key === "Escape" && overviewOverlay.classList.contains("active")) {
+                closeOverviewDocument();
             }
         });
 

@@ -19,7 +19,7 @@
         rel="stylesheet">
 
     <style>
-        /* Design Tokens — Combat HUD / Shooter Theme */
+        /* Design Tokens — Professional Dark Interface */
         :root {
             --bg-dark: #07181b;
             --bg-darker: #041012;
@@ -178,7 +178,7 @@
         }
 
         header::before {
-            content: "[WEAPON SYS :: ARMORY ONLINE]";
+            content: "[LANGSPHERE :: DIRECTORY ONLINE]";
             display: block;
             margin: 0 auto 1rem;
             font-family: var(--font-mono);
@@ -460,7 +460,7 @@
         }
 
         .lang-card::after {
-            content: "TARGET";
+            content: "VIEW DETAILS";
             position: absolute;
             top: 0.65rem;
             right: 0.75rem;
@@ -1438,7 +1438,7 @@
                 </svg>
                 <span class="logo-glow">LangSphere</span>
             </div>
-            <p>Lock onto programming languages. Fire to inspect specs, syntax, and combat-ready metrics.</p>
+            <p>Explore programming languages through specifications, syntax, and ecosystem insights.</p>
 
             <div class="view-controls" aria-label="Directory views">
                 <button class="view-btn active" id="directory-view-btn" type="button">Directory</button>
@@ -1452,10 +1452,10 @@
                         <path
                             d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z" />
                     </svg>
-                    <input type="text" id="search-input" placeholder="Scan targets — name, creator, paradigm, feature...">
+                    <input type="text" id="search-input" placeholder="Search by name, creator, paradigm, or feature...">
                 </div>
                 <div class="filters-container" id="filters-container">
-                    <span class="filter-chip active" data-filter="all">All Targets</span>
+                    <span class="filter-chip active" data-filter="all">All Languages</span>
                     <span class="filter-chip" data-filter="systems">Systems</span>
                     <span class="filter-chip" data-filter="web">Web Development</span>
                     <span class="filter-chip" data-filter="data-science">Data & AI</span>
@@ -3968,7 +3968,7 @@ func greet(name: String) {
                 fxCtx.font = "600 7px 'Fira Code', monospace";
                 fxCtx.textAlign = "center";
                 fxCtx.fillStyle = `rgba(255, 59, 46, ${0.55 + lockProgress * 0.35})`;
-                fxCtx.fillText("LOCK", 0, -bracketSize - 7);
+                fxCtx.fillText("FOCUS", 0, -bracketSize - 7);
             }
 
             fxCtx.restore();

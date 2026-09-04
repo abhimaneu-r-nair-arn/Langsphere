@@ -42,23 +42,6 @@
             --font-mono: 'Fira Code', monospace;
         }
 
-        body.light-theme {
-            --bg-dark: #f4f8f7;
-            --bg-darker: #dfeae8;
-            --bg-card: rgba(255, 255, 255, 0.82);
-            --bg-card-hover: rgba(255, 255, 255, 0.98);
-            --border-color: rgba(18, 92, 87, 0.2);
-            --border-hover: rgba(18, 92, 87, 0.48);
-            --text-main: #102d2d;
-            --text-muted: #52706d;
-            --text-dark: #76918e;
-            --accent-default: #0b8f83;
-            --accent-glow: rgba(11, 143, 131, 0.2);
-            --hud-amber: #0b766e;
-            --hud-red: #d6405b;
-            --hud-dim: rgba(11, 118, 110, 0.48);
-        }
-
         /* Core Styles */
         * {
             box-sizing: border-box;
@@ -79,19 +62,6 @@
             line-height: 1.6;
             overflow-x: hidden;
             position: relative;
-        }
-
-        body.light-theme {
-            background-image:
-                radial-gradient(at 15% 10%, rgba(34, 211, 197, 0.18) 0px, transparent 45%),
-                radial-gradient(at 85% 90%, rgba(255, 154, 46, 0.14) 0px, transparent 50%),
-                linear-gradient(135deg, #f4f8f7 0%, #e9f2f0 100%);
-        }
-
-        body.light-theme::after {
-            background:
-                repeating-linear-gradient(0deg, rgba(18, 92, 87, 0.035) 0px, rgba(18, 92, 87, 0.035) 1px, transparent 1px, transparent 3px),
-                radial-gradient(ellipse at center, transparent 55%, rgba(18, 92, 87, 0.08) 100%);
         }
 
         .page-canvas {
@@ -189,8 +159,7 @@
             margin: 0 auto 1.25rem;
         }
 
-        .view-btn,
-        .theme-toggle {
+        .view-btn {
             border: 1px solid var(--border-color);
             border-radius: 5px;
             padding: 0.5rem 0.8rem;
@@ -202,15 +171,10 @@
         }
 
         .view-btn:hover,
-        .theme-toggle:hover,
         .view-btn.active {
             color: var(--text-main);
             border-color: var(--accent-default);
             background: var(--accent-glow);
-        }
-
-        .theme-toggle {
-            min-width: 92px;
         }
 
         header::before {
@@ -654,11 +618,6 @@
             display: flex;
             flex-direction: column;
             position: relative;
-        }
-
-        body.light-theme .modal-container {
-            background: #f7fbfa;
-            box-shadow: 0 25px 50px -12px rgba(18, 55, 52, 0.28);
         }
 
         .details-overlay.active .modal-container {
@@ -1484,7 +1443,6 @@
             <div class="view-controls" aria-label="Directory views">
                 <button class="view-btn active" id="directory-view-btn" type="button">Directory</button>
                 <button class="view-btn" id="timeline-view-btn" type="button">History Timeline</button>
-                <button class="theme-toggle" id="theme-toggle" type="button" aria-pressed="false">Light Mode</button>
             </div>
 
             <!-- Search & Filters -->
@@ -3688,7 +3646,6 @@ func greet(name: String) {
         const timelineTrack = document.getElementById("timeline-track");
         const directoryViewBtn = document.getElementById("directory-view-btn");
         const timelineViewBtn = document.getElementById("timeline-view-btn");
-        const themeToggle = document.getElementById("theme-toggle");
 
         // Modal Elements
         const modal = document.getElementById("details-overlay");
@@ -4165,14 +4122,6 @@ func greet(name: String) {
             timelineViewBtn.classList.toggle("active", showTimeline);
             if (showTimeline) renderTimeline();
         }
-
-        function setTheme(isLight) {
-            document.body.classList.toggle("light-theme", isLight);
-            themeToggle.textContent = isLight ? "Dark Mode" : "Light Mode";
-            themeToggle.setAttribute("aria-pressed", String(isLight));
-            localStorage.setItem("langsphere-theme", isLight ? "light" : "dark");
-        }
-
 
         // Modal Control Logic
         function escapeAttribute(value) {
@@ -4797,11 +4746,6 @@ func greet(name: String) {
 
         directoryViewBtn.addEventListener("click", () => setView("directory"));
         timelineViewBtn.addEventListener("click", () => setView("timeline"));
-        themeToggle.addEventListener("click", () => setTheme(!document.body.classList.contains("light-theme")));
-
-        const savedTheme = localStorage.getItem("langsphere-theme");
-        setTheme(savedTheme === "light");
-
         // Initial render
         renderCards();
 

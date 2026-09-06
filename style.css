@@ -1156,16 +1156,18 @@
         }
 
         .pros-column li::before {
-            content: '[OK]';
+            content: '✓';
             position: absolute;
             left: 0;
+            width: 1rem;
             color: #ff9a2e;
         }
 
         .cons-column li::before {
-            content: '[X]';
+            content: '✗';
             position: absolute;
             left: 0;
+            width: 1rem;
             color: #ef4444;
         }
 
@@ -1223,10 +1225,12 @@
         }
 
         .spec-row {
-            display: flex;
-            justify-content: space-between;
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 0.25rem;
             font-size: 0.85rem;
-            padding-bottom: 0.5rem;
+            line-height: 1.5;
+            padding: 0.65rem 0;
             border-bottom: 1px solid rgba(255, 255, 255, 0.03);
         }
 
@@ -1242,6 +1246,8 @@
         .spec-val {
             color: var(--text-main);
             font-weight: 500;
+            text-align: left;
+            overflow-wrap: anywhere;
         }
 
         /* Footer */
@@ -1502,13 +1508,10 @@
             }
 
             .spec-row {
-                align-items: flex-start;
-                gap: 0.75rem;
+                gap: 0.25rem;
             }
 
             .spec-val {
-                max-width: 58%;
-                text-align: right;
-                overflow-wrap: anywhere;
+                max-width: none;
             }
         }

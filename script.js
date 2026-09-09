@@ -7,6 +7,7 @@
         const directoryView = document.getElementById("languages-grid");
         const timelineView = document.getElementById("timeline-view");
         const timelineTrack = document.getElementById("timeline-track");
+        const timelineEmptyState = document.getElementById("timeline-empty-state");
         const directoryViewBtn = document.getElementById("directory-view-btn");
         const timelineViewBtn = document.getElementById("timeline-view-btn");
 
@@ -382,13 +383,8 @@
 
         fxFrameId = requestAnimationFrame(drawFxFrame);
 
-        // Initialize Card Layout
-        function renderCards() {
-            // Remove only lang-card elements, not the emptyState inside the grid
-            const existingCards = grid.querySelectorAll(".lang-card");
-            existingCards.forEach(c => c.remove());
-
-            const filtered = languages.filter(lang => {
+        function getFilteredLanguages() {
+            return languages.filter(lang => {
                 const matchesSearch = lang.name.toLowerCase().includes(searchQuery) ||
                     lang.creator.toLowerCase().includes(searchQuery) ||
                     lang.shortDesc.toLowerCase().includes(searchQuery) ||
@@ -398,6 +394,32 @@
 
                 return matchesSearch && matchesFilter;
             });
+        }
+
+        function clearFilters() {
+            currentFilter = "all";
+            searchQuery = "";
+            searchInput.value = "";
+            filtersContainer.querySelectorAll(".filter-chip").forEach(chip => {
+                chip.classList.toggle("active", chip.getAttribute("data-filter") === "all");
+            });
+        }
+
+        function renderCurrentView() {
+            if (timelineView.classList.contains("active")) {
+                renderTimeline();
+            } else {
+                renderCards();
+            }
+        }
+
+        // Initialize Card Layout
+        function renderCards() {
+            // Remove only lang-card elements, not the emptyState inside the grid
+            const existingCards = grid.querySelectorAll(".lang-card");
+            existingCards.forEach(c => c.remove());
+
+            const filtered = getFilteredLanguages();
 
             if (filtered.length === 0) {
                 emptyState.classList.add("visible");
@@ -465,7 +487,18 @@
         }
 
         function renderTimeline() {
-            const timelineLanguages = [...languages].sort((first, second) => first.year - second.year || first.name.localeCompare(second.name));
+            const timelineLanguages = getFilteredLanguages()
+                .sort((first, second) => first.year - second.year || first.name.localeCompare(second.name));
+
+            if (timelineEmptyState) {
+                timelineEmptyState.classList.toggle("visible", timelineLanguages.length === 0);
+            }
+
+            if (timelineLanguages.length === 0) {
+                timelineTrack.innerHTML = "";
+                return;
+            }
+
             timelineTrack.innerHTML = timelineLanguages.map(lang => `
                 <article class="timeline-entry" data-language-id="${lang.id}" tabindex="0" role="button" aria-label="Open ${lang.name} profile">
                     <span class="timeline-year">${lang.year}</span>
@@ -491,12 +524,20 @@
         }
 
         function setView(view) {
+            clearFilters();
+
             const showTimeline = view === "timeline";
             directoryView.style.display = showTimeline ? "none" : "grid";
             timelineView.classList.toggle("active", showTimeline);
             directoryViewBtn.classList.toggle("active", !showTimeline);
             timelineViewBtn.classList.toggle("active", showTimeline);
-            if (showTimeline) renderTimeline();
+
+            if (showTimeline) {
+                renderTimeline();
+            } else {
+                if (timelineEmptyState) timelineEmptyState.classList.remove("visible");
+                renderCards();
+            }
         }
 
         // Modal Control Logic
@@ -931,7 +972,7 @@
         // Event Listeners for Filters and Search
         searchInput.addEventListener("input", (e) => {
             searchQuery = e.target.value.toLowerCase();
-            renderCards();
+            renderCurrentView();
         });
 
         filtersContainer.addEventListener("click", (e) => {
@@ -944,7 +985,7 @@
 
             targetChip.classList.add("active");
             currentFilter = targetChip.getAttribute("data-filter");
-            renderCards();
+            renderCurrentView();
         });
 
         // Close Modal on backdrop click

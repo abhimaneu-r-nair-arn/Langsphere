@@ -11,7 +11,7 @@
                 accentGlow: "rgba(55, 118, 171, 0.2)",
                 accentLight: "#4b8bbe",
                 logoSvg: `<svg viewBox="0 0 24 24"><path fill="#3776AB" d="M12 2c-5.523 0-5 2.033-5 4h5v1H7c-2.485 0-5 .784-5 4v5c0 2.21 2.239 3 5 3h1.5v-1.5c0-1.38 1.12-2.5 2.5-2.5h5c1.38 0 2.5 1.12 2.5 2.5V20h1c2.761 0 5-.79 5-3v-5c0-3.216-2.515-4-5-4h-5V7c0-1.967.523-5-5-5zm-3 2.5a1 1 0 1 1 0 2 1 1 0 0 1 0-2zm6 12.5a1 1 0 1 1 0 2 1 1 0 0 1 0-2z"/></svg>`,
-                categories: ["data-science", "web", "interpreted", "object-oriented"],
+                categories: ["data-science", "web", "interpreted", "object-oriented", "scripting"],
                 features: [
                     "Indentation-based structural blocks forcing beautiful code layouts.",
                     "Vast developer ecosystem backed by massive scientific computing resources.",
@@ -82,7 +82,7 @@ print(f"Squared odd values: {squared_odds}")`,
                 accentGlow: "rgba(247, 223, 30, 0.15)",
                 accentLight: "#fcee75",
                 logoSvg: `<svg viewBox="0 0 24 24"><path fill="#F7DF1E" d="M3 3h18v18H3V3zm14.525 10.978c-.062-.832-.472-1.472-1.348-1.745-.337-.1-.978-.269-1.528-.482-.674-.247-.797-.539-.775-.853.033-.427.46-.73 1.056-.73.618 0 .977.292 1.157.82.045.135.214.225.36.19l1.101-.258a.382.382 0 0 0 .28-.438c-.349-1.427-1.439-2.022-2.854-2.022-1.63 0-2.855.977-2.9 2.416-.056 1.573.989 2.146 2.45 2.685.922.337 1.483.562 1.427 1.157-.056.494-.584.775-1.225.775-.82 0-1.28-.46-1.46-1.123a.362.362 0 0 0-.327-.27l-1.18.158a.379.379 0 0 0-.326.438c.28 1.45 1.348 2.303 3.28 2.303 1.83 0 3.326-.887 3.382-2.584M9 8h1.5v5.5a1.5 1.5 0 0 1-1.5 1.5H8a1.5 1.5 0 0 1-1.5-1.5V11H8v2.5a.5.5 0 0 0 .5.5h.5V8z"/></svg>`,
-                categories: ["web", "interpreted", "object-oriented"],
+                categories: ["web", "interpreted", "object-oriented", "scripting"],
                 features: [
                     "Event-driven asynchronous model using event loops.",
                     "Flexible prototype-based object model instead of traditional classes.",
@@ -167,7 +167,7 @@ fetchDeveloperProfiles("fullstack").then(activeDevs => {
                 accentGlow: "rgba(49, 120, 198, 0.2)",
                 accentLight: "#6ea1da",
                 logoSvg: `<svg viewBox="0 0 24 24"><path fill="#3178C6" d="M3 3h18v18H3V3zm14.475 11.238c-.062-.832-.472-1.472-1.348-1.745-.337-.1-.978-.269-1.528-.482-.674-.247-.797-.539-.775-.853.033-.427.46-.73 1.056-.73.618 0 .977.292 1.157.82.045.135.214.225.36.19l1.101-.258a.382.382 0 0 0 .28-.438c-.349-1.427-1.439-2.022-2.854-2.022-1.63 0-2.855.977-2.9 2.416-.056 1.573.989 2.146 2.45 2.685.922.337 1.483.562 1.427 1.157-.056.494-.584.775-1.225.775-.82 0-1.28-.46-1.46-1.123a.362.362 0 0 0-.327-.27l-1.18.158a.379.379 0 0 0-.326.438c.28 1.45 1.348 2.303 3.28 2.303 1.83 0 3.326-.887 3.382-2.584m-8.975-6.238h-4v2.5h1.25V17H11.5v-6.5H12.75V8z"/></svg>`,
-                categories: ["web", "compiled"],
+                categories: ["web", "compiled", "object-oriented", "interpreted"],
                 features: [
                     "Static compilation catches structure bugs before runtime.",
                     "Advanced type capabilities including Union Types, Generics, and Enums.",
@@ -256,7 +256,7 @@ registry.registerUser({ id: 101, name: "Alice", role: 'admin' });`,
                 accentGlow: "rgba(206, 65, 43, 0.2)",
                 accentLight: "#e27362",
                 logoSvg: `<svg viewBox="0 0 24 24"><path fill="#CE412B" d="M12 2C6.477 2 2 6.477 2 12s4.477 10 10 10 10-4.477 10-10S17.523 2 12 2zm1 14.5v-3H9v3H7v-8h2v3h4v-3h2v8h-2z"/></svg>`,
-                categories: ["systems", "compiled"],
+                categories: ["systems", "compiled", "embedded", "web", "functional"],
                 features: [
                     "Compile-time borrow checker ensuring absolute memory safety.",
                     "Zero-cost abstractions mapping structures directly to machine code.",
@@ -460,7 +460,7 @@ func main() {
                 accentGlow: "rgba(0, 89, 156, 0.2)",
                 accentLight: "#3d91cf",
                 logoSvg: `<svg viewBox="0 0 24 24"><path fill="#00599C" d="M12 2C6.477 2 2 6.477 2 12s4.477 10 10 10 10-4.477 10-10S17.523 2 12 2zm1 11h-2v2H9v-2H7v-2h2V9h2v2h2v2zm6 0h-2v2h-2v-2h-2v-2h2V9h2v2h2v2z"/></svg>`,
-                categories: ["systems", "compiled", "object-oriented"],
+                categories: ["systems", "compiled", "object-oriented", "embedded"],
                 features: [
                     "RAII (Resource Acquisition Is Initialization) binding scopes to memory.",
                     "Highly powerful template metaprogramming for zero-cost designs.",
@@ -545,7 +545,7 @@ int main() {
                 accentGlow: "rgba(231, 111, 81, 0.2)",
                 accentLight: "#ef9a84",
                 logoSvg: `<svg viewBox="0 0 24 24"><path fill="#E76F51" d="M2 12c0-5.52 4.48-10 10-10s10 4.48 10 10-4.48 10-10 10S2 17.52 2 12zm7.5-3.5c-.5 0-.8.3-.8.8v6.4c0 .5.3.8.8.8h5c.5 0 .8-.3.8-.8v-6.4c0-.5-.3-.8-.8-.8h-5z"/></svg>`,
-                categories: ["object-oriented", "compiled"],
+                categories: ["object-oriented", "compiled", "web", "mobile"],
                 features: [
                     "Compiles to universal Java Bytecode executed on any JVM.",
                     "Strict object-oriented model with clear interface enforcement.",
@@ -622,7 +622,7 @@ public class StreamProcessor {
                 accentGlow: "rgba(240, 81, 56, 0.2)",
                 accentLight: "#f48c7c",
                 logoSvg: `<svg viewBox="0 0 24 24"><path fill="#F05138" d="M12 2C6.477 2 2 6.477 2 12s4.477 10 10 10 10-4.477 10-10S17.523 2 12 2zm4.8 11.2c-.4 1.2-1.6 2.4-2.8 2.8-.8.2-2-.2-2.8-.8-.6-.4-1.2-1.2-1.2-1.2s-.6.8-1.2 1.2c-.8.6-2 1-2.8.8-1.2-.4-2.4-1.6-2.8-2.8-.2-.8.2-2 .8-2.8.4-.6 1.2-1.2 1.2-1.2s-.8-.6-1.2-1.2c-.6-.8-1-2-.8-2.8.4-1.2 1.6-2.4 2.8-2.8.8-.2 2 .2 2.8.8.6.4 1.2 1.2 1.2 1.2s.6-.8 1.2-1.2c.8-.6 2-1 2.8-.8 1.2.4 2.4 1.6 2.8 2.8.2.8-.2 2-.8 2.8-.4.6-1.2 1.2-1.2 1.2s.8.6 1.2 1.2c.6.8 1 2 .8 2.8z"/></svg>`,
-                categories: ["compiled", "object-oriented"],
+                categories: ["mobile", "compiled", "object-oriented"],
                 features: [
                     "Optionals enforcing safe checking of nil references at compile-time.",
                     "Automatic Reference Counting (ARC) instead of garbage collection.",
@@ -705,7 +705,7 @@ for dev in devs {
                 accentGlow: "rgba(94, 80, 134, 0.2)",
                 accentLight: "#8e80b6",
                 logoSvg: `<svg viewBox="0 0 24 24"><path fill="#5E5086" d="M2 12c0-5.52 4.48-10 10-10s10 4.48 10 10-4.48 10-10 10S2 17.52 2 12zm7-4l-3 4 3 4h2l-3-4 3-4H9zm6 0l-3 4 3 4h2l-3-4 3-4h-2zm-1.5 3h4v2h-4v-2z"/></svg>`,
-                categories: ["functional", "compiled"],
+                categories: ["functional", "compiled", "scientific"],
                 features: [
                     "Pure functional scope guaranteeing zero side effects.",
                     "Lazy evaluation deferring compilation computation until values are requested.",
@@ -1035,7 +1035,7 @@ puts catalog.premium_names(20)`,
                 accentGlow: "rgba(119, 123, 180, 0.2)",
                 accentLight: "#a4a7d0",
                 logoSvg: `<svg viewBox="0 0 24 24"><path fill="#777BB4" d="M12 2C6.477 2 2 6.477 2 12s4.477 10 10 10 10-4.477 10-10S17.523 2 12 2zm-1 13H9V9h2v6zm4-2h-2v2h-2v-2H9v-2h2V9h2v2h2v2z"/></svg>`,
-                categories: ["web", "interpreted", "scripting"],
+                categories: ["web", "interpreted", "scripting", "object-oriented"],
                 features: [
                     "Native HTML embedding allowing rapid server-side page generation.",
                     "Enormous hosting ecosystem with near-universal server support.",
@@ -1482,7 +1482,7 @@ void main() async {
                 accentGlow: "rgba(44, 45, 114, 0.25)",
                 accentLight: "#5c5da6",
                 logoSvg: `<svg viewBox="0 0 24 24"><path fill="#2C2D72" d="M12 2C6.477 2 2 6.477 2 12s4.477 10 10 10 10-4.477 10-10S17.523 2 12 2zm1 14H9V8h2v6h2v2zm3-9a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3z"/></svg>`,
-                categories: ["scripting", "embedded", "interpreted"],
+                categories: ["scripting", "embedded", "interpreted", "object-oriented"],
                 features: [
                     "Sub-300KB runtime  -  smallest footprint of any scripting language.",
                     "Tables as the universal data structure (arrays, maps, objects).",
@@ -1659,7 +1659,7 @@ end`,
                 accentGlow: "rgba(149, 88, 178, 0.2)",
                 accentLight: "#b98acc",
                 logoSvg: `<svg viewBox="0 0 24 24"><path fill="#9558B2" d="M12 2C6.477 2 2 6.477 2 12s4.477 10 10 10 10-4.477 10-10S17.523 2 12 2zm-2 13V9l6 3-6 3z"/></svg>`,
-                categories: ["scientific", "data-science", "compiled", "functional"],
+                categories: ["scientific", "data-science", "compiled", "functional", "interpreted"],
                 features: [
                     "LLVM JIT compilation achieving C/Fortran-level numerical performance.",
                     "Multiple dispatch as the core paradigm  -  functions defined over type combinations.",
@@ -1734,237 +1734,1916 @@ println("Coefficients: $(result.beta), R²: $(round(result.r^2, digits=4))")`,
                 ]
             },
             {
-                id: "rust",
-                name: "Rust",
-                year: 2010,
-                creator: "Graydon Hoare",
-                shortDesc: "A systems programming language focused on safety, speed, and concurrency without sacrificing low-level control.",
-                fullDesc: "Rust delivers memory safety and thread safety through its ownership model, making it ideal for embedded systems, performance-critical code, and reliable infrastructure. It combines the control of C/C++ with modern tooling and compiler checks.",
-                accentColor: "#B7410E",
-                accentGlow: "rgba(183, 65, 14, 0.2)",
-                accentLight: "#f97316",
-                logoSvg: `<svg viewBox="0 0 24 24"><path fill="#B7410E" d="M12 2c2.21 0 4 1.79 4 4v1.5h2c1.38 0 2.5 1.12 2.5 2.5v2c0 1.38-1.12 2.5-2.5 2.5h-2V16c0 2.21-1.79 4-4 4s-4-1.79-4-4v-1.5H6c-1.38 0-2.5-1.12-2.5-2.5v-2C3.5 7.12 4.62 6 6 6h2V6c0-2.21 1.79-4 4-4zm0 2a2 2 0 0 0-2 2v1h4V6a2 2 0 0 0-2-2z"/></svg>`,
-                categories: ["systems", "compiled", "functional"],
+                id: "csharp",
+                name: "C#",
+                year: 2000,
+                creator: "Anders Hejlsberg (Microsoft)",
+                shortDesc: "A modern, type-safe language for .NET applications spanning enterprise backends, game development, and cross-platform desktop apps.",
+                fullDesc: "C# is a statically typed, object-oriented language designed for the Common Language Runtime (.NET). It powers enterprise web APIs, Unity game development, Windows desktop software, and cloud services on Azure with a rich standard library and strong tooling in Visual Studio.",
+                accentColor: "#68217A",
+                accentGlow: "rgba(104, 33, 122, 0.2)",
+                accentLight: "#9b4fae",
+                logoSvg: `<svg viewBox="0 0 24 24"><path fill="#68217A" d="M12 2C6.477 2 2 6.477 2 12s4.477 10 10 10 10-4.477 10-10S17.523 2 12 2zm-1.2 5.5h2.4v9H10.8v-9zm5.4 0c1.38 0 2.5 1.12 2.5 2.5v4c0 1.38-1.12 2.5-2.5 2.5h-1.8v-9h1.8z"/></svg>`,
+                categories: ["object-oriented", "compiled", "web", "mobile"],
                 features: [
-                    "Ownership and borrowing rules prevent common memory bugs at compile time.",
-                    "Excellent performance with no garbage collector overhead.",
-                    "Powerful concurrency primitives for safe parallel programming.",
-                    "Growing ecosystem for embedded, web, and CLI tools."
+                    "Static typing with nullable reference types and pattern matching.",
+                    "Unified .NET runtime for cross-platform deployment on Windows, Linux, and macOS.",
+                    "LINQ for declarative data queries integrated into the language.",
+                    "Async/await built in for scalable I/O-bound applications."
                 ],
-                codeSnippet: `<span class="keyword">fn</span> <span class="function">main</span>() {
-    <span class="keyword">let</span> data = <span class="function">vec</span>![<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>];
-    <span class="keyword">for</span> value <span class="keyword">in</span> data {
-        <span class="function">println!</span>(<span class="string">"{value}"</span>);
-    }
-}`,
-                rawCode: `fn main() {
-    let data = vec![1, 2, 3];
-    for value in data {
-        println!("{value}");
-    }
-}`,
-                packageManager: "Cargo",
-                frameworksWeb: "Axum, Actix Web, Rocket",
-                frameworksData: "ndarray, Polars, tch-rs",
-                primaryRuntime: "rustc / LLVM",
+                codeSnippet: `<span class="keyword">public</span> <span class="keyword">record</span> <span class="type">Order</span>(<span class="type">int</span> Id, <span class="type">string</span> Customer, <span class="type">decimal</span> Total);
+
+<span class="keyword">var</span> orders = <span class="keyword">new</span>[] {
+    <span class="keyword">new</span> <span class="type">Order</span>(<span class="number">1</span>, <span class="string">"Ada"</span>, <span class="number">120.50</span>m),
+    <span class="keyword">new</span> <span class="type">Order</span>(<span class="number">2</span>, <span class="string">"Linus"</span>, <span class="number">89.00</span>m)
+};
+
+<span class="keyword">foreach</span> (<span class="keyword">var</span> o <span class="keyword">in</span> orders.<span class="function">Where</span>(x =&gt; x.Total &gt; <span class="number">100</span>))
+    Console.<span class="function">WriteLine</span>(<span class="string">$"{o.Customer}: {o.Total:C}"</span>);`,
+                rawCode: `public record Order(int Id, string Customer, decimal Total);
+
+var orders = new[] {
+    new Order(1, "Ada", 120.50m),
+    new Order(2, "Linus", 89.00m)
+};
+
+foreach (var o in orders.Where(x => x.Total > 100))
+    Console.WriteLine($"{o.Customer}: {o.Total:C}");`,
+                packageManager: "NuGet",
+                frameworksWeb: "ASP.NET Core, Blazor, SignalR",
+                frameworksData: "ML.NET, Entity Framework, Accord.NET",
+                primaryRuntime: ".NET CLR / .NET Runtime",
                 pros: [
-                    "Outstanding performance and memory safety.",
-                    "Strong ecosystem for systems and embedded engineering.",
-                    "Excellent tooling with Cargo and Clippy."
+                    "Excellent tooling and IDE support with Visual Studio and Rider.",
+                    "Strong typing and modern language features reduce runtime errors.",
+                    "Versatile across web, desktop, games (Unity), and cloud."
                 ],
                 cons: [
-                    "Steeper learning curve due to ownership rules.",
-                    "Compilation can feel strict for beginners.",
-                    "Longer iteration time in some projects."
+                    "Historically Windows-centric, though .NET is now cross-platform.",
+                    "Heavier runtime footprint than native compiled languages.",
+                    "Some advanced features can increase learning curve."
                 ],
                 specs: {
-                    typing: "Static, Strong",
-                    memory: "Manual + Ownership Model",
-                    execution: "Compiled Native",
-                    concurrency: "Threads, Async, Fearless Concurrency"
+                    typing: "Static, Strong, Nullable annotations",
+                    memory: "Garbage Collected (.NET GC)",
+                    execution: "JIT Compiled (CLR) / AOT via Native AOT",
+                    concurrency: "async/await, Tasks, Parallel LINQ, Threads"
                 },
                 metrics: [
-                    { label: "Performance / Speed", value: 95 },
-                    { label: "Ease of Learning", value: 72 },
-                    { label: "Community & Ecosystem", value: 84 },
-                    { label: "Job Market Demand", value: 80 }
-                ]
-            },
-            {
-                id: "go",
-                name: "Go",
-                year: 2009,
-                creator: "Robert Griesemer, Rob Pike, Ken Thompson",
-                shortDesc: "A pragmatic, statically typed language built for scalable services, tooling, and cloud-native development.",
-                fullDesc: "Go emphasizes simplicity, fast compilation, and dependable concurrency. It has become a staple for backend services, CLI tools, Kubernetes, and distributed systems where clarity and deployment speed matter.",
-                accentColor: "#00ADD8",
-                accentGlow: "rgba(0, 173, 216, 0.2)",
-                accentLight: "#4dd4ff",
-                logoSvg: `<svg viewBox="0 0 24 24"><path fill="#00ADD8" d="M12 2c5.523 0 10 4.477 10 10s-4.477 10-10 10S2 17.523 2 12 6.477 2 12 2zm-1.6 5.2h-1.8l-1.8 5.6h1.8l.6-1.9h2.4l.6 1.9h1.8l-1.8-5.6zm-1.2 3.1 1.1-3.2 1.1 3.2h-2.2zm4.4 2.5c0-1.4 1.1-2.5 2.4-2.5h.7v1.3h-.7c-.6 0-1.1.5-1.1 1.2 0 .7.5 1.2 1.1 1.2h.7v1.3h-.7c-1.3 0-2.4-1.1-2.4-2.5z"/></svg>`,
-                categories: ["web", "systems", "compiled"],
-                features: [
-                    "Minimal syntax makes code easy to read and maintain.",
-                    "Built-in concurrency with goroutines and channels.",
-                    "Excellent standard library for networking and HTTP services.",
-                    "Fast compilation and straightforward deployment model."
-                ],
-                codeSnippet: `<span class="keyword">package</span> main
-
-<span class="keyword">import</span> <span class="string">"fmt"</span>
-
-<span class="keyword">func</span> <span class="function">main</span>() {
-    <span class="keyword">go</span> <span class="keyword">func</span>() {
-        <span class="function">fmt</span>.<span class="function">Println</span>(<span class="string">"Hello from Goroutine"</span>)
-    }()
-}`,
-                rawCode: `package main
-
-import "fmt"
-
-func main() {
-    go func() {
-        fmt.Println("Hello from Goroutine")
-    }()
-}`,
-                packageManager: "Go Modules",
-                frameworksWeb: "Gin, Echo, Fiber",
-                frameworksData: "gorm, pgx, go-sql-driver/mysql",
-                primaryRuntime: "Go compiler / gc",
-                pros: [
-                    "Simple syntax and strong standard library.",
-                    "Great concurrency model for scalable services.",
-                    "Excellent tooling for cloud-native teams."
-                ],
-                cons: [
-                    "Less expressive for some high-level abstractions.",
-                    "Verbose error handling in larger applications.",
-                    "Generics were introduced later than in some rivals."
-                ],
-                specs: {
-                    typing: "Static, Strong",
-                    memory: "Garbage Collected",
-                    execution: "Compiled",
-                    concurrency: "Goroutines, Channels"
-                },
-                metrics: [
-                    { label: "Performance / Speed", value: 88 },
-                    { label: "Ease of Learning", value: 84 },
-                    { label: "Community & Ecosystem", value: 82 },
-                    { label: "Job Market Demand", value: 83 }
-                ]
-            },
-            {
-                id: "kotlin",
-                name: "Kotlin",
-                year: 2011,
-                creator: "JetBrains",
-                shortDesc: "A modern language for Android, JVM applications, and cross-platform development with concise syntax.",
-                fullDesc: "Kotlin combines safety, concision, and interoperability with Java. It has become the standard for Android development while also supporting backend services, web apps, and multiplatform projects.",
-                accentColor: "#7F52FF",
-                accentGlow: "rgba(127, 82, 255, 0.2)",
-                accentLight: "#a78bfa",
-                logoSvg: `<svg viewBox="0 0 24 24"><path fill="#7F52FF" d="M3 3h18v18H3V3zm2 2v14h14V5H5zm3 3h2.4l2.1 3.3 2.1-3.3H16l-3.6 5.4L16 15h-2.4l-2.1-3.3-2.1 3.3H8l3.6-5.4L8 8z"/></svg>`,
-                categories: ["mobile", "object-oriented", "compiled"],
-                features: [
-                    "Concise syntax reduces boilerplate and improves readability.",
-                    "Strong interoperability with Java libraries and frameworks.",
-                    "Great support for coroutines and asynchronous programming.",
-                    "Multiplatform support for Android, desktop, and web."
-                ],
-                codeSnippet: `<span class="keyword">fun</span> <span class="function">main</span>() {
-    <span class="keyword">val</span> users = <span class="function">listOf</span>(<span class="string">"Ada"</span>, <span class="string">"Linus"</span>)
-    users.<span class="function">forEach</span> { user -&gt;
-        <span class="function">println</span>(<span class="string">"Hello $user"</span>)
-    }
-}`,
-                rawCode: `fun main() {
-    val users = listOf("Ada", "Linus")
-    users.forEach { user ->
-        println("Hello $user")
-    }
-}`,
-                packageManager: "Gradle / Maven",
-                frameworksWeb: "Ktor, Spring Boot",
-                frameworksData: "Room, Exposed, Jetpack DataStore",
-                primaryRuntime: "JVM, Kotlin/Native, Kotlin/JS",
-                pros: [
-                    "Modern, readable syntax with less boilerplate.",
-                    "Excellent Android and JVM ecosystem support.",
-                    "Strong design for scalable applications."
-                ],
-                cons: [
-                    "Some tooling can be more complex than expected.",
-                    "Compilation errors may be harder to interpret at times.",
-                    "Smaller ecosystem than Java in some niches."
-                ],
-                specs: {
-                    typing: "Static, Strong",
-                    memory: "Managed by Runtime",
-                    execution: "Compiled to JVM/Native/JS",
-                    concurrency: "Coroutines, Threads"
-                },
-                metrics: [
-                    { label: "Performance / Speed", value: 84 },
-                    { label: "Ease of Learning", value: 82 },
-                    { label: "Community & Ecosystem", value: 85 },
+                    { label: "Performance / Speed", value: 82 },
+                    { label: "Ease of Learning", value: 75 },
+                    { label: "Community & Ecosystem", value: 90 },
                     { label: "Job Market Demand", value: 88 }
                 ]
             },
             {
-                id: "swift",
-                name: "Swift",
-                year: 2014,
-                creator: "Apple",
-                shortDesc: "A fast, safe, and expressive language for Apple platforms and modern server applications.",
-                fullDesc: "Swift was created to make Apple development more approachable without compromising speed. It now supports iOS, macOS, watchOS, tvOS, and growing server-side development with a strong safety model.",
-                accentColor: "#FF9500",
-                accentGlow: "rgba(255, 149, 0, 0.2)",
-                accentLight: "#ffb347",
-                logoSvg: `<svg viewBox="0 0 24 24"><path fill="#FF9500" d="M12 2c2.5 0 4.5 1.5 5.8 4.5 1.1 2.6 1 5.6-.5 8.1-1.2 2.3-3.1 4.2-5.3 5.3-1.2.6-2.6 1.1-4 1.1-1.2 0-2.4-.3-3.5-.8 1.2-1.8 2.2-3.8 2.7-5.9.5-2.2.4-4.4-.4-6.4.8-1.6 2.2-2.8 4.2-3.3.4-.1.8-.2 1.2-.2z"/></svg>`,
-                categories: ["mobile", "object-oriented", "compiled"],
+                id: "zig",
+                name: "Zig",
+                year: 2016,
+                creator: "Andrew Kelley",
+                shortDesc: "A general-purpose systems language focused on robustness, optimality, and maintainability as a modern C successor.",
+                fullDesc: "Zig is a low-level systems programming language that emphasizes explicit memory control, comptime metaprogramming, and zero hidden control flow. It targets C interoperability, cross-compilation, and embedded development without a preprocessor or hidden allocations.",
+                accentColor: "#F7A41D",
+                accentGlow: "rgba(247, 164, 29, 0.2)",
+                accentLight: "#f9c066",
+                logoSvg: `<svg viewBox="0 0 24 24"><path fill="#F7A41D" d="M12 2 4 6v12l8 4 8-4V6l-8-4zm0 2.2 5.8 2.9L12 10 6.2 7.1 12 4.2zM6 8.4l5 2.5v5.8l-5-2.5V8.4zm12 0v5.8l-5 2.5v-5.8l5-2.5z"/></svg>`,
+                categories: ["systems", "compiled", "embedded"],
                 features: [
-                    "Modern syntax with strong type inference and safety.",
-                    "Excellent support for Apple frameworks and native UI development.",
-                    "Powerful async features built into the language.",
-                    "Growing ecosystem for server-side and cross-platform work."
+                    "Comptime execution for powerful compile-time metaprogramming.",
+                    "No hidden control flow, no hidden memory allocations.",
+                    "First-class C ABI interoperability without FFI boilerplate.",
+                    "Built-in cross-compilation toolchain."
                 ],
-                codeSnippet: `<span class="keyword">import</span> Foundation
+                codeSnippet: `<span class="keyword">const</span> std = <span class="keyword">@import</span>(<span class="string">"std"</span>);
 
-<span class="keyword">func</span> <span class="function">greet</span>(name: <span class="type">String</span>) {
-    <span class="function">print</span>(<span class="string">"Hello, \(name)"</span>)
-}`,
-                rawCode: `import Foundation
+<span class="keyword">pub fn</span> <span class="function">sum</span>(items: []<span class="keyword">const</span> <span class="type">i32</span>) <span class="type">i32</span> {
+    <span class="keyword">var</span> total: <span class="type">i32</span> = <span class="number">0</span>;
+    <span class="keyword">for</span> (items) |n| total += n;
+    <span class="keyword">return</span> total;
+}
 
-func greet(name: String) {
-    print("Hello, \(name)")
+<span class="keyword">pub fn</span> <span class="function">main</span>() !<span class="type">void</span> {
+    <span class="keyword">const</span> nums = [_]<span class="type">i32</span>{ <span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span> };
+    <span class="keyword">try</span> std.io.getStdOut().writer().print(<span class="string">"Sum: {}\\n"</span>, .{<span class="function">sum</span>(&nums)});
 }`,
-                packageManager: "Swift Package Manager",
-                frameworksWeb: "Vapor, Kitura",
-                frameworksData: "Core Data, SwiftData",
-                primaryRuntime: "Swift runtime / LLVM",
+                rawCode: `const std = @import("std");
+
+pub fn sum(items: []const i32) i32 {
+    var total: i32 = 0;
+    for (items) |n| total += n;
+    return total;
+}
+
+pub fn main() !void {
+    const nums = [_]i32{ 1, 2, 3, 4 };
+    try std.io.getStdOut().writer().print("Sum: {}\\n", .{sum(&nums)});
+}`,
+                packageManager: "zig fetch / build.zig.zon",
+                frameworksWeb: "http.zig (minimal HTTP servers)",
+                frameworksData: "zig-sqlite, zmath",
+                primaryRuntime: "Native binary (zig compiler / LLVM)",
                 pros: [
-                    "Excellent for Apple ecosystem development.",
-                    "High safety and performance.",
-                    "Modern syntax with clear language design."
+                    "Simple, readable syntax without C preprocessor complexity.",
+                    "Excellent cross-compilation story out of the box.",
+                    "Compile-time safety with explicit error handling."
                 ],
                 cons: [
-                    "Most powerful in Apple-centric environments.",
-                    "Smaller cross-platform footprint than some rivals.",
-                    "Tooling is strongest on Apple platforms."
+                    "Still maturing ecosystem compared to Rust or C.",
+                    "Smaller community and fewer production libraries.",
+                    "Language and standard library still evolving rapidly."
+                ],
+                specs: {
+                    typing: "Static, Strong, Compile-time evaluation",
+                    memory: "Manual (Allocator API), no hidden allocations",
+                    execution: "AOT Compiled Native",
+                    concurrency: "OS Threads, async I/O (stdlib evolving)"
+                },
+                metrics: [
+                    { label: "Performance / Speed", value: 96 },
+                    { label: "Ease of Learning", value: 62 },
+                    { label: "Community & Ecosystem", value: 55 },
+                    { label: "Job Market Demand", value: 48 }
+                ]
+            },
+            {
+                id: "clojure",
+                name: "Clojure",
+                year: 2007,
+                creator: "Rich Hickey",
+                shortDesc: "A Lisp dialect on the JVM emphasizing immutable data, functional programming, and practical concurrency for data-heavy applications.",
+                fullDesc: "Clojure is a dynamic functional language that runs on the JVM and JavaScript (ClojureScript). Its persistent immutable data structures, REPL-driven workflow, and software transactional memory make it popular for backend services, data pipelines, and financial systems.",
+                accentColor: "#63B132",
+                accentGlow: "rgba(99, 177, 50, 0.2)",
+                accentLight: "#8fd066",
+                logoSvg: `<svg viewBox="0 0 24 24"><path fill="#63B132" d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 5h2v2h-2V7zm0 4h2v6h-2v-6zm4-4h2v10h-2V7z"/></svg>`,
+                categories: ["functional", "interpreted", "data-science", "web"],
+                features: [
+                    "Immutable persistent data structures by default.",
+                    "Lisp macros for powerful metaprogramming.",
+                    "Software Transactional Memory (STM) for safe concurrent state.",
+                    "Seamless Java interop on the JVM."
+                ],
+                codeSnippet: `(<span class="keyword">defn</span> <span class="function">active-users</span> [users]
+  (-&gt;&gt; users
+      (<span class="function">filter</span> :active)
+      (<span class="function">map</span> :name)
+      (<span class="function">sort</span>)))
+
+(<span class="function">println</span> (<span class="function">active-users</span>
+  [{:name <span class="string">"Ada"</span> :active <span class="keyword">true</span>}
+   {:name <span class="string">"Grace"</span> :active <span class="keyword">false</span>}
+   {:name <span class="string">"Linus"</span> :active <span class="keyword">true</span>}]))`,
+                rawCode: `(defn active-users [users]
+  (->> users
+      (filter :active)
+      (map :name)
+      (sort)))
+
+(println (active-users
+  [{:name "Ada" :active true}
+   {:name "Grace" :active false}
+   {:name "Linus" :active true}]))`,
+                packageManager: "Leiningen, deps.edn, tools.deps",
+                frameworksWeb: "Ring, Compojure, Pedestal, Re-frame",
+                frameworksData: "Incanter, Clojure Data Science, core.async",
+                primaryRuntime: "JVM, ClojureScript (JS), Babashka",
+                pros: [
+                    "REPL-driven development enables rapid iteration.",
+                    "Immutable data eliminates whole classes of concurrency bugs.",
+                    "Strong fit for data transformation and pipeline workloads."
+                ],
+                cons: [
+                    "Lisp syntax can be unfamiliar to many developers.",
+                    "Dynamic typing requires discipline on large codebases.",
+                    "Smaller hiring pool compared to Java or Python."
+                ],
+                specs: {
+                    typing: "Dynamic, Strong (optional spec)",
+                    memory: "Garbage Collected (JVM / JS runtime)",
+                    execution: "Interpreted / JIT (JVM bytecode)",
+                    concurrency: "STM, core.async, Agents, Futures"
+                },
+                metrics: [
+                    { label: "Performance / Speed", value: 72 },
+                    { label: "Ease of Learning", value: 55 },
+                    { label: "Community & Ecosystem", value: 62 },
+                    { label: "Job Market Demand", value: 52 }
+                ]
+            },
+            {
+                id: "fsharp",
+                name: "F#",
+                year: 2005,
+                creator: "Don Syme (Microsoft Research)",
+                shortDesc: "A concise, functional-first language on .NET for data-oriented programming, web services, and quantitative finance.",
+                fullDesc: "F# combines functional, object-oriented, and imperative paradigms on the .NET platform. Its type inference, discriminated unions, and pipeline operators make it ideal for domain modeling, data analysis, and reliable backend services alongside C# in the same solution.",
+                accentColor: "#378BBA",
+                accentGlow: "rgba(55, 139, 186, 0.2)",
+                accentLight: "#6aafd4",
+                logoSvg: `<svg viewBox="0 0 24 24"><path fill="#378BBA" d="M12 2C6.477 2 2 6.477 2 12s4.477 10 10 10 10-4.477 10-10S17.523 2 12 2zM8 7h8v2h-3v8H11V9H8V7z"/></svg>`,
+                categories: ["functional", "compiled", "data-science", "web"],
+                features: [
+                    "Type inference reduces boilerplate while keeping static safety.",
+                    "Discriminated unions and pattern matching for expressive domain models.",
+                    "Pipeline operator (|>) for readable data transformations.",
+                    "Full .NET interoperability with C# libraries."
+                ],
+                codeSnippet: `<span class="keyword">type</span> <span class="type">Status</span> = Active | Inactive
+
+<span class="keyword">let</span> users = [
+    (<span class="string">"Ada"</span>, Active); (<span class="string">"Grace"</span>, Inactive); (<span class="string">"Linus"</span>, Active)
+]
+
+users
+|&gt; List.filter (fun (_, s) -&gt; s = Active)
+|&gt; List.map fst
+|&gt; List.iter (printfn <span class="string">"Active: %s"</span>)`,
+                rawCode: `type Status = Active | Inactive
+
+let users = [
+    ("Ada", Active); ("Grace", Inactive); ("Linus", Active)
+]
+
+users
+|> List.filter (fun (_, s) -> s = Active)
+|> List.map fst
+|> List.iter (printfn "Active: %s")`,
+                packageManager: "NuGet, Paket",
+                frameworksWeb: "Giraffe, Saturn, SAFE Stack",
+                frameworksData: "Deedle, FSharp.Data, Plotly.NET",
+                primaryRuntime: ".NET CLR",
+                pros: [
+                    "Concise syntax with strong static type safety.",
+                    "Excellent for domain-driven design and financial modeling.",
+                    "Interops seamlessly with the entire .NET ecosystem."
+                ],
+                cons: [
+                    "Smaller community than C# on .NET.",
+                    "Fewer learning resources and tutorials available.",
+                    "Some teams prefer C# for broader hiring."
+                ],
+                specs: {
+                    typing: "Static, Strong, Inferred",
+                    memory: "Garbage Collected (.NET GC)",
+                    execution: "JIT Compiled (CLR)",
+                    concurrency: "async workflows, Tasks, Agents"
+                },
+                metrics: [
+                    { label: "Performance / Speed", value: 80 },
+                    { label: "Ease of Learning", value: 68 },
+                    { label: "Community & Ecosystem", value: 58 },
+                    { label: "Job Market Demand", value: 50 }
+                ]
+            },
+            {
+                id: "perl",
+                name: "Perl",
+                year: 1987,
+                creator: "Larry Wall",
+                shortDesc: "A text-processing powerhouse and scripting language that shaped early web development and system administration.",
+                fullDesc: "Perl excels at string manipulation, regex, and glue code connecting systems together. While newer languages have overtaken it in web development, Perl remains entrenched in bioinformatics, legacy web systems, and Unix administration tooling via CPAN's vast module archive.",
+                accentColor: "#39457E",
+                accentGlow: "rgba(57, 69, 126, 0.2)",
+                accentLight: "#6b76a8",
+                logoSvg: `<svg viewBox="0 0 24 24"><path fill="#39457E" d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 5h4v2h-4V7zm0 4h4v6h-2v-4h-2v-2z"/></svg>`,
+                categories: ["scripting", "interpreted", "web"],
+                features: [
+                    "Built-in regular expression engine unmatched in expressiveness.",
+                    "TMTOWTDI philosophy - multiple ways to solve problems.",
+                    "CPAN - one of the largest language module repositories.",
+                    "Strong text parsing and report generation capabilities."
+                ],
+                codeSnippet: `<span class="keyword">my</span> @lines = &lt;&lt;<span class="string">'DATA'</span>;
+Hello Ada
+Hello Linus
+DATA
+
+<span class="keyword">for</span> (<span class="keyword">my</span> $line (@lines)) {
+    $line =~ s/Hello/Hi/;
+    <span class="function">print</span> <span class="string">"$line\\n"</span>;
+}`,
+                rawCode: `my @lines = <<'DATA';
+Hello Ada
+Hello Linus
+DATA
+
+for (my $line (@lines)) {
+    $line =~ s/Hello/Hi/;
+    print "$line\\n";
+}`,
+                packageManager: "CPAN, cpanm",
+                frameworksWeb: "Catalyst, Mojolicious, Dancer2",
+                frameworksData: "BioPerl, PDL (Perl Data Language)",
+                primaryRuntime: "Perl interpreter (perl)",
+                pros: [
+                    "Unmatched text and regex processing capabilities.",
+                    "Huge legacy codebase and CPAN module library.",
+                    "Quick scripting for sysadmin and automation tasks."
+                ],
+                cons: [
+                    "Syntax can be cryptic and hard to maintain at scale.",
+                    "Declining popularity in modern web development.",
+                    "Multiple competing object systems create inconsistency."
+                ],
+                specs: {
+                    typing: "Dynamic, Weak",
+                    memory: "Reference-counted + Garbage Collected",
+                    execution: "Interpreted (Bytecode optional)",
+                    concurrency: "Threads (limited), fork, AnyEvent"
+                },
+                metrics: [
+                    { label: "Performance / Speed", value: 45 },
+                    { label: "Ease of Learning", value: 50 },
+                    { label: "Community & Ecosystem", value: 70 },
+                    { label: "Job Market Demand", value: 35 }
+                ]
+            },
+            {
+                id: "objective-c",
+                name: "Objective-C",
+                year: 1984,
+                creator: "Brad Cox, Tom Love (Stepstone)",
+                shortDesc: "The original language of Apple's macOS and iOS ecosystem before Swift, combining C with Smalltalk-style messaging.",
+                fullDesc: "Objective-C extends C with dynamic object-oriented messaging inspired by Smalltalk. It powered Apple's platforms for decades and remains in millions of legacy iOS and macOS codebases, though new development has largely shifted to Swift.",
+                accentColor: "#438EFF",
+                accentGlow: "rgba(67, 142, 255, 0.2)",
+                accentLight: "#7aadff",
+                logoSvg: `<svg viewBox="0 0 24 24"><path fill="#438EFF" d="M12 2C6.477 2 2 6.477 2 12s4.477 10 10 10 10-4.477 10-10S17.523 2 12 2zm0 3c1.5 0 2.7 1.2 2.7 2.7S13.5 10.4 12 10.4 9.3 9.2 9.3 7.7 10.5 5 12 5zm0 13.5c-2.2 0-4.1-1.1-5.2-2.8.7-1.1 1.9-1.9 3.3-1.9h3.8c1.4 0 2.6.8 3.3 1.9-1.1 1.7-3 2.8-5.2 2.8z"/></svg>`,
+                categories: ["mobile", "object-oriented", "compiled"],
+                features: [
+                    "Dynamic runtime messaging via objc_msgSend.",
+                    "Categories and protocols for extending classes without subclassing.",
+                    "Automatic Reference Counting (ARC) for memory management.",
+                    "Full C interoperability as a strict superset of C."
+                ],
+                codeSnippet: `<span class="keyword">@interface</span> <span class="type">Greeter</span> : <span class="type">NSObject</span>
+- (<span class="type">void</span>)<span class="function">greet</span>:(<span class="type">NSString</span> *)name;
+<span class="keyword">@end</span>
+
+<span class="keyword">@implementation</span> <span class="type">Greeter</span>
+- (<span class="type">void</span>)<span class="function">greet</span>:(<span class="type">NSString</span> *)name {
+    <span class="function">NSLog</span>(<span class="string">@"Hello, %@"</span>, name);
+}
+<span class="keyword">@end</span>`,
+                rawCode: `@interface Greeter : NSObject
+- (void)greet:(NSString *)name;
+@end
+
+@implementation Greeter
+- (void)greet:(NSString *)name {
+    NSLog(@"Hello, %@", name);
+}
+@end`,
+                packageManager: "CocoaPods, Swift Package Manager (interop)",
+                frameworksWeb: "None (native Apple platforms)",
+                frameworksData: "Core Data, HealthKit APIs",
+                primaryRuntime: "Objective-C runtime (libobjc)",
+                pros: [
+                    "Mature Apple platform integration and Cocoa/CocoaTouch APIs.",
+                    "Dynamic runtime enables powerful introspection and swizzling.",
+                    "Stable in massive legacy iOS/macOS codebases."
+                ],
+                cons: [
+                    "Verbose syntax compared to modern Swift.",
+                    "Apple has shifted primary focus to Swift for new development.",
+                    "Steep learning curve for developers without C background."
+                ],
+                specs: {
+                    typing: "Dynamic, Weak (Static with LLVM)",
+                    memory: "Automatic Reference Counting (ARC)",
+                    execution: "Compiled Native (LLVM)",
+                    concurrency: "GCD, NSOperationQueue, Threads"
+                },
+                metrics: [
+                    { label: "Performance / Speed", value: 85 },
+                    { label: "Ease of Learning", value: 45 },
+                    { label: "Community & Ecosystem", value: 65 },
+                    { label: "Job Market Demand", value: 55 }
+                ]
+            },
+            {
+                id: "matlab",
+                name: "MATLAB",
+                year: 1984,
+                creator: "Cleve Moler (MathWorks)",
+                shortDesc: "A matrix-oriented numerical computing environment used in engineering, signal processing, and academic research worldwide.",
+                fullDesc: "MATLAB (Matrix Laboratory) provides an interactive environment for matrix computations, visualization, and algorithm development. Its toolboxes cover control systems, signal processing, image analysis, and Simulink model-based design for engineering simulations.",
+                accentColor: "#E16737",
+                accentGlow: "rgba(225, 103, 55, 0.2)",
+                accentLight: "#ef9468",
+                logoSvg: `<svg viewBox="0 0 24 24"><path fill="#E16737" d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 5h2v6.5l4.5 2.6-1 1.7L11 15V7z"/></svg>`,
+                categories: ["scientific", "data-science", "interpreted"],
+                features: [
+                    "Native matrix and vector operations as first-class syntax.",
+                    "Rich visualization and plotting built into the environment.",
+                    "Extensive domain toolboxes for engineering and science.",
+                    "Simulink for model-based design and simulation."
+                ],
+                codeSnippet: `<span class="comment">% Solve a linear system Ax = b</span>
+A = [<span class="number">3</span> <span class="number">2</span>; <span class="number">1</span> <span class="number">4</span>];
+b = [<span class="number">7</span>; <span class="number">5</span>];
+x = A \\ b;
+
+<span class="comment">% Plot a sine wave</span>
+t = <span class="number">0</span>:<span class="number">0.01</span>:<span class="number">2</span>*pi;
+<span class="function">plot</span>(t, <span class="function">sin</span>(t));
+<span class="function">title</span>(<span class="string">'Sine Wave'</span>);`,
+                rawCode: `% Solve a linear system Ax = b
+A = [3 2; 1 4];
+b = [7; 5];
+x = A \\ b;
+
+% Plot a sine wave
+t = 0:0.01:2*pi;
+plot(t, sin(t));
+title('Sine Wave');`,
+                packageManager: "MATLAB Add-On Explorer, File Exchange",
+                frameworksWeb: "MATLAB Web App Server, MATLAB Production Server",
+                frameworksData: "Statistics Toolbox, Deep Learning Toolbox, Image Processing Toolbox",
+                primaryRuntime: "MATLAB interpreter (MathWorks)",
+                pros: [
+                    "Industry standard in academia and engineering research.",
+                    "Matrix operations are intuitive and highly optimized.",
+                    "Excellent built-in visualization and simulation tools."
+                ],
+                cons: [
+                    "Proprietary and expensive licensing from MathWorks.",
+                    "Not designed for general-purpose application development.",
+                    "Performance limited compared to compiled languages for large-scale compute."
+                ],
+                specs: {
+                    typing: "Dynamic, Matrix-first",
+                    memory: "Managed by MATLAB runtime",
+                    execution: "Interpreted (JIT-accelerated)",
+                    concurrency: "parfor, spmd, Parallel Computing Toolbox"
+                },
+                metrics: [
+                    { label: "Performance / Speed", value: 70 },
+                    { label: "Ease of Learning", value: 80 },
+                    { label: "Community & Ecosystem", value: 85 },
+                    { label: "Job Market Demand", value: 72 }
+                ]
+            },
+            {
+                id: "webassembly",
+                name: "WebAssembly",
+                year: 2017,
+                creator: "W3C WebAssembly Community Group",
+                shortDesc: "A portable binary instruction format enabling near-native performance for web browsers, edge runtimes, and embedded hosts.",
+                fullDesc: "WebAssembly (Wasm) is not a traditional programming language but a compilation target and runtime format. Languages like Rust, C, C++, and Go compile to Wasm modules that run in browsers, serverless edge platforms, and standalone runtimes like Wasmtime with sandboxed security.",
+                accentColor: "#654FF0",
+                accentGlow: "rgba(101, 79, 240, 0.2)",
+                accentLight: "#9580f5",
+                logoSvg: `<svg viewBox="0 0 24 24"><path fill="#654FF0" d="M12 2 3 7v10l9 5 9-5V7l-9-5zm0 2.5 6.5 3.6v7.8L12 19.5l-6.5-3.6V8.1L12 4.5z"/></svg>`,
+                categories: ["web", "compiled", "systems", "embedded"],
+                features: [
+                    "Near-native execution speed in sandboxed environments.",
+                    "Language-agnostic compilation target (Rust, C, C++, Go, etc.).",
+                    "Deterministic, portable binary format across platforms.",
+                    "Component Model enabling modular, composable Wasm modules."
+                ],
+                codeSnippet: `<span class="comment">;; WebAssembly Text Format (WAT) - factorial example</span>
+(<span class="keyword">module</span>
+  (<span class="keyword">func</span> $<span class="function">factorial</span> (<span class="keyword">param</span> $n <span class="type">i32</span>) (<span class="keyword">result</span> <span class="type">i32</span>)
+    (<span class="keyword">local</span> $result <span class="type">i32</span>)
+    (<span class="keyword">local.set</span> $result (<span class="type">i32.const</span> <span class="number">1</span>)
+    (<span class="keyword">block</span> $<span class="function">loop</span>
+      (<span class="keyword">br_if</span> $<span class="function">done</span> (<span class="type">i32.le_s</span> $n (<span class="type">i32.const</span> <span class="number">1</span>))
+      (<span class="keyword">local.set</span> $result (<span class="type">i32.mul</span> (<span class="keyword">local.get</span> $result) (<span class="keyword">local.get</span> $n))
+      (<span class="keyword">local.set</span> $n (<span class="type">i32.sub</span> (<span class="keyword">local.get</span> $n) (<span class="type">i32.const</span> <span class="number">1</span>)))
+      (<span class="keyword">br</span> $<span class="function">loop</span>)
+    (<span class="keyword">end</span>)
+    (<span class="keyword">local.get</span> $result)))`,
+                rawCode: `(module
+  (func $factorial (param $n i32) (result i32)
+    (local $result i32)
+    (local.set $result (i32.const 1))
+    (block $loop
+      (br_if $done (i32.le_s $n (i32.const 1)))
+      (local.set $result (i32.mul (local.get $result) (local.get $n)))
+      (local.set $n (i32.sub (local.get $n) (i32.const 1)))
+      (br $loop))
+    (local.get $result)))`,
+                packageManager: "wasi-sdk, wasm-pack (Rust), Emscripten",
+                frameworksWeb: "wasm-bindgen, Blazor WebAssembly, Yew",
+                frameworksData: "LinAlg WASM, ONNX Runtime Web",
+                primaryRuntime: "Browser engines, Wasmtime, Wasmer, WAMR",
+                pros: [
+                    "Brings C/Rust performance to the browser safely.",
+                    "Sandboxed execution model improves security.",
+                    "Growing serverless and edge computing adoption."
+                ],
+                cons: [
+                    "Not meant to be written directly - usually compiled from other languages.",
+                    "Limited direct DOM access without JavaScript glue code.",
+                    "Debugging and tooling still maturing compared to native dev."
+                ],
+                specs: {
+                    typing: "Static (in source languages), Linear memory model",
+                    memory: "Linear memory (manual in source lang, sandboxed)",
+                    execution: "Compiled binary, JIT/AOT in host runtime",
+                    concurrency: "Host-dependent (Threads proposal, SharedArrayBuffer)"
+                },
+                metrics: [
+                    { label: "Performance / Speed", value: 92 },
+                    { label: "Ease of Learning", value: 40 },
+                    { label: "Community & Ecosystem", value: 78 },
+                    { label: "Job Market Demand", value: 70 }
+                ]
+            },
+            {
+                id: "ocaml",
+                name: "OCaml",
+                year: 1996,
+                creator: "Xavier Leroy et al. (INRIA)",
+                shortDesc: "A functional language with an industrial-strength type system, used in compilers, finance, and formal verification.",
+                fullDesc: "OCaml combines functional programming with imperative and object-oriented features. Its powerful type inference, algebraic data types, and pattern matching make it the language behind Coq proof assistants, the MirageOS unikernel, and high-assurance systems at companies like Jane Street.",
+                accentColor: "#EC6813",
+                accentGlow: "rgba(236, 104, 19, 0.2)",
+                accentLight: "#f49a5a",
+                logoSvg: `<svg viewBox="0 0 24 24"><path fill="#EC6813" d="M12 2C6.477 2 2 6.477 2 12s4.477 10 10 10 10-4.477 10-10S17.523 2 12 2zm-3 5h6v2H9V7zm0 4h6v6h-2v-4H9v-2z"/></svg>`,
+                categories: ["functional", "compiled", "scientific", "systems"],
+                features: [
+                    "Hindley-Milner type inference with polymorphic variants.",
+                    "Pattern matching on algebraic data types.",
+                    "Native code generation via ocamlopt for high performance.",
+                    "Used as implementation language for Coq and Frama-C."
+                ],
+                codeSnippet: `<span class="keyword">type</span> <span class="type">status</span> = Active | Inactive
+
+<span class="keyword">let</span> <span class="function">active_names</span> users =
+  users
+  |&gt; List.filter (fun (_, s) -&gt; s = Active)
+  |&gt; List.map fst
+
+<span class="keyword">let</span> () =
+  [<span class="string">"Ada"</span>, Active; <span class="string">"Grace"</span>, Inactive; <span class="string">"Linus"</span>, Active]
+  |&gt; <span class="function">active_names</span>
+  |&gt; List.iter (Printf.printf <span class="string">"Active: %s\\n"</span>)`,
+                rawCode: `type status = Active | Inactive
+
+let active_names users =
+  users
+  |> List.filter (fun (_, s) -> s = Active)
+  |> List.map fst
+
+let () =
+  ["Ada", Active; "Grace", Inactive; "Linus", Active]
+  |> active_names
+  |> List.iter (Printf.printf "Active: %s\\n")`,
+                packageManager: "opam, dune",
+                frameworksWeb: "Dream, Ocsigen, Eliom",
+                frameworksData: "Owl (scientific computing), Core (Jane Street)",
+                primaryRuntime: "ocamlopt (native) / ocamlc (bytecode)",
+                pros: [
+                    "One of the most practical ML-family languages for production.",
+                    "Strong type system catches errors at compile time.",
+                    "Excellent for compiler writing and formal methods."
+                ],
+                cons: [
+                    "Smaller ecosystem than Haskell or mainstream languages.",
+                    "Syntax and tooling can feel dated to some developers.",
+                    "Limited mainstream job market outside finance and research."
+                ],
+                specs: {
+                    typing: "Static, Strong, Inferred (HM)",
+                    memory: "Garbage Collected (generational)",
+                    execution: "Compiled Native / Bytecode",
+                    concurrency: "Domainslib, Lwt, Async libraries"
+                },
+                metrics: [
+                    { label: "Performance / Speed", value: 88 },
+                    { label: "Ease of Learning", value: 58 },
+                    { label: "Community & Ecosystem", value: 60 },
+                    { label: "Job Market Demand", value: 48 }
+                ]
+            },
+            {
+                id: "bash",
+                name: "Bash",
+                year: 1989,
+                creator: "Brian Fox (Free Software Foundation)",
+                shortDesc: "The default Unix shell for scripting automation, system administration, and DevOps pipeline orchestration.",
+                fullDesc: "Bash (Bourne Again Shell) is the de facto command language on Linux and macOS. It orchestrates system tasks, CI/CD pipelines, and server provisioning. While not a general application language, Bash scripts glue together the entire Unix toolchain.",
+                accentColor: "#4EAA25",
+                accentGlow: "rgba(78, 170, 37, 0.2)",
+                accentLight: "#7ec85a",
+                logoSvg: `<svg viewBox="0 0 24 24"><path fill="#4EAA25" d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-4 6h8v2H8V8zm0 4h5v2H8v-2z"/></svg>`,
+                categories: ["scripting", "interpreted", "systems"],
+                features: [
+                    "Direct access to Unix commands and pipes.",
+                    "Variables, conditionals, loops, and functions for automation.",
+                    "Ubiquitous on Linux servers and macOS terminals.",
+                    "Essential for CI/CD scripts (GitHub Actions, GitLab CI)."
+                ],
+                codeSnippet: `<span class="comment">#!/bin/bash</span>
+<span class="function">backup_logs</span>() {
+  <span class="keyword">local</span> src=<span class="string">"/var/log/app"</span>
+  <span class="keyword">local</span> dest=<span class="string">"/backup/$(date +%Y%m%d)"</span>
+  mkdir -p <span class="string">"$dest"</span>
+  cp -r <span class="string">"$src"</span>/* <span class="string">"$dest"</span>/
+  <span class="function">echo</span> <span class="string">"Backed up to $dest"</span>
+}
+
+<span class="function">backup_logs</span>`,
+                rawCode: `#!/bin/bash
+backup_logs() {
+  local src="/var/log/app"
+  local dest="/backup/$(date +%Y%m%d)"
+  mkdir -p "$dest"
+  cp -r "$src"/* "$dest"/
+  echo "Backed up to $dest"
+}
+
+backup_logs`,
+                packageManager: "None (system package managers)",
+                frameworksWeb: "N/A (DevOps/CI glue)",
+                frameworksData: "awk, sed, jq (JSON processing)",
+                primaryRuntime: "bash / sh interpreter",
+                pros: [
+                    "Universal on Unix-like systems - zero install needed.",
+                    "Perfect for quick automation and pipeline scripts.",
+                    "Composes naturally with every CLI tool."
+                ],
+                cons: [
+                    "Error-prone with unquoted variables and word splitting.",
+                    "Not suitable for complex application logic.",
+                    "Inconsistent behavior across bash/sh/zsh variants."
+                ],
+                specs: {
+                    typing: "Untyped (string-based)",
+                    memory: "Process-based (no GC)",
+                    execution: "Interpreted by shell",
+                    concurrency: "Background jobs (&), xargs, GNU parallel"
+                },
+                metrics: [
+                    { label: "Performance / Speed", value: 30 },
+                    { label: "Ease of Learning", value: 85 },
+                    { label: "Community & Ecosystem", value: 90 },
+                    { label: "Job Market Demand", value: 88 }
+                ]
+            },
+            {
+                id: "fortran",
+                name: "Fortran",
+                year: 1957,
+                creator: "John Backus (IBM)",
+                shortDesc: "The oldest high-level language still in heavy use for supercomputing, climate modeling, and numerical simulation.",
+                fullDesc: "Fortran (Formula Translation) pioneered compiled scientific computing and remains dominant in HPC, weather prediction, and physics simulations. Modern Fortran (2003+) adds OOP, coarrays for parallelism, and ISO C interoperability while preserving decades of optimized numerical libraries.",
+                accentColor: "#734F96",
+                accentGlow: "rgba(115, 79, 150, 0.2)",
+                accentLight: "#9a7bb8",
+                logoSvg: `<svg viewBox="0 0 24 24"><path fill="#734F96" d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zM8 7h8v2h-3v8h-2V9H8V7z"/></svg>`,
+                categories: ["scientific", "compiled", "data-science"],
+                features: [
+                    "Native array operations optimized for vectorized numerical code.",
+                    "Coarrays and DO CONCURRENT for shared-memory parallelism.",
+                    "Massive legacy of BLAS, LAPACK, and domain-specific HPC libraries.",
+                    "Modern modules, derived types, and generic programming."
+                ],
+                codeSnippet: `<span class="keyword">program</span> <span class="function">vector_norm</span>
+  <span class="keyword">implicit none</span>
+  <span class="keyword">real</span>, <span class="keyword">dimension</span>(:) :: v = [<span class="number">3.0</span>, <span class="number">4.0</span>]
+  <span class="keyword">real</span> :: norm
+  norm = <span class="function">sqrt</span>(<span class="function">sum</span>(v**<span class="number">2</span>))
+  <span class="function">print</span> *, <span class="string">'Norm:'</span>, norm
+<span class="keyword">end program</span>`,
+                rawCode: `program vector_norm
+  implicit none
+  real, dimension(:) :: v = [3.0, 4.0]
+  real :: norm
+  norm = sqrt(sum(v**2))
+  print *, 'Norm:', norm
+end program`,
+                packageManager: "fpm (Fortran Package Manager)",
+                frameworksWeb: "None (HPC-focused)",
+                frameworksData: "BLAS, LAPACK, NetCDF, PETSc",
+                primaryRuntime: "gfortran, ifort, nvfortran",
+                pros: [
+                    "Unmatched performance for dense numerical linear algebra.",
+                    "Decades of validated scientific code and libraries.",
+                    "Still actively developed with modern language features."
+                ],
+                cons: [
+                    "Syntax feels archaic compared to Python or Julia.",
+                    "Limited general-purpose ecosystem outside HPC.",
+                    "Smaller developer community for new application domains."
                 ],
                 specs: {
                     typing: "Static, Strong",
-                    memory: "Automatic Reference Counting",
-                    execution: "Compiled Native",
-                    concurrency: "Async/Await, Actors"
+                    memory: "Manual / Stack allocation",
+                    execution: "AOT Compiled Native",
+                    concurrency: "Coarrays, OpenMP, MPI"
+                },
+                metrics: [
+                    { label: "Performance / Speed", value: 97 },
+                    { label: "Ease of Learning", value: 55 },
+                    { label: "Community & Ecosystem", value: 70 },
+                    { label: "Job Market Demand", value: 60 }
+                ]
+            },
+            {
+                id: "erlang",
+                name: "Erlang",
+                year: 1986,
+                creator: "Joe Armstrong et al. (Ericsson)",
+                shortDesc: "A fault-tolerant functional language built for telecom-grade distributed systems with millions of concurrent processes.",
+                fullDesc: "Erlang runs on the BEAM virtual machine and was designed for soft real-time, fault-tolerant, distributed systems. It powers WhatsApp messaging infrastructure and OTP provides battle-tested patterns for supervision trees, hot code swapping, and nine-nines availability.",
+                accentColor: "#A90533",
+                accentGlow: "rgba(169, 5, 51, 0.2)",
+                accentLight: "#d14d6e",
+                logoSvg: `<svg viewBox="0 0 24 24"><path fill="#A90533" d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 5h4v2h-4V7zm0 4h4v6h-2v-4H10v-2z"/></svg>`,
+                categories: ["functional", "compiled", "systems", "web"],
+                features: [
+                    "Lightweight processes (not OS threads) with message passing.",
+                    "OTP supervision trees for let-it-crash fault tolerance.",
+                    "Hot code swapping without stopping running systems.",
+                    "Pattern matching and immutable data by default."
+                ],
+                codeSnippet: `<span class="keyword">-module</span>(<span class="function">counter</span>).
+<span class="keyword">-export</span>([<span class="function">start</span>/<span class="number">0</span>, <span class="function">loop</span>/<span class="number">1</span>]).
+
+<span class="function">start</span>() -&gt;
+    <span class="function">spawn</span>(?MODULE, loop, [<span class="number">0</span>]).
+
+<span class="function">loop</span>(N) -&gt;
+    <span class="function">receive</span>
+        inc -&gt; <span class="function">loop</span>(N + <span class="number">1</span>);
+        {get, Pid} -&gt; Pid ! N, <span class="function">loop</span>(N)
+    <span class="keyword">end</span>.`,
+                rawCode: `-module(counter).
+-export([start/0, loop/1]).
+
+start() ->
+    spawn(?MODULE, loop, [0]).
+
+loop(N) ->
+    receive
+        inc -> loop(N + 1);
+        {get, Pid} -> Pid ! N, loop(N)
+    end.`,
+                packageManager: "rebar3, Hex",
+                frameworksWeb: "Cowboy, Elli",
+                frameworksData: "Mnesia, ETS tables",
+                primaryRuntime: "BEAM Virtual Machine",
+                pros: [
+                    "Proven fault tolerance at massive scale (WhatsApp, RabbitMQ).",
+                    "Concurrency model is simple and extremely scalable.",
+                    "Hot code upgrades enable zero-downtime deployments."
+                ],
+                cons: [
+                    "Unusual syntax and paradigm for developers from OOP backgrounds.",
+                    "Smaller ecosystem than Elixir for modern web tooling.",
+                    "String handling and binary operations can feel awkward."
+                ],
+                specs: {
+                    typing: "Dynamic, Strong",
+                    memory: "Garbage Collected (per-process heaps)",
+                    execution: "Compiled to BEAM bytecode",
+                    concurrency: "Actor model, lightweight processes"
+                },
+                metrics: [
+                    { label: "Performance / Speed", value: 75 },
+                    { label: "Ease of Learning", value: 50 },
+                    { label: "Community & Ecosystem", value: 72 },
+                    { label: "Job Market Demand", value: 58 }
+                ]
+            },
+            {
+                id: "groovy",
+                name: "Groovy",
+                year: 2003,
+                creator: "James Strachan",
+                shortDesc: "A dynamic JVM language with Python-like syntax, widely used in Jenkins pipelines and Gradle build scripts.",
+                fullDesc: "Groovy is a dynamic language for the Java platform that integrates seamlessly with Java libraries. It powers Jenkins CI/CD pipelines, Gradle build definitions, and rapid scripting for JVM ecosystems with optional static typing via @CompileStatic.",
+                accentColor: "#4298B8",
+                accentGlow: "rgba(66, 152, 184, 0.2)",
+                accentLight: "#6eb8d4",
+                logoSvg: `<svg viewBox="0 0 24 24"><path fill="#4298B8" d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 5h2v2h-2V7zm0 4h2v6h-2v-6z"/></svg>`,
+                categories: ["scripting", "object-oriented", "interpreted", "web"],
+                features: [
+                    "Seamless Java interoperability - use any Java library directly.",
+                    "Closures, builders, and metaprogramming via MOP.",
+                    "Optional static compilation for performance-critical paths.",
+                    "Native DSL support for Gradle and Jenkins pipelines."
+                ],
+                codeSnippet: `<span class="keyword">def</span> users = [[name: <span class="string">'Ada'</span>, active: <span class="keyword">true</span>],
+             [name: <span class="string">'Grace'</span>, active: <span class="keyword">false</span>]]
+
+users.findAll { it.active }
+     .collect { it.name.toUpperCase() }
+     .each { <span class="function">println</span> it }`,
+                rawCode: `def users = [[name: 'Ada', active: true],
+             [name: 'Grace', active: false]]
+
+users.findAll { it.active }
+     .collect { it.name.toUpperCase() }
+     .each { println it }`,
+                packageManager: "Gradle, Grape",
+                frameworksWeb: "Grails, Ratpack, Spring Boot (Groovy)",
+                frameworksData: "Groovy SQL, Apache Groovy",
+                primaryRuntime: "JVM (Groovy runtime)",
+                pros: [
+                    "Perfect for Jenkins and Gradle automation scripts.",
+                    "Concise syntax reduces Java boilerplate significantly.",
+                    "Full access to the entire Java ecosystem."
+                ],
+                cons: [
+                    "Performance slower than Java unless statically compiled.",
+                    "Declining mindshare compared to Kotlin on JVM.",
+                    "Dynamic typing can hide errors until runtime."
+                ],
+                specs: {
+                    typing: "Dynamic (optional Static via @CompileStatic)",
+                    memory: "Garbage Collected (JVM)",
+                    execution: "Interpreted / JIT (JVM bytecode)",
+                    concurrency: "Java Threads, GPars"
+                },
+                metrics: [
+                    { label: "Performance / Speed", value: 65 },
+                    { label: "Ease of Learning", value: 82 },
+                    { label: "Community & Ecosystem", value: 68 },
+                    { label: "Job Market Demand", value: 62 }
+                ]
+            },
+            {
+                id: "crystal",
+                name: "Crystal",
+                year: 2014,
+                creator: "Manas Technology Solutions",
+                shortDesc: "A compiled language with Ruby-like syntax that delivers C-like performance without sacrificing readability.",
+                fullDesc: "Crystal combines Ruby's elegant syntax with static type checking and native compilation via LLVM. It offers compile-time type inference, macros, and fibers for concurrency, targeting developers who want Ruby ergonomics with systems-level speed.",
+                accentColor: "#000000",
+                accentGlow: "rgba(0, 0, 0, 0.15)",
+                accentLight: "#444444",
+                logoSvg: `<svg viewBox="0 0 24 24"><path fill="#000000" d="M12 2 4 7v10l8 5 8-5V7l-8-5zm0 3 5 3.1v6.2L12 17.3 7 14.3V8.1L12 5z"/></svg>`,
+                categories: ["compiled", "object-oriented", "systems", "web"],
+                features: [
+                    "Ruby-inspired syntax with static type safety.",
+                    "Compile-time type inference minimizes type annotations.",
+                    "Native compilation via LLVM for C-level performance.",
+                    "Lightweight fibers for efficient concurrency."
+                ],
+                codeSnippet: `<span class="keyword">def</span> <span class="function">active_names</span>(users : <span class="type">Array</span>(<span class="type">NamedTuple</span>(name: <span class="type">String</span>, active: <span class="type">Bool</span>)))
+  users.select(&.<span class="function">active</span>).map(&.<span class="function">name</span>)
+<span class="keyword">end</span>
+
+[{name: <span class="string">"Ada"</span>, active: <span class="keyword">true</span>}, {name: <span class="string">"Grace"</span>, active: <span class="keyword">false</span>}]
+  .<span class="function">then</span> { |u| <span class="function">active_names</span>(u) }
+  .each { |n| <span class="function">puts</span> n }`,
+                rawCode: `def active_names(users : Array(NamedTuple(name: String, active: Bool)))
+  users.select(&.active).map(&.name)
+end
+
+[{name: "Ada", active: true}, {name: "Grace", active: false}]
+  .then { |u| active_names(u) }
+  .each { |n| puts n }`,
+                packageManager: "Shards (shard.yml)",
+                frameworksWeb: "Kemal, Amber, Lucky",
+                frameworksData: "Crecto ORM, sqlite3",
+                primaryRuntime: "Crystal compiler / LLVM",
+                pros: [
+                    "Ruby-like readability with compiled performance.",
+                    "Strong type system catches errors at compile time.",
+                    "Single-binary deployment with no runtime dependency."
+                ],
+                cons: [
+                    "Smaller ecosystem and community than Ruby or Go.",
+                    "Compilation times can be slow for large projects.",
+                    "Limited Windows support compared to Linux/macOS."
+                ],
+                specs: {
+                    typing: "Static, Strong, Inferred",
+                    memory: "Garbage Collected (Boehm-Demers-Weiser)",
+                    execution: "AOT Compiled Native (LLVM)",
+                    concurrency: "Fibers (cooperative), Channels"
                 },
                 metrics: [
                     { label: "Performance / Speed", value: 90 },
                     { label: "Ease of Learning", value: 78 },
-                    { label: "Community & Ecosystem", value: 76 },
+                    { label: "Community & Ecosystem", value: 52 },
+                    { label: "Job Market Demand", value: 38 }
+                ]
+            },
+            {
+                id: "nim",
+                name: "Nim",
+                year: 2008,
+                creator: "Andreas Rumpf",
+                shortDesc: "An efficient, expressive systems language that compiles to C, C++, or JavaScript with metaprogramming power.",
+                fullDesc: "Nim is a statically typed compiled language with Python-like syntax, powerful macro system, and zero-overhead abstractions. It compiles to C for maximum portability and performance, making it suitable for systems programming, game development, and scripting.",
+                accentColor: "#FFE953",
+                accentGlow: "rgba(255, 233, 83, 0.2)",
+                accentLight: "#fff099",
+                logoSvg: `<svg viewBox="0 0 24 24"><path fill="#FFE953" stroke="#333" stroke-width="0.5" d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 5h4v2h-4V7zm0 4h4v6h-2v-4h-4v-2h4z"/></svg>`,
+                categories: ["compiled", "systems", "scripting", "object-oriented"],
+                features: [
+                    "Compiles to C/C++/JS/ObjC for zero runtime dependency.",
+                    "Powerful hygienic macro system for metaprogramming.",
+                    "Python/Ruby/Pascal-inspired readable syntax.",
+                    "Optional GC, manual memory, or ownership modes."
+                ],
+                codeSnippet: `<span class="keyword">proc</span> <span class="function">activeNames</span>(users: <span class="keyword">seq</span>[<span class="type">User</span>]): <span class="keyword">seq</span>[<span class="type">string</span>] =
+  users.filterIt(it.active).mapIt(it.name)
+
+<span class="keyword">type</span>
+  <span class="type">User</span> = <span class="keyword">object</span>
+    name: <span class="type">string</span>
+    active: <span class="type">bool</span>
+
+<span class="function">echo</span> <span class="function">activeNames</span>(@[<span class="type">User</span>(name: <span class="string">"Ada"</span>, active: <span class="keyword">true</span>)])`,
+                rawCode: `proc activeNames(users: seq[User]): seq[string] =
+  users.filterIt(it.active).mapIt(it.name)
+
+type
+  User = object
+    name: string
+    active: bool
+
+echo activeNames(@[User(name: "Ada", active: true)])`,
+                packageManager: "nimble",
+                frameworksWeb: "Jester, Karax",
+                frameworksData: "Arraymancer, Neo",
+                primaryRuntime: "C compiler (GCC, Clang, MSVC)",
+                pros: [
+                    "Expressive syntax with systems-level performance.",
+                    "Compiles to portable C with no Nim runtime needed.",
+                    "Excellent metaprogramming via macros and templates."
+                ],
+                cons: [
+                    "Smaller community and fewer libraries than Rust or Go.",
+                    "Documentation can be sparse for advanced features.",
+                    "GC pauses may affect real-time use cases."
+                ],
+                specs: {
+                    typing: "Static, Strong, Inferred",
+                    memory: "Garbage Collected (optional manual/ARC)",
+                    execution: "AOT via C/C++ compilation",
+                    concurrency: "Async/Await, Threads, Channels"
+                },
+                metrics: [
+                    { label: "Performance / Speed", value: 92 },
+                    { label: "Ease of Learning", value: 72 },
+                    { label: "Community & Ecosystem", value: 50 },
+                    { label: "Job Market Demand", value: 35 }
+                ]
+            },
+            {
+                id: "powershell",
+                name: "PowerShell",
+                year: 2006,
+                creator: "Jeffrey Snover (Microsoft)",
+                shortDesc: "Microsoft's cross-platform shell and scripting language for automating Windows, Azure, and hybrid cloud infrastructure.",
+                fullDesc: "PowerShell is an object-oriented shell built on .NET that treats command output as structured objects rather than plain text. PowerShell Core runs on Linux and macOS, making it the standard for Azure automation, Active Directory management, and enterprise DevOps on Windows.",
+                accentColor: "#012456",
+                accentGlow: "rgba(1, 36, 86, 0.25)",
+                accentLight: "#2a5490",
+                logoSvg: `<svg viewBox="0 0 24 24"><path fill="#012456" d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-3 5h6v2H9V7zm0 4h4v6H9v-6z"/></svg>`,
+                categories: ["scripting", "interpreted", "systems", "object-oriented"],
+                features: [
+                    "Pipeline passes .NET objects, not just text streams.",
+                    "Cmdlet ecosystem for Windows, Azure, and Exchange admin.",
+                    "Cross-platform PowerShell 7+ on Linux and macOS.",
+                    "Remote management via WS-Management and SSH."
+                ],
+                codeSnippet: `<span class="keyword">Get-Process</span> | <span class="keyword">Where-Object</span> { $_.CPU -gt <span class="number">100</span> } |
+    <span class="keyword">Select-Object</span> Name, CPU, WorkingSet |
+    <span class="keyword">Sort-Object</span> CPU -Descending |
+    <span class="keyword">Format-Table</span> -AutoSize`,
+                rawCode: `Get-Process | Where-Object { $_.CPU -gt 100 } |
+    Select-Object Name, CPU, WorkingSet |
+    Sort-Object CPU -Descending |
+    Format-Table -AutoSize`,
+                packageManager: "PowerShell Gallery (PSGallery)",
+                frameworksWeb: "Pode, Universal Dashboard",
+                frameworksData: "ImportExcel, dbatools, Az modules",
+                primaryRuntime: "PowerShell 7+ / Windows PowerShell 5.1",
+                pros: [
+                    "Deep integration with Windows and Azure ecosystems.",
+                    "Object pipeline is far more powerful than text-based shells.",
+                    "Huge module library on PowerShell Gallery."
+                ],
+                cons: [
+                    "Historically Windows-only (though now cross-platform).",
+                    "Syntax quirks and verbose cmdlet names.",
+                    "Performance slower than compiled languages for compute-heavy tasks."
+                ],
+                specs: {
+                    typing: "Dynamic, .NET object-based",
+                    memory: "Garbage Collected (.NET GC)",
+                    execution: "Interpreted (.NET runtime)",
+                    concurrency: "Runspaces, Jobs, ForEach-Object -Parallel"
+                },
+                metrics: [
+                    { label: "Performance / Speed", value: 55 },
+                    { label: "Ease of Learning", value: 75 },
+                    { label: "Community & Ecosystem", value: 82 },
+                    { label: "Job Market Demand", value: 80 }
+                ]
+            },
+            {
+                id: "ada",
+                name: "Ada",
+                year: 1980,
+                creator: "Jean Ichbiah (CII Honeywell Bull)",
+                shortDesc: "A safety-critical systems language mandated for avionics, defense, and railway software where failure is not an option.",
+                fullDesc: "Ada was designed for high-integrity systems with strong typing, contracts, tasking, and real-time support. It is required by DO-178C avionics standards and used in the Boeing 777, Airbus A380, and European rail signaling systems.",
+                accentColor: "#002157",
+                accentGlow: "rgba(0, 33, 87, 0.25)",
+                accentLight: "#2a5490",
+                logoSvg: `<svg viewBox="0 0 24 24"><path fill="#002157" d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 5h4v2h-4V7zm0 4h4v6h-2v-4H10v-2z"/></svg>`,
+                categories: ["systems", "compiled", "embedded", "object-oriented"],
+                features: [
+                    "Design-by-contract with pre/postconditions and invariants.",
+                    "Built-in tasking and protected types for real-time concurrency.",
+                    "Range checks and strong typing prevent buffer overflows.",
+                    "Spark subset enables formal verification of critical code."
+                ],
+                codeSnippet: `<span class="keyword">procedure</span> <span class="function">Safe_Divide</span> (A, B : <span class="type">Integer</span>; Result : <span class="keyword">out</span> <span class="type">Float</span>) <span class="keyword">is</span>
+<span class="keyword">begin</span>
+   <span class="keyword">if</span> B = <span class="number">0</span> <span class="keyword">then</span>
+      <span class="keyword">raise</span> <span class="type">Constraint_Error</span>;
+   <span class="keyword">end if</span>;
+   Result := <span class="type">Float</span>(A) / <span class="type">Float</span>(B);
+<span class="keyword">end</span> Safe_Divide;`,
+                rawCode: `procedure Safe_Divide (A, B : Integer; Result : out Float) is
+begin
+   if B = 0 then
+      raise Constraint_Error;
+   end if;
+   Result := Float(A) / Float(B);
+end Safe_Divide;`,
+                packageManager: "Alire (Ada package manager)",
+                frameworksWeb: "None (embedded/safety-critical focus)",
+                frameworksData: "GNATcoll, Ada Web Server",
+                primaryRuntime: "GNAT (GCC Ada), AdaCore toolchain",
+                pros: [
+                    "Gold standard for safety-critical and certified software.",
+                    "Strong typing and contracts catch bugs at compile time.",
+                    "Excellent real-time and concurrent programming support."
+                ],
+                cons: [
+                    "Verbose syntax and steep learning curve.",
+                    "Very niche job market outside aerospace and defense.",
+                    "Smaller open-source ecosystem than C or Rust."
+                ],
+                specs: {
+                    typing: "Static, Strong, Range-constrained",
+                    memory: "Manual with strong safety checks",
+                    execution: "AOT Compiled Native",
+                    concurrency: "Tasks, Protected Objects, Ravenscar profile"
+                },
+                metrics: [
+                    { label: "Performance / Speed", value: 88 },
+                    { label: "Ease of Learning", value: 40 },
+                    { label: "Community & Ecosystem", value: 45 },
+                    { label: "Job Market Demand", value: 42 }
+                ]
+            },
+            {
+                id: "dlang",
+                name: "D",
+                year: 2001,
+                creator: "Walter Bright, Andrei Alexandrescu",
+                shortDesc: "A systems language combining C performance with modern features like GC, templates, and functional programming.",
+                fullDesc: "D (Dlang) aims to be a better C++ with garbage collection, design-by-contract, and powerful template metaprogramming. It supports both systems and application programming with interop to C and optional manual memory management.",
+                accentColor: "#B03931",
+                accentGlow: "rgba(176, 57, 49, 0.2)",
+                accentLight: "#d46e66",
+                logoSvg: `<svg viewBox="0 0 24 24"><path fill="#B03931" d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zM8 7h8v2H8V7zm0 4h5v6h-2v-4H8v-2z"/></svg>`,
+                categories: ["systems", "compiled", "object-oriented", "functional"],
+                features: [
+                    "C ABI compatibility for seamless C library use.",
+                    "Design-by-contract built into the language.",
+                    "Powerful compile-time function execution (CTFE).",
+                    "Optional GC with @nogc for deterministic performance."
+                ],
+                codeSnippet: `<span class="keyword">import</span> std.algorithm, std.range;
+
+<span class="keyword">void</span> <span class="function">main</span>() {
+    <span class="keyword">auto</span> names = [<span class="string">"Ada"</span>, <span class="string">"Grace"</span>, <span class="string">"Linus"</span>]
+        .filter!(n =&gt; n.length &gt; <span class="number">3</span>)
+        .map!(n =&gt; n.toUpper)
+        .array;
+    <span class="function">writeln</span>(names);
+}`,
+                rawCode: `import std.algorithm, std.range;
+
+void main() {
+    auto names = ["Ada", "Grace", "Linus"]
+        .filter!(n => n.length > 3)
+        .map!(n => n.toUpper)
+        .array;
+    writeln(names);
+}`,
+                packageManager: "dub",
+                frameworksWeb: "vibe.d, Hunt framework",
+                frameworksData: "mir (ndarray), dpp",
+                primaryRuntime: "DMD, LDC, GDC compilers",
+                pros: [
+                    "Modern features without sacrificing C-level performance.",
+                    "Excellent C interoperability for legacy integration.",
+                    "CTFE enables powerful compile-time code generation."
+                ],
+                cons: [
+                    "Small community compared to Rust or C++.",
+                    "Fragmented compiler ecosystem (DMD vs LDC vs GDC).",
+                    "Limited corporate adoption outside niche projects."
+                ],
+                specs: {
+                    typing: "Static, Strong",
+                    memory: "Garbage Collected (optional manual/@nogc)",
+                    execution: "AOT Compiled Native",
+                    concurrency: "std.concurrency, fibers"
+                },
+                metrics: [
+                    { label: "Performance / Speed", value: 91 },
+                    { label: "Ease of Learning", value: 58 },
+                    { label: "Community & Ecosystem", value: 48 },
+                    { label: "Job Market Demand", value: 32 }
+                ]
+            },
+            {
+                id: "common-lisp",
+                name: "Common Lisp",
+                year: 1984,
+                creator: "ANSI X3J13 Committee",
+                shortDesc: "The programmable programming language - a Lisp dialect with macros, CLOS objects, and interactive REPL development.",
+                fullDesc: "Common Lisp is a multi-paradigm language standardized by ANSI with powerful macros, the Common Lisp Object System (CLOS), and a condition system for restarts. It influenced Java, Python, and modern functional languages and remains used in AI research and specialized tooling.",
+                accentColor: "#000000",
+                accentGlow: "rgba(0, 0, 0, 0.12)",
+                accentLight: "#555555",
+                logoSvg: `<svg viewBox="0 0 24 24"><path fill="#000000" d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 5h2v2h-2V7zm0 4h2v6h-2v-6z"/></svg>`,
+                categories: ["functional", "compiled", "scientific", "object-oriented"],
+                features: [
+                    "Code-as-data macros enable language extension at compile time.",
+                    "CLOS multimethods and multiple inheritance.",
+                    "Interactive REPL with incremental compilation.",
+                    "Condition system with restarts for robust error recovery."
+                ],
+                codeSnippet: `(<span class="keyword">defun</span> <span class="function">active-names</span> (users)
+  (<span class="function">mapcar</span> #'car
+    (<span class="function">remove-if-not</span> (<span class="keyword">lambda</span> (u) (<span class="function">getf</span> u :active))
+                 users)))
+
+(<span class="function">print</span> (<span class="function">active-names</span> '((:name <span class="string">"Ada"</span> :active t) (:name <span class="string">"Grace"</span> :active nil))))`,
+                rawCode: `(defun active-names (users)
+  (mapcar #'car
+    (remove-if-not (lambda (u) (getf u :active))
+                 users)))
+
+(print (active-names '((:name "Ada" :active t) (:name "Grace" :active nil))))`,
+                packageManager: "Quicklisp",
+                frameworksWeb: "Hunchentoot, Caveman2",
+                frameworksData: "mgl (machine learning), cl-ml",
+                primaryRuntime: "SBCL, CCL, ECL, ABCL",
+                pros: [
+                    "Most powerful macro system of any mainstream language.",
+                    "REPL-driven development unmatched in interactivity.",
+                    "Mature ANSI standard with multiple high-quality implementations."
+                ],
+                cons: [
+                    "Parentheses-heavy syntax deters many developers.",
+                    "Fragmented library ecosystem across implementations.",
+                    "Very niche job market outside specialized domains."
+                ],
+                specs: {
+                    typing: "Dynamic, Strong (optional gradual typing)",
+                    memory: "Garbage Collected (generational)",
+                    execution: "Compiled Native / Bytecode",
+                    concurrency: "lparallel, Bordeaux Threads"
+                },
+                metrics: [
+                    { label: "Performance / Speed", value: 78 },
+                    { label: "Ease of Learning", value: 45 },
+                    { label: "Community & Ecosystem", value: 55 },
+                    { label: "Job Market Demand", value: 30 }
+                ]
+            },
+            {
+                id: "prolog",
+                name: "Prolog",
+                year: 1972,
+                creator: "Alain Colmerauer, Philippe Roussel",
+                shortDesc: "A logic programming language where programs define relations and the engine searches for solutions via unification.",
+                fullDesc: "Prolog expresses programs as facts and rules about relations. The execution engine performs backtracking search and unification, making it ideal for expert systems, natural language processing, symbolic AI, and constraint satisfaction problems.",
+                accentColor: "#E61B23",
+                accentGlow: "rgba(230, 27, 35, 0.2)",
+                accentLight: "#ef6066",
+                logoSvg: `<svg viewBox="0 0 24 24"><path fill="#E61B23" d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 5h4v2h-4V7zm0 4h4v6h-2v-4H10v-2z"/></svg>`,
+                categories: ["functional", "interpreted", "scientific", "data-science"],
+                features: [
+                    "Declarative programming via facts, rules, and queries.",
+                    "Automatic backtracking search engine.",
+                    "Pattern matching through unification.",
+                    "Built-in constraint logic programming (CLP) extensions."
+                ],
+                codeSnippet: `<span class="comment">% Family relations in Prolog</span>
+<span class="function">parent</span>(ada, grace).
+<span class="function">parent</span>(grace, linus).
+
+<span class="function">ancestor</span>(X, Y) :- <span class="function">parent</span>(X, Y).
+<span class="function">ancestor</span>(X, Y) :- <span class="function">parent</span>(X, Z), <span class="function">ancestor</span>(Z, Y).
+
+<span class="comment">% Query: ?- ancestor(ada, linus).</span>`,
+                rawCode: `% Family relations in Prolog
+parent(ada, grace).
+parent(grace, linus).
+
+ancestor(X, Y) :- parent(X, Y).
+ancestor(X, Y) :- parent(X, Z), ancestor(Z, Y).
+
+% Query: ?- ancestor(ada, linus).`,
+                packageManager: "SWI-Prolog packs, Scryer Prolog",
+                frameworksWeb: "SWI-Prolog HTTP, Pengines",
+                frameworksData: "ProbLog, clpfd (constraints)",
+                primaryRuntime: "SWI-Prolog, GNU Prolog, Scryer Prolog",
+                pros: [
+                    "Natural fit for rule-based and expert system problems.",
+                    "Concise expression of complex relational logic.",
+                    "Still relevant for NLP, scheduling, and AI research."
+                ],
+                cons: [
+                    "Completely different paradigm from imperative languages.",
+                    "Performance unpredictable due to search strategy.",
+                    "Very limited mainstream industry adoption."
+                ],
+                specs: {
+                    typing: "Dynamic, Untyped (terms and atoms)",
+                    memory: "Garbage Collected (implementation-dependent)",
+                    execution: "Interpreted (WAM bytecode)",
+                    concurrency: "Tabling, engines, threads (SWI-Prolog)"
+                },
+                metrics: [
+                    { label: "Performance / Speed", value: 50 },
+                    { label: "Ease of Learning", value: 42 },
+                    { label: "Community & Ecosystem", value: 48 },
+                    { label: "Job Market Demand", value: 28 }
+                ]
+            },
+            {
+                id: "solidity",
+                name: "Solidity",
+                year: 2014,
+                creator: "Christian Reitwiessner et al. (Ethereum Foundation)",
+                shortDesc: "The primary smart contract language for Ethereum and EVM-compatible blockchains powering DeFi and NFTs.",
+                fullDesc: "Solidity is a statically typed, contract-oriented language that compiles to EVM bytecode. It enables decentralized applications (dApps), DeFi protocols, NFT marketplaces, and DAO governance on Ethereum, Polygon, and other EVM chains.",
+                accentColor: "#AA6746",
+                accentGlow: "rgba(170, 103, 70, 0.2)",
+                accentLight: "#c99578",
+                logoSvg: `<svg viewBox="0 0 24 24"><path fill="#AA6746" d="M12 2 4 7v10l8 5 8-5V7l-8-5zm0 3 5 3.1v6.2L12 17.3 7 14.3V8.1L12 5z"/></svg>`,
+                categories: ["web", "compiled", "object-oriented"],
+                features: [
+                    "Smart contracts with state variables and public functions.",
+                    "Inheritance, interfaces, and libraries for code reuse.",
+                    "Events for logging on-chain activity.",
+                    "Modifiers for access control and input validation."
+                ],
+                codeSnippet: `<span class="keyword">pragma solidity</span> ^<span class="number">0.8</span>.<span class="number">0</span>;
+
+<span class="keyword">contract</span> <span class="type">Counter</span> {
+    <span class="type">uint256</span> <span class="keyword">public</span> count;
+
+    <span class="keyword">function</span> <span class="function">increment</span>() <span class="keyword">public</span> {
+        count += <span class="number">1</span>;
+    }
+
+    <span class="keyword">function</span> <span class="function">get</span>() <span class="keyword">public</span> <span class="keyword">view</span> <span class="keyword">returns</span> (<span class="type">uint256</span>) {
+        <span class="keyword">return</span> count;
+    }
+}`,
+                rawCode: `pragma solidity ^0.8.0;
+
+contract Counter {
+    uint256 public count;
+
+    function increment() public {
+        count += 1;
+    }
+
+    function get() public view returns (uint256) {
+        return count;
+    }
+}`,
+                packageManager: "npm (Hardhat, Foundry), OpenZeppelin",
+                frameworksWeb: "Hardhat, Foundry, Truffle, Remix IDE",
+                frameworksData: "The Graph, Chainlink oracles",
+                primaryRuntime: "Ethereum Virtual Machine (EVM)",
+                pros: [
+                    "Dominant language for blockchain smart contract development.",
+                    "Large ecosystem of audited libraries (OpenZeppelin).",
+                    "High demand in Web3 and DeFi job market."
+                ],
+                cons: [
+                    "Security vulnerabilities can lead to irreversible financial loss.",
+                    "Gas costs make inefficient code expensive on-chain.",
+                    "Tightly coupled to EVM - not general-purpose."
+                ],
+                specs: {
+                    typing: "Static, Strong",
+                    memory: "EVM stack and storage model",
+                    execution: "Compiled to EVM bytecode",
+                    concurrency: "Single-threaded per contract (blockchain serialized)"
+                },
+                metrics: [
+                    { label: "Performance / Speed", value: 40 },
+                    { label: "Ease of Learning", value: 65 },
+                    { label: "Community & Ecosystem", value: 85 },
+                    { label: "Job Market Demand", value: 75 }
+                ]
+            },
+            {
+                id: "graphql",
+                name: "GraphQL",
+                year: 2015,
+                creator: "Lee Byron, Nick Schrock, Dan Schafer (Facebook/Meta)",
+                shortDesc: "A query language and runtime for APIs that lets clients request exactly the data they need in a single call.",
+                fullDesc: "GraphQL is a schema-driven API query language that replaces multiple REST endpoints with a single typed graph. Clients specify nested data requirements, reducing over-fetching and under-fetching. It powers APIs at GitHub, Shopify, and Netflix.",
+                accentColor: "#E10098",
+                accentGlow: "rgba(225, 0, 152, 0.15)",
+                accentLight: "#f066c0",
+                logoSvg: `<svg viewBox="0 0 24 24"><path fill="#E10098" d="M12 2l8 4.6v9.2L12 20.4 4 15.8V6.6L12 2zm0 3L7 7.5v5L12 16l5-3.5v-5L12 5z"/></svg>`,
+                categories: ["web", "data-science", "interpreted"],
+                features: [
+                    "Strongly typed schema with introspection.",
+                    "Clients request only needed fields - no over-fetching.",
+                    "Single endpoint replaces dozens of REST routes.",
+                    "Real-time subscriptions for live data updates."
+                ],
+                codeSnippet: `<span class="comment"># GraphQL query</span>
+<span class="keyword">query</span> <span class="function">GetActiveUsers</span> {
+  users(filter: { active: <span class="keyword">true</span> }) {
+    id
+    name
+    email
+    posts(limit: <span class="number">5</span>) {
+      title
+      createdAt
+    }
+  }
+}`,
+                rawCode: `# GraphQL query
+query GetActiveUsers {
+  users(filter: { active: true }) {
+    id
+    name
+    email
+    posts(limit: 5) {
+      title
+      createdAt
+    }
+  }
+}`,
+                packageManager: "npm (Apollo, GraphQL Yoga, Relay)",
+                frameworksWeb: "Apollo Server, GraphQL Yoga, Hasura, PostGraphile",
+                frameworksData: "GraphQL Code Generator, Prisma GraphQL",
+                primaryRuntime: "Node.js, Java, Go, Python GraphQL servers",
+                pros: [
+                    "Eliminates over-fetching and API versioning headaches.",
+                    "Self-documenting schema via introspection.",
+                    "Excellent developer experience with GraphiQL playground."
+                ],
+                cons: [
+                    "Complex queries can cause N+1 performance problems.",
+                    "Caching is harder than REST with HTTP cache headers.",
+                    "Not a replacement for all API patterns (file uploads, etc.)."
+                ],
+                specs: {
+                    typing: "Static Schema, Strong",
+                    memory: "Server-managed (resolver-dependent)",
+                    execution: "Interpreted query resolution",
+                    concurrency: "Server-dependent (async resolvers)"
+                },
+                metrics: [
+                    { label: "Performance / Speed", value: 70 },
+                    { label: "Ease of Learning", value: 78 },
+                    { label: "Community & Ecosystem", value: 88 },
+                    { label: "Job Market Demand", value: 82 }
+                ]
+            },
+            {
+                id: "assembly",
+                name: "Assembly",
+                year: 1947,
+                creator: "Kathleen Booth (early concepts)",
+                shortDesc: "Low-level human-readable representation of machine instructions - the foundation beneath every compiled language.",
+                fullDesc: "Assembly language provides symbolic mnemonics for CPU opcodes (MOV, ADD, JMP). Each architecture (x86, ARM, RISC-V) has its own dialect. Assembly is used for bootloaders, OS kernels, embedded firmware, reverse engineering, and performance-critical inner loops.",
+                accentColor: "#6E4C13",
+                accentGlow: "rgba(110, 76, 19, 0.2)",
+                accentLight: "#9a7848",
+                logoSvg: `<svg viewBox="0 0 24 24"><path fill="#6E4C13" d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 5h4v2h-4V7zm0 4h4v6h-2v-4H10v-2z"/></svg>`,
+                categories: ["systems", "compiled", "embedded"],
+                features: [
+                    "Direct mapping to CPU instruction set architecture.",
+                    "Full control over registers, memory, and flags.",
+                    "Essential for OS development, drivers, and boot code.",
+                    "Required skill for reverse engineering and security research."
+                ],
+                codeSnippet: `<span class="comment">; x86-64 NASM - sum array elements</span>
+<span class="keyword">section</span> .text
+<span class="keyword">global</span> <span class="function">sum_array</span>
+<span class="function">sum_array</span>:
+    xor rax, rax          <span class="comment">; sum = 0</span>
+    xor rcx, rcx          <span class="comment">; index = 0</span>
+.loop:
+    cmp rcx, rsi          <span class="comment">; compare index vs length</span>
+    jge .done
+    add rax, [rdi + rcx*8]
+    inc rcx
+    jmp .loop
+.done:
+    ret`,
+                rawCode: `; x86-64 NASM - sum array elements
+section .text
+global sum_array
+sum_array:
+    xor rax, rax
+    xor rcx, rcx
+.loop:
+    cmp rcx, rsi
+    jge .done
+    add rax, [rdi + rcx*8]
+    inc rcx
+    jmp .loop
+.done:
+    ret`,
+                packageManager: "None (assembler toolchains)",
+                frameworksWeb: "None",
+                frameworksData: "SIMD intrinsics (SSE, AVX, NEON)",
+                primaryRuntime: "CPU directly (NASM, GAS, MASM)",
+                pros: [
+                    "Maximum performance and hardware control.",
+                    "Essential for systems programming and security research.",
+                    "Deep understanding of how computers actually work."
+                ],
+                cons: [
+                    "Extremely verbose and architecture-specific.",
+                    "No portability between CPU architectures.",
+                    "Error-prone with no type safety or memory protection."
+                ],
+                specs: {
+                    typing: "Untyped (register and memory operands)",
+                    memory: "Manual (direct register/memory access)",
+                    execution: "Assembled to machine code",
+                    concurrency: "Manual (OS threads, atomics)"
+                },
+                metrics: [
+                    { label: "Performance / Speed", value: 100 },
+                    { label: "Ease of Learning", value: 20 },
+                    { label: "Community & Ecosystem", value: 75 },
+                    { label: "Job Market Demand", value: 55 }
+                ]
+            },
+            {
+                id: "verilog",
+                name: "Verilog",
+                year: 1984,
+                creator: "Gateway Design Automation (Phil Moorby)",
+                shortDesc: "A hardware description language for designing, simulating, and synthesizing digital circuits and FPGAs.",
+                fullDesc: "Verilog (and SystemVerilog) describes the behavior and structure of electronic systems at the register-transfer level. Engineers use it to design CPUs, GPUs, ASICs, and FPGA configurations. It is fundamental to chip design at Intel, AMD, NVIDIA, and Apple Silicon teams.",
+                accentColor: "#1A1A1A",
+                accentGlow: "rgba(26, 26, 26, 0.15)",
+                accentLight: "#555555",
+                logoSvg: `<svg viewBox="0 0 24 24"><path fill="#1A1A1A" d="M12 2 3 7v10l9 5 9-5V7l-9-5zm0 2.5 6.5 3.6v7.8L12 19.5l-6.5-3.6V8.1L12 4.5z"/></svg>`,
+                categories: ["embedded", "compiled", "systems"],
+                features: [
+                    "Register-transfer level (RTL) design abstraction.",
+                    "Concurrent execution model matching hardware parallelism.",
+                    "Synthesizable subset maps directly to FPGA/ASIC gates.",
+                    "SystemVerilog adds OOP, assertions, and verification."
+                ],
+                codeSnippet: `<span class="keyword">module</span> <span class="type">counter</span> (
+    <span class="keyword">input</span>  wire clk,
+    <span class="keyword">input</span>  wire reset,
+    <span class="keyword">output</span> reg  [<span class="number">7</span>:<span class="number">0</span>] count
+);
+    <span class="keyword">always</span> @(posedge clk)
+        <span class="keyword">if</span> (reset) count &lt;= <span class="number">8'd0</span>;
+        <span class="keyword">else</span>       count &lt;= count + <span class="number">1</span>;
+<span class="keyword">endmodule</span>`,
+                rawCode: `module counter (
+    input  wire clk,
+    input  wire reset,
+    output reg  [7:0] count
+);
+    always @(posedge clk)
+        if (reset) count <= 8'd0;
+        else       count <= count + 1;
+endmodule`,
+                packageManager: "None (vendor toolchains: Vivado, Quartus)",
+                frameworksWeb: "None (hardware design)",
+                frameworksData: "UVM (Universal Verification Methodology)",
+                primaryRuntime: "FPGA synthesis / ASIC fabrication",
+                pros: [
+                    "Industry standard for digital hardware design.",
+                    "Enables massive parallelism at the silicon level.",
+                    "High demand in semiconductor and FPGA industries."
+                ],
+                cons: [
+                    "Completely different paradigm from software programming.",
+                    "Simulation and synthesis cycles are slow.",
+                    "Expensive proprietary EDA toolchains required."
+                ],
+                specs: {
+                    typing: "Static (wire/reg/logic types)",
+                    memory: "Hardware registers and flip-flops",
+                    execution: "Synthesized to physical hardware",
+                    concurrency: "Inherent hardware parallelism"
+                },
+                metrics: [
+                    { label: "Performance / Speed", value: 100 },
+                    { label: "Ease of Learning", value: 35 },
+                    { label: "Community & Ecosystem", value: 65 },
+                    { label: "Job Market Demand", value: 70 }
+                ]
+            },
+            {
+                id: "racket",
+                name: "Racket",
+                year: 1995,
+                creator: "Matthias Felleisen, PLT",
+                shortDesc: "A language-oriented programming language for building DSLs, teaching, and research in programming language design.",
+                fullDesc: "Racket (formerly PLT Scheme) is a Lisp dialect designed for creating new programming languages. It powers How to Design Programs curriculum, DrRacket IDE, and research in language-oriented programming with macros, contracts, and a rich standard library.",
+                accentColor: "#9F1D20",
+                accentGlow: "rgba(159, 29, 32, 0.2)",
+                accentLight: "#c55a5c",
+                logoSvg: `<svg viewBox="0 0 24 24"><path fill="#9F1D20" d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 5h4v2h-4V7zm0 4h4v6h-2v-4H10v-2z"/></svg>`,
+                categories: ["functional", "interpreted", "scientific", "object-oriented"],
+                features: [
+                    "#lang mechanism for creating domain-specific languages.",
+                    "Gradual typing with Typed Racket.",
+                    "Built-in contract system for runtime verification.",
+                    "DrRacket IDE with stepper for pedagogical debugging."
+                ],
+                codeSnippet: `<span class="comment">#lang racket</span>
+
+(<span class="keyword">define</span> (active-names users)
+  (<span class="function">map</span> second
+       (<span class="function">filter</span> (<span class="keyword">lambda</span> (u) (<span class="function">third</span> u))
+             users)))
+
+(<span class="function">displayln</span> (<span class="function">active-names</span> '((<span class="number">1</span> <span class="string">"Ada"</span> #t) (<span class="number">2</span> <span class="string">"Grace"</span> #f))))`,
+                rawCode: `#lang racket
+
+(define (active-names users)
+  (map second
+       (filter (lambda (u) (third u))
+             users)))
+
+(displayln (active-names '((1 "Ada" #t) (2 "Grace" #f))))`,
+                packageManager: "raco pkg (built-in)",
+                frameworksWeb: "Racket Web Server, Pollen",
+                frameworksData: "math library, plot",
+                primaryRuntime: "Racket VM (Chez Scheme backend)",
+                pros: [
+                    "Best-in-class for teaching programming and PL research.",
+                    "Create new languages with #lang in hours, not months.",
+                    "Excellent documentation and pedagogical tooling."
+                ],
+                cons: [
+                    "Very niche outside academia and language research.",
+                    "Performance slower than compiled systems languages.",
+                    "Parentheses syntax limits mainstream adoption."
+                ],
+                specs: {
+                    typing: "Dynamic (Typed Racket optional)",
+                    memory: "Garbage Collected (generational)",
+                    execution: "Bytecode interpreted / JIT (Chez)",
+                    concurrency: "Places, futures, threads"
+                },
+                metrics: [
+                    { label: "Performance / Speed", value: 68 },
+                    { label: "Ease of Learning", value: 70 },
+                    { label: "Community & Ecosystem", value: 52 },
+                    { label: "Job Market Demand", value: 25 }
+                ]
+            },
+            {
+                id: "vlang",
+                name: "V",
+                year: 2019,
+                creator: "Alexander Medvednikov",
+                shortDesc: "A simple, fast-compiling language that generates human-readable C code with optional no GC and hot reload.",
+                fullDesc: "V (Vlang) aims for simplicity like Go, performance like C, and compilation speed under one second. It can generate C code, compile to native binaries, or target WASM. Features include sum types, generics, and built-in ORM and web frameworks.",
+                accentColor: "#4F87C4",
+                accentGlow: "rgba(79, 135, 196, 0.2)",
+                accentLight: "#7aadd8",
+                logoSvg: `<svg viewBox="0 0 24 24"><path fill="#4F87C4" d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zM8 7h8v2H8V7zm0 4h5v6h-2v-4H8v-2z"/></svg>`,
+                categories: ["compiled", "systems", "web"],
+                features: [
+                    "Sub-second compilation for fast development iteration.",
+                    "Generates readable C code for transparency and portability.",
+                    "Optional autofree and no-GC modes for systems programming.",
+                    "Built-in web framework, ORM, and cross-platform GUI."
+                ],
+                codeSnippet: `<span class="keyword">struct</span> <span class="type">User</span> {
+    name   <span class="type">string</span>
+    active <span class="type">bool</span>
+}
+
+<span class="keyword">fn</span> <span class="function">active_names</span>(users []<span class="type">User</span>) []<span class="type">string</span> {
+    <span class="keyword">mut</span> names := []<span class="type">string</span>{}
+    <span class="keyword">for</span> u <span class="keyword">in</span> users {
+        <span class="keyword">if</span> u.active { names &lt;&lt; u.name }
+    }
+    <span class="keyword">return</span> names
+}`,
+                rawCode: `struct User {
+    name   string
+    active bool
+}
+
+fn active_names(users []User) []string {
+    mut names := []string{}
+    for u in users {
+        if u.active { names << u.name }
+    }
+    return names
+}`,
+                packageManager: "vpm (V Package Manager)",
+                frameworksWeb: "vweb (built-in), Volt",
+                frameworksData: "vorm (built-in ORM)",
+                primaryRuntime: "V compiler (generates C/tcc/GCC)",
+                pros: [
+                    "Extremely fast compile times boost developer productivity.",
+                    "Simple, readable syntax lowers the learning barrier.",
+                    "Single language for web, CLI, GUI, and systems."
+                ],
+                cons: [
+                    "Young language with evolving semantics and breaking changes.",
+                    "Smaller ecosystem than Go, Rust, or Zig.",
+                    "Some advertised features still maturing."
+                ],
+                specs: {
+                    typing: "Static, Strong, Inferred",
+                    memory: "GC (optional autofree / no GC)",
+                    execution: "AOT via C compilation",
+                    concurrency: "Goroutine-like threads, channels"
+                },
+                metrics: [
+                    { label: "Performance / Speed", value: 88 },
+                    { label: "Ease of Learning", value: 85 },
+                    { label: "Community & Ecosystem", value: 42 },
+                    { label: "Job Market Demand", value: 28 }
+                ]
+            },
+            {
+                id: "cobol",
+                name: "COBOL",
+                year: 1959,
+                creator: "Grace Hopper et al. (CODASYL)",
+                shortDesc: "The backbone of global banking, insurance, and government mainframe systems processing trillions in daily transactions.",
+                fullDesc: "COBOL (Common Business-Oriented Language) runs an estimated 220 billion lines in production, powering 95% of ATM transactions and most mainframe batch processing. Its English-like syntax was designed for business readability and remains irreplaceable in legacy enterprise systems.",
+                accentColor: "#0052A5",
+                accentGlow: "rgba(0, 82, 165, 0.2)",
+                accentLight: "#4d8fd4",
+                logoSvg: `<svg viewBox="0 0 24 24"><path fill="#0052A5" d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 5h4v2h-4V7zm0 4h4v6h-2v-4H10v-2z"/></svg>`,
+                categories: ["compiled", "object-oriented", "data-science"],
+                features: [
+                    "English-like syntax designed for business readability.",
+                    "Fixed-point decimal arithmetic for financial accuracy.",
+                    "Massive installed base in banking and government.",
+                    "COBOL 2002+ adds OOP, Unicode, and XML support."
+                ],
+                codeSnippet: `<span class="keyword">IDENTIFICATION DIVISION</span>.
+<span class="keyword">PROGRAM-ID</span>. HELLO-WORLD.
+<span class="keyword">PROCEDURE DIVISION</span>.
+    <span class="function">DISPLAY</span> <span class="string">"Hello, World!"</span>
+    <span class="function">STOP RUN</span>.`,
+                rawCode: `IDENTIFICATION DIVISION.
+PROGRAM-ID. HELLO-WORLD.
+PROCEDURE DIVISION.
+    DISPLAY "Hello, World!"
+    STOP RUN.`,
+                packageManager: "None (mainframe JCL, Micro Focus packages)",
+                frameworksWeb: "CICS (transaction processing), IMS",
+                frameworksData: "DB2, IMS databases, VSAM files",
+                primaryRuntime: "IBM z/OS, Micro Focus, GnuCOBOL",
+                pros: [
+                    "Processes the majority of global financial transactions.",
+                    "Extremely stable - code from the 1970s still runs today.",
+                    "High-paying maintenance jobs due to retiring workforce."
+                ],
+                cons: [
+                    "Extremely verbose and dated syntax.",
+                    "No modern developer tooling or community growth.",
+                    "Limited to legacy maintenance - no greenfield projects."
+                ],
+                specs: {
+                    typing: "Static, Strong (PIC clauses)",
+                    memory: "Managed by runtime (RECORDS, WORKING-STORAGE)",
+                    execution: "Compiled (native or bytecode on mainframe)",
+                    concurrency: "CICS transactions, batch processing"
+                },
+                metrics: [
+                    { label: "Performance / Speed", value: 75 },
+                    { label: "Ease of Learning", value: 60 },
+                    { label: "Community & Ecosystem", value: 40 },
+                    { label: "Job Market Demand", value: 65 }
+                ]
+            },
+            {
+                id: "tcl",
+                name: "Tcl",
+                year: 1988,
+                creator: "John Ousterhout",
+                shortDesc: "A embeddable scripting language with a everything-is-a-string philosophy, powering EDA tools and network test equipment.",
+                fullDesc: "Tcl (Tool Command Language) is designed to be embedded in C applications as a scripting layer. It powers the Tk GUI toolkit, Cisco IOS extensions, EDA tools (Synopsys, Cadence), and SQLite's test suite. Its simple syntax makes it easy to embed and extend.",
+                accentColor: "#E29844",
+                accentGlow: "rgba(226, 152, 68, 0.2)",
+                accentLight: "#ecba7a",
+                logoSvg: `<svg viewBox="0 0 24 24"><path fill="#E29844" d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 5h4v2h-4V7zm0 4h4v6h-2v-4H10v-2z"/></svg>`,
+                categories: ["scripting", "interpreted", "embedded"],
+                features: [
+                    "Everything is a string - uniform data model.",
+                    "Trivial C embedding API (Tcl_CreateInterp).",
+                    "Tk cross-platform GUI toolkit included.",
+                    "Event-driven I/O with fileevent and after commands."
+                ],
+                codeSnippet: `<span class="keyword">proc</span> <span class="function">active_names</span> {users} {
+    <span class="keyword">set</span> result {}
+    <span class="keyword">foreach</span> u $users {
+        <span class="keyword">if</span> {[<span class="function">dict</span> <span class="keyword">get</span> $u active]} {
+            <span class="keyword">lappend</span> result [<span class="function">dict</span> <span class="keyword">get</span> $u name]
+        }
+    }
+    <span class="keyword">return</span> $result
+}
+<span class="function">puts</span> [<span class="function">active_names</span> [list [list name Ada active 1]]]`,
+                rawCode: `proc active_names {users} {
+    set result {}
+    foreach u $users {
+        if {[dict get $u active]} {
+            lappend result [dict get $u name]
+        }
+    }
+    return $result
+}
+puts [active_names [list [list name Ada active 1]]]`,
+                packageManager: "teapot, tcllib",
+                frameworksWeb: "TclHttpd, Rivet",
+                frameworksData: "Tcl SQLite binding, R (Rtcl)",
+                primaryRuntime: "tclsh, wish (Tk), Tcl 8.6+",
+                pros: [
+                    "Easiest language to embed in C/C++ applications.",
+                    "Tk provides cross-platform GUI with minimal code.",
+                    "Stable and mature in EDA and networking niches."
+                ],
+                cons: [
+                    "Everything-is-a-string can cause subtle type bugs.",
+                    "Declining popularity outside embedded niches.",
+                    "Performance slower than Lua or Python for scripting."
+                ],
+                specs: {
+                    typing: "Dynamic (everything is a string)",
+                    memory: "Reference-counted + Garbage Collected",
+                    execution: "Interpreted (bytecode)",
+                    concurrency: "Event loop, threads (limited)"
+                },
+                metrics: [
+                    { label: "Performance / Speed", value: 48 },
+                    { label: "Ease of Learning", value: 88 },
+                    { label: "Community & Ecosystem", value: 45 },
+                    { label: "Job Market Demand", value: 38 }
+                ]
+            },
+            {
+                id: "sass",
+                name: "Sass",
+                year: 2006,
+                creator: "Hampton Catlin, Natalie Weizenbaum",
+                shortDesc: "The most popular CSS preprocessor adding variables, nesting, mixins, and functions to stylesheet authoring.",
+                fullDesc: "Sass (Syntactically Awesome Style Sheets) extends CSS with programming features that compile down to standard CSS. Variables, nesting, mixins, and partials make large-scale stylesheet maintenance manageable. It is used by Bootstrap, Foundation, and most enterprise front-end teams.",
+                accentColor: "#CC6699",
+                accentGlow: "rgba(204, 102, 153, 0.2)",
+                accentLight: "#db99bb",
+                logoSvg: `<svg viewBox="0 0 24 24"><path fill="#CC6699" d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 5h4v2h-4V7zm0 4h4v6h-2v-4H10v-2z"/></svg>`,
+                categories: ["web", "compiled", "scripting"],
+                features: [
+                    "Variables for colors, fonts, and breakpoints.",
+                    "Nested rules mirror HTML structure for readability.",
+                    "Mixins for reusable style patterns and vendor prefixes.",
+                    "Partials and @import for modular stylesheet organization."
+                ],
+                codeSnippet: `$primary: <span class="number">#3498db</span>;
+$radius: <span class="number">8px</span>;
+
+<span class="keyword">@mixin</span> <span class="function">card</span>($bg) {
+  background: $bg;
+  border-radius: $radius;
+  padding: <span class="number">1rem</span>;
+}
+
+<span class="function">.profile</span> {
+  <span class="keyword">@include</span> <span class="function">card</span>($primary);
+  <span class="function">h2</span> { color: white; }
+}`,
+                rawCode: `$primary: #3498db;
+$radius: 8px;
+
+@mixin card($bg) {
+  background: $bg;
+  border-radius: $radius;
+  padding: 1rem;
+}
+
+.profile {
+  @include card($primary);
+  h2 { color: white; }
+}`,
+                packageManager: "npm (sass, node-sass, dart-sass)",
+                frameworksWeb: "Bootstrap (Sass), Bulma, Foundation",
+                frameworksData: "N/A (stylesheet technology)",
+                primaryRuntime: "Dart Sass, LibSass (deprecated), PostCSS",
+                pros: [
+                    "Dramatically improves CSS maintainability at scale.",
+                    "Industry standard preprocessor with huge community.",
+                    "Compiles to standard CSS - no browser lock-in."
+                ],
+                cons: [
+                    "Requires build step in development workflow.",
+                    "Can produce bloated CSS if mixins are overused.",
+                    "CSS itself now has native variables and nesting."
+                ],
+                specs: {
+                    typing: "Untyped (stylesheet DSL)",
+                    memory: "N/A (compile-time only)",
+                    execution: "Compiled to CSS",
+                    concurrency: "N/A (build-time tool)"
+                },
+                metrics: [
+                    { label: "Performance / Speed", value: 85 },
+                    { label: "Ease of Learning", value: 90 },
+                    { label: "Community & Ecosystem", value: 92 },
+                    { label: "Job Market Demand", value: 78 }
+                ]
+            },
+            {
+                id: "apex",
+                name: "Apex",
+                year: 2006,
+                creator: "Salesforce (Marc Benioff team)",
+                shortDesc: "Salesforce's proprietary Java-like language for building enterprise CRM customizations, triggers, and cloud business logic.",
+                fullDesc: "Apex is a strongly typed, object-oriented language that runs on Salesforce's multi-tenant cloud platform. Developers use it to write triggers, batch jobs, REST APIs, and integrations on the world's leading CRM, making it essential for enterprise SaaS customization.",
+                accentColor: "#00A1E0",
+                accentGlow: "rgba(0, 161, 224, 0.2)",
+                accentLight: "#4dbfee",
+                logoSvg: `<svg viewBox="0 0 24 24"><path fill="#00A1E0" d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 5h4v2h-4V7zm0 4h4v6h-2v-4H10v-2z"/></svg>`,
+                categories: ["web", "object-oriented", "compiled", "data-science"],
+                features: [
+                    "Tight integration with Salesforce objects and SOQL queries.",
+                    "Governor limits enforce multi-tenant platform fairness.",
+                    "Triggers react to database record changes automatically.",
+                    "Batch Apex and Queueable for asynchronous processing."
+                ],
+                codeSnippet: `<span class="keyword">public class</span> <span class="type">AccountService</span> {
+    <span class="keyword">public static void</span> <span class="function">flagHighValue</span>(List&lt;Account&gt; accounts) {
+        <span class="keyword">for</span> (Account a : accounts) {
+            <span class="keyword">if</span> (a.AnnualRevenue &gt; <span class="number">1000000</span>) {
+                a.Rating = <span class="string">'Hot'</span>;
+            }
+        }
+        <span class="keyword">update</span> accounts;
+    }
+}`,
+                rawCode: `public class AccountService {
+    public static void flagHighValue(List<Account> accounts) {
+        for (Account a : accounts) {
+            if (a.AnnualRevenue > 1000000) {
+                a.Rating = 'Hot';
+            }
+        }
+        update accounts;
+    }
+}`,
+                packageManager: "Salesforce DX, Unlocked Packages",
+                frameworksWeb: "Lightning Web Components (with Apex backend)",
+                frameworksData: "SOQL, SOSL, Salesforce Reports",
+                primaryRuntime: "Salesforce Multi-tenant Cloud (Force.com)",
+                pros: [
+                    "Direct access to the world's #1 CRM platform.",
+                    "High-paying Salesforce developer job market.",
+                    "Managed infrastructure - no server ops needed."
+                ],
+                cons: [
+                    "Locked to Salesforce platform - not portable.",
+                    "Governor limits constrain complex logic.",
+                    "Proprietary ecosystem with certification costs."
+                ],
+                specs: {
+                    typing: "Static, Strong (Java-like)",
+                    memory: "Managed by Salesforce runtime",
+                    execution: "Compiled on platform (on-save)",
+                    concurrency: "Batch Apex, Queueable, @future methods"
+                },
+                metrics: [
+                    { label: "Performance / Speed", value: 60 },
+                    { label: "Ease of Learning", value: 72 },
+                    { label: "Community & Ecosystem", value: 80 },
                     { label: "Job Market Demand", value: 85 }
                 ]
             }
+
         ];
 
 const beginnerGuides = {

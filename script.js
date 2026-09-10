@@ -413,6 +413,10 @@
             }
         }
 
+        function getLanguagePageUrl(lang) {
+            return `languages/language-${encodeURIComponent(lang.id)}.html`;
+        }
+
         // Initialize Card Layout
         function renderCards() {
             // Remove only lang-card elements, not the emptyState inside the grid
@@ -473,7 +477,9 @@
           </div>
         `;
 
-                const openCard = () => openModal(lang);
+                const openCard = () => {
+                    window.location.href = getLanguagePageUrl(lang);
+                };
                 card.addEventListener("click", openCard);
                 card.addEventListener("keydown", event => {
                     if (event.key === "Enter" || event.key === " ") {
@@ -511,7 +517,7 @@
             timelineTrack.querySelectorAll(".timeline-entry").forEach(entry => {
                 const openEntry = () => {
                     const language = languages.find(item => item.id === entry.dataset.languageId);
-                    if (language) openModal(language);
+                    if (language) window.location.href = getLanguagePageUrl(language);
                 };
                 entry.addEventListener("click", openEntry);
                 entry.addEventListener("keydown", event => {
@@ -1015,5 +1021,6 @@
 
         directoryViewBtn.addEventListener("click", () => setView("directory"));
         timelineViewBtn.addEventListener("click", () => setView("timeline"));
+        if (window.location.hash === "#timeline-view") setView("timeline");
         // Initial render
         renderCards();

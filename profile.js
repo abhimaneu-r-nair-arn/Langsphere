@@ -58,28 +58,32 @@ if (isFirebaseConfigured) onAuthStateChanged(auth, async user => {
     document.getElementById("profile-age").value = profile.age || "";
     document.getElementById("profile-work").value = profile.workEducation || "";
 
-    const learned = Array.isArray(data.learnedLanguages)
-      ? data.learnedLanguages.filter(record =>
-        record && typeof record.language === "string" && typeof record.level === "string"
+    const completions = data.languageCompletions;
+    const learned = completions && typeof completions === "object" && !Array.isArray(completions)
+      ? Object.values(completions).filter(record =>
+        record && record.completed === true &&
+        typeof record.language === "string" &&
+        record.sectionsCompleted === 18
       )
       : [];
     if (learned.length) {
       learnedList.replaceChildren();
-      [...learned].reverse().forEach(record => {
+      learned.forEach(record => {
         const item = document.createElement("article");
         item.className = "learned-item";
         const title = document.createElement("strong");
         title.textContent = record.language;
-        const level = document.createElement("span");
-        level.textContent = `${record.level} level`;
-        item.append(title, level);
-        if (record.learnedAt) {
-          const date = new Date(record.learnedAt);
+        const completion = document.createElement("span");
+        completion.className = "learning-completion";
+        completion.textContent = "All six sections completed at Beginner, Intermediate, and Advanced levels (18/18).";
+        item.append(title, completion);
+        if (record.completedAt) {
+          const date = new Date(record.completedAt);
           if (!Number.isNaN(date.getTime())) {
-            const learnedAt = document.createElement("time");
-            learnedAt.dateTime = date.toISOString();
-            learnedAt.textContent = `Opened ${date.toLocaleDateString()}`;
-            item.append(learnedAt);
+            const completedAt = document.createElement("time");
+            completedAt.dateTime = date.toISOString();
+            completedAt.textContent = `Completed ${date.toLocaleDateString()}`;
+            item.append(completedAt);
           }
         }
         learnedList.append(item);

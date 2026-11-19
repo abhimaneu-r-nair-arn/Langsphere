@@ -3,7 +3,7 @@
     const language = languages.find(item => item.id === page.dataset.languageId);
     const profileShell = `
         <main class="container">
-            <header class="profile-page-header"><a class="profile-back-link" href="../directory.html">&lt;- Back to directory</a><div class="logo-container"><span class="logo-glow">LangSphere</span></div><p>Complete language profile, practical guidance, and ecosystem reference.</p></header>
+            <header class="profile-page-header"><a class="profile-back-link" href="../directory.html">&lt;- Back to directory</a><div class="logo-container"><span class="logo-glow">LangSphere</span></div><p>Complete language profile, practical guidance, and ecosystem reference.</p><p id="language-progress-status" class="language-progress-status" role="status" aria-live="polite" hidden></p></header>
             <article class="language-profile" id="language-profile"><div class="modal-hero" id="modal-hero"><div class="modal-logo" id="modal-logo"></div><div class="modal-meta"><h1 id="modal-title"></h1><p>Created by <span id="modal-creator" class="modal-meta-accent"></span> in <span id="modal-year" class="modal-meta-accent"></span></p></div><div class="hero-level-control"><span class="hero-level-label">LEARNING LEVEL</span><div class="profile-level-toggle" id="profile-level-toggle" role="group" aria-label="Learning path level"><button class="profile-level-option active" type="button" data-profile-level="beginner">Beginner</button><button class="profile-level-option" type="button" data-profile-level="intermediate">Intermediate</button><button class="profile-level-option" type="button" data-profile-level="advanced">Advanced</button></div></div></div>
                 <div class="modal-body"><div class="modal-left"><nav class="modal-tabs" aria-label="Language profile sections"><button class="tab-btn active" data-tab="profile" type="button">Profile</button><button class="tab-btn" data-tab="overview" type="button">Overview</button><button class="tab-btn" data-tab="beginner" type="button">Beginner Guide</button><button class="tab-btn" data-tab="learning" type="button">Learning Path</button><button class="tab-btn" data-tab="syntax" type="button">Syntax Highlight</button><button class="tab-btn" data-tab="ecosystem" type="button">Ecosystem</button><button class="tab-btn" data-tab="proscons" type="button">Pros &amp; Cons</button></nav>
                     <section class="tab-pane active" id="tab-profile"><div class="profile-summary" id="profile-summary"></div><p id="profile-description" class="tab-overview"></p><div class="profile-tags" id="profile-tags"></div><div class="overview-bullets"><h4 id="profile-highlights-title">Profile Highlights</h4><ul id="profile-highlights"></ul></div></section>
@@ -25,6 +25,16 @@
     if (!document.getElementById("language-profile")) document.body.innerHTML = profileShell;
 
     const $ = id => document.getElementById(id);
+    const progressStatus = $("language-progress-status");
+    const progressTracker = import(new URL("../language-progress.js", window.location.href).href);
+    const showProgressStatus = (message, isError = false) => {
+        progressStatus.hidden = false;
+        progressStatus.classList.toggle("error", isError);
+        progressStatus.textContent = message;
+    };
+    progressTracker.catch(error => {
+        showProgressStatus(`Could not load learning progress tracking: ${error.message}`, true);
+    });
     const esc = value => String(value).replace(/&/g, "&amp;").replace(/"/g, "&quot;").replace(/</g, "&lt;").replace(/>/g, "&gt;");
     const fallbackGuide = {
         syntax: `Start with variables, functions, and control flow before exploring the advanced parts of ${language.name}.`,
@@ -55,7 +65,24 @@
         }
     };
     const requestedLevel = new URLSearchParams(window.location.search).get("level");
-    let selectedProfileLevel = ["beginner", "intermediate", "advanced"].includes(requestedLevel) ? requestedLevel : "beginner";
+    const validRequestedLevel = ["beginner", "intermediate", "advanced"].includes(requestedLevel)
+        ? requestedLevel
+        : null;
+    let selectedProfileLevel = "beginner";
+
+    function trackSectionView(section) {
+        if (section === "profile") return;
+        progressTracker.then(({ recordLanguageSectionView }) =>
+            recordLanguageSectionView({
+                languageId: language.id,
+                language: language.name,
+                level: selectedProfileLevel,
+                section
+            })
+        ).catch(error => {
+            showProgressStatus(`Could not save learning progress: ${error.message}`, true);
+        });
+    }
 
     function getLevelDetails(level) {
         const sharedFeatures = language.features.slice(0, 3);
@@ -212,11 +239,24 @@
     document.querySelectorAll(".tab-btn").forEach(button => button.addEventListener("click", () => {
         document.querySelectorAll(".tab-btn").forEach(item => item.classList.toggle("active", item === button));
         document.querySelectorAll(".tab-pane").forEach(pane => pane.classList.toggle("active", pane.id === `tab-${button.dataset.tab}`));
+        trackSectionView(button.dataset.tab);
     }));
-    document.querySelectorAll(".profile-level-option").forEach(button => button.addEventListener("click", () => {
-        selectedProfileLevel = button.dataset.profileLevel;
+    document.querySelectorAll(".profile-level-option").forEach(button => button.addEventListener("click", async () => {
+        const level = button.dataset.profileLevel;
+        if (level !== "beginner") {
+            try {
+                const { requestLevelAccess } = await progressTracker;
+                if (!await requestLevelAccess(level)) return;
+            } catch (error) {
+                showProgressStatus(`Could not check your sign-in status: ${error.message}`, true);
+                return;
+            }
+        }
+        selectedProfileLevel = level;
         renderLevelDetails();
         renderLearningPath();
+        const activeSection = document.querySelector(".tab-btn.active")?.dataset.tab;
+        if (activeSection) trackSectionView(activeSection);
     }));
     document.querySelectorAll(".beginner-pill").forEach(button => button.addEventListener("click", () => {
         const detail = button.parentElement.nextElementSibling;
@@ -224,7 +264,19 @@
         detail.classList.add("visible");
     }));
     document.querySelectorAll(".beginner-step-btn").forEach(button => button.addEventListener("click", () => button.parentElement.nextElementSibling.classList.toggle("visible")));
-    if (requestedLevel) document.querySelector('.tab-btn[data-tab="learning"]').click();
+    if (validRequestedLevel === "beginner") {
+        document.querySelector('.tab-btn[data-tab="learning"]').click();
+    } else if (validRequestedLevel) {
+        progressTracker.then(async ({ requestLevelAccess }) => {
+            if (!await requestLevelAccess(validRequestedLevel)) return;
+            selectedProfileLevel = validRequestedLevel;
+            renderLevelDetails();
+            renderLearningPath();
+            document.querySelector('.tab-btn[data-tab="learning"]').click();
+        }).catch(error => {
+            showProgressStatus(`Could not check your sign-in status: ${error.message}`, true);
+        });
+    }
     $("copy-code-btn").addEventListener("click", async event => {
         try {
             await navigator.clipboard.writeText(language.rawCode);

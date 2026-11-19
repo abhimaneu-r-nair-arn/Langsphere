@@ -59,9 +59,6 @@
         if (window.persistLearningRoute) {
             await window.persistLearningRoute({ language: language.name, level: selectedLevel });
         }
-        if (window.markLanguageLearned) {
-            await window.markLanguageLearned(language.name, selectedLevel);
-        }
         window.location.href = result.querySelector(".learning-result-link").href;
     });
 })();

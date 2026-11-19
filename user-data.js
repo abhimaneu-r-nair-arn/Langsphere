@@ -1,6 +1,9 @@
 import { auth, db, isFirebaseConfigured } from "./firebase.js";
-import { doc, setDoc, getDoc, deleteDoc, serverTimestamp }
+import { doc, setDoc, getDoc, deleteDoc, serverTimestamp, arrayUnion }
   from "https://www.gstatic.com/firebasejs/10.14.1/firebase-firestore.js";
+
+const LEARNING_LEVELS = ["beginner", "intermediate", "advanced"];
+const LEARNING_SECTIONS = ["overview", "beginner", "learning", "syntax", "ecosystem", "proscons"];
 
 function requireUser() {
   if (!isFirebaseConfigured) {
@@ -77,30 +80,53 @@ export async function loadProfile() {
   return snap.exists() ? snap.data() : {};
 }
 
-export async function markLanguageLearned(language, level) {
+export async function recordLanguageSectionViewed({ languageId, language, level, section }) {
   const user = requireUser();
-  const snap = await getDoc(doc(db, "users", user.uid));
-  const existing = snap.exists() && Array.isArray(snap.data().learnedLanguages)
-    ? snap.data().learnedLanguages
-    : [];
-  const record = {
-    language: String(language).trim().slice(0, 60),
-    level: String(level).toLowerCase(),
-    learnedAt: new Date().toISOString()
-  };
-  if (!record.language || !["beginner", "intermediate", "advanced"].includes(record.level)) return;
+  const id = String(languageId || "").trim().toLowerCase();
+  const name = String(language || "").trim().slice(0, 60);
+  const selectedLevel = String(level || "").toLowerCase();
+  const selectedSection = String(section || "").toLowerCase();
+  if (!id || id.includes("|") || !name ||
+    !LEARNING_LEVELS.includes(selectedLevel) ||
+    !LEARNING_SECTIONS.includes(selectedSection)) {
+    throw new Error("Cannot record an invalid language section.");
+  }
 
-  const matchingIndex = existing.findIndex(item =>
-    item && typeof item.language === "string" &&
-    item.language.toLowerCase() === record.language.toLowerCase()
+  const userRef = doc(db, "users", user.uid);
+  const progressKey = `${id}|${selectedLevel}|${selectedSection}`;
+  const requiredKeys = LEARNING_LEVELS.flatMap(requiredLevel =>
+    LEARNING_SECTIONS.map(requiredSection => `${id}|${requiredLevel}|${requiredSection}`)
   );
-  if (matchingIndex >= 0) existing[matchingIndex] = record;
-  else existing.push(record);
-
-  await setDoc(doc(db, "users", user.uid), {
-    learnedLanguages: existing,
+  await setDoc(userRef, {
+    viewedLanguageSections: arrayUnion(progressKey),
     updatedAt: serverTimestamp()
   }, { merge: true });
+
+  const snap = await getDoc(userRef);
+  const data = snap.exists() ? snap.data() : {};
+  const viewedSections = new Set(
+    Array.isArray(data.viewedLanguageSections) ? data.viewedLanguageSections : []
+  );
+  const viewedCount = requiredKeys.filter(key => viewedSections.has(key)).length;
+  const complete = viewedCount === requiredKeys.length;
+  const existingCompletion = data.languageCompletions && data.languageCompletions[id];
+
+  if (complete && existingCompletion?.completed !== true) {
+    await setDoc(userRef, {
+      languageCompletions: {
+        [id]: {
+          language: name,
+          languageId: id,
+          completed: true,
+          sectionsCompleted: requiredKeys.length,
+          completedAt: new Date().toISOString()
+        }
+      },
+      updatedAt: serverTimestamp()
+    }, { merge: true });
+  }
+
+  return { complete, viewedCount, totalSections: requiredKeys.length };
 }
 
 export async function deleteUserData() {

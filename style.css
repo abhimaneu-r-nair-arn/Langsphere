@@ -328,6 +328,17 @@
             margin-top: 1rem;
         }
 
+        .language-progress-status {
+            margin: 0.75rem 0 0;
+            color: var(--text-muted);
+            font-size: 0.86rem;
+            line-height: 1.5;
+        }
+
+        .language-progress-status.error {
+            color: #ffb6c1;
+        }
+
         .profile-back-link {
             color: var(--text-muted);
             font: 600 0.8rem var(--font-mono);
@@ -2429,6 +2440,11 @@
         .auth-back-link {
             color: var(--accent-default);
             text-decoration: none;
+        }
+
+        .auth-home-link.logo-glow {
+            display: inline-block;
+            font-size: 1.65rem;
         }
 
         .auth-card h1 {

@@ -26,15 +26,6 @@ async function persistLearningRoute(route) {
 }
 
 window.persistLearningRoute = persistLearningRoute;
-window.markLanguageLearned = async (language, level) => {
-  if (!currentUser) return;
-  try {
-    const { markLanguageLearned } = await import("./user-data.js");
-    await markLanguageLearned(language, level);
-  } catch (error) {
-    console.warn("Could not record learned language:", error);
-  }
-};
 
 function saveCurrentSelection() {
   if (restoringRoute || !currentUser || !levelToggle || !languageInput) return;
@@ -65,7 +56,7 @@ if (isFirebaseConfigured) {
   onAuthStateChanged(auth, async user => {
     currentUser = user;
     if (!user) {
-      syncStatus.innerHTML = 'Sign in to sync your learning route across devices. <a href="login.html?next=learning.html">Log in</a> or <a href="signup.html?next=learning.html">sign up</a>.';
+      location.replace(`login.html?next=${encodeURIComponent(location.href)}`);
       return;
     }
 
@@ -79,6 +70,6 @@ if (isFirebaseConfigured) {
       syncStatus.textContent = `Could not load your saved route: ${error.message}`;
     }
   });
-} else if (syncStatus) {
-  syncStatus.innerHTML = 'Configure Firebase to save routes to an account. <a href="login.html">Open account setup</a>.';
+} else {
+  location.replace(`login.html?next=${encodeURIComponent(location.href)}`);
 }

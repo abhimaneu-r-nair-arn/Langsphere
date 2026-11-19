@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Manage your LangSphere profile and learned languages.">
+  <title>LangSphere | Profile</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body class="auth-page profile-page">
+  <main class="profile-layout">
+    <header class="profile-header">
+      <a class="auth-home-link" href="index.html">LangSphere</a>
+      <span id="profile-state">Loading profile...</span>
+    </header>
+
+    <section class="profile-card" aria-labelledby="profile-title">
+      <div class="profile-heading">
+        <div id="profile-avatar" class="profile-avatar" aria-hidden="true">U</div>
+        <div>
+          <p class="eyebrow-label">USER PROFILE</p>
+          <h1 id="profile-title">My information</h1>
+        </div>
+      </div>
+
+      <form id="profile-form" class="profile-form">
+        <label for="profile-name">Name</label>
+        <input id="profile-name" name="name" maxlength="80" required>
+
+        <label for="profile-gender">Gender</label>
+        <select id="profile-gender" name="gender">
+          <option value="">Prefer not to say</option>
+          <option value="Woman">Woman</option>
+          <option value="Man">Man</option>
+          <option value="Non-binary">Non-binary</option>
+          <option value="Other">Other</option>
+        </select>
+
+        <label for="profile-age">Age</label>
+        <input id="profile-age" name="age" type="number" min="1" max="120" required>
+
+        <label for="profile-work">Work or education</label>
+        <textarea id="profile-work" name="workEducation" maxlength="200" rows="3"
+          placeholder="Example: Computer science student or Software engineer"></textarea>
+
+        <button type="submit">Save profile</button>
+      </form>
+      <p id="profile-message" class="auth-message" role="status" aria-live="polite"></p>
+    </section>
+
+    <section class="profile-card learned-card" aria-labelledby="learned-title">
+      <div>
+        <p class="eyebrow-label">LEARNING RECORD</p>
+        <h2 id="learned-title">Languages explored</h2>
+      </div>
+      <div id="learned-list" class="learned-list">
+        <p>No languages recorded yet.</p>
+      </div>
+    </section>
+
+    <section class="profile-card danger-card" aria-labelledby="delete-title">
+      <div>
+        <p class="eyebrow-label">ACCOUNT DANGER ZONE</p>
+        <h2 id="delete-title">Delete account</h2>
+        <p>This permanently deletes your account, profile, learning route, and saved language record.</p>
+      </div>
+      <button id="delete-account-button" class="danger-button" type="button">Delete my account</button>
+      <form id="delete-account-form" class="delete-account-form" hidden>
+        <label for="delete-password">Confirm with your password</label>
+        <input id="delete-password" type="password" autocomplete="current-password" required>
+        <div class="delete-confirm-actions">
+          <button id="confirm-delete-button" class="danger-button" type="submit">Permanently delete</button>
+          <button id="cancel-delete-button" type="button">Cancel</button>
+        </div>
+      </form>
+      <p id="delete-message" class="auth-message" role="status" aria-live="polite"></p>
+    </section>
+  </main>
+  <script type="module" src="profile.js"></script>
+  <script type="module" src="auth-ui.js"></script>
+</body>
+</html>

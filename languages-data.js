@@ -3646,6 +3646,8 @@ $radius: 8px;
 
         ];
 
+window.languages = languages;
+
 const beginnerGuides = {
     python: {
         syntax: "Use indentation for blocks, define functions with def, and keep variables simple at first.",

@@ -15,7 +15,6 @@
     <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=Fira+Code:wght@400;500;600&display=swap" rel="stylesheet">
 
     <link rel="stylesheet" href="style.css">
-    <script>if(performance.getEntriesByType('navigation')[0]?.type==='reload')location.replace('index.html');</script>
 </head>
 <body>
     <main class="container learning-page-container">
@@ -58,6 +57,7 @@
                     <p class="learning-query-status" id="learning-query-status">Select a language to see its recommended path.</p>
                 </article>
             </div>
+            <p class="learning-sync-status" id="learning-sync-status" role="status" aria-live="polite"></p>
             <div class="learning-result" id="learning-result" aria-live="polite"></div>
         </section>
         <footer class="site-footer" aria-label="Site footer">
@@ -124,5 +124,7 @@
     <script src="languages-data.js"></script>
     <script src="learning-page.js"></script>
     <script src="cursor-effect.js"></script>
+    <script type="module" src="learning-sync.js"></script>
+    <script type="module" src="auth-ui.js"></script>
 </body>
 </html>

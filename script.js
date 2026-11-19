@@ -877,13 +877,13 @@
 
         async function openOnlineCompiler(lang, source) {
             const compilerUrl = compilerSiteMap[lang.id] || `https://www.google.com/search?q=${encodeURIComponent(`${lang.name} free online compiler`)}`;
+            window.open(compilerUrl, "_blank", "noopener,noreferrer");
             try {
                 await navigator.clipboard.writeText(source);
                 beginnerGuideContent.querySelector("#beginner-run-btn").textContent = "Code Copied - Open Compiler";
             } catch (error) {
-                // The external compiler still opens if clipboard access is unavailable.
+                beginnerGuideContent.querySelector("#beginner-run-btn").textContent = "Compiler Opened - Copy Manually";
             }
-            window.open(compilerUrl, "_blank", "noopener,noreferrer");
         }
 
         function closeModal() {
@@ -962,17 +962,19 @@
         });
 
         // Copy to Clipboard Action
-        copyCodeBtn.addEventListener("click", () => {
+        copyCodeBtn.addEventListener("click", async () => {
             if (!activeLanguage) return;
 
-            navigator.clipboard.writeText(activeLanguage.rawCode).then(() => {
+            try {
+                await navigator.clipboard.writeText(activeLanguage.rawCode);
                 copyCodeBtn.textContent = "Copied! [OK]";
-                setTimeout(() => {
-                    copyCodeBtn.textContent = "Copy Code";
-                }, 2000);
-            }).catch(err => {
-                console.error("Could not copy snippet:", err);
-            });
+            } catch (error) {
+                console.error("Could not copy snippet:", error);
+                copyCodeBtn.textContent = "Copy unavailable";
+            }
+            setTimeout(() => {
+                copyCodeBtn.textContent = "Copy Code";
+            }, 2000);
         });
 
         // Event Listeners for Filters and Search

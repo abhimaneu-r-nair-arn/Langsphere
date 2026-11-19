@@ -198,9 +198,15 @@
     const compilerSites = { python: "https://www.programiz.com/python-programming/online-compiler/", javascript: "https://onecompiler.com/javascript", typescript: "https://onecompiler.com/typescript", rust: "https://play.rust-lang.org/", go: "https://go.dev/play/", java: "https://www.programiz.com/java-programming/online-compiler/", swift: "https://onecompiler.com/swift", kotlin: "https://play.kotlinlang.org/", ruby: "https://www.programiz.com/ruby-programming/online-compiler/", php: "https://www.programiz.com/php/online-compiler/", c: "https://www.onlinegdb.com/online_c_compiler", cpp: "https://www.onlinegdb.com/online_c++_compiler" };
     $("beginner-guide-content").querySelector(".beginner-run-btn").addEventListener("click", async event => {
         const source = $("beginner-guide-content").querySelector(".beginner-code-editor").value;
-        try { await navigator.clipboard.writeText(source); } catch (error) { /* Clipboard access is optional. */ }
-        window.open(compilerSites[language.id] || `https://www.google.com/search?q=${encodeURIComponent(language.name + " free online compiler")}`, "_blank", "noopener,noreferrer");
-        event.currentTarget.textContent = "Code Copied - Open Compiler";
+        const button = event.currentTarget;
+        const compilerUrl = compilerSites[language.id] || `https://www.google.com/search?q=${encodeURIComponent(language.name + " free online compiler")}`;
+        window.open(compilerUrl, "_blank", "noopener,noreferrer");
+        try {
+            await navigator.clipboard.writeText(source);
+            button.textContent = "Code Copied - Compiler Opened";
+        } catch (error) {
+            button.textContent = "Compiler Opened - Copy Manually";
+        }
     });
 
     document.querySelectorAll(".tab-btn").forEach(button => button.addEventListener("click", () => {

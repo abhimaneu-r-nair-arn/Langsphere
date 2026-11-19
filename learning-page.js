@@ -49,11 +49,18 @@
     });
     languageInput.addEventListener("input", updateResult);
     languageInput.addEventListener("keydown", event => { if (event.key === "Enter") submit.click(); });
-    submit.addEventListener("click", () => {
-        if (!findLanguage()) {
+    submit.addEventListener("click", async () => {
+        const language = findLanguage();
+        if (!language) {
             status.textContent = "Choose a language before opening a learning path.";
             languageInput.focus();
             return;
+        }
+        if (window.persistLearningRoute) {
+            await window.persistLearningRoute({ language: language.name, level: selectedLevel });
+        }
+        if (window.markLanguageLearned) {
+            await window.markLanguageLearned(language.name, selectedLevel);
         }
         window.location.href = result.querySelector(".learning-result-link").href;
     });

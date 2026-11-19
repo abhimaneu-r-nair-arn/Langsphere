@@ -20,7 +20,17 @@
       <label for="li-email">Email</label>
       <input id="li-email" name="email" type="email" autocomplete="email" required>
       <label for="li-pass">Password</label>
-      <input id="li-pass" name="password" type="password" autocomplete="current-password" required>
+      <div class="password-field">
+        <input id="li-pass" name="password" type="password" autocomplete="current-password" required>
+        <button class="password-toggle" type="button" data-password-toggle aria-controls="li-pass"
+          aria-label="Show password" title="Show password" aria-pressed="false">
+          <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+            <path class="bulb-glass" d="M12 2a7 7 0 0 0-4 12.75c.83.57 1.5 1.52 1.5 2.25h5c0-.73.67-1.68 1.5-2.25A7 7 0 0 0 12 2z"/>
+            <path d="M9 18h6m-5 3h4"/>
+            <path d="M12 5a4 4 0 0 0-4 4M12 1v1M4.2 4.2l.7.7M1 11h1m18 0h1m-1.9-6.8-.7.7"/>
+          </svg>
+        </button>
+      </div>
       <button type="submit">Log in</button>
       <a href="#" id="forgot">Forgot password?</a>
     </form>
@@ -28,6 +38,7 @@
     <p class="auth-switch">New to LangSphere? <a href="signup.html">Create an account</a></p>
     <a class="auth-back-link" href="index.html">Back to LangSphere</a>
   </main>
+  <script src="password-toggle.js" defer></script>
   <script type="module" src="login.js"></script>
 </body>
 </html>

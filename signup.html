@@ -22,13 +22,24 @@
       <label for="su-email">Email</label>
       <input id="su-email" name="email" type="email" autocomplete="email" required>
       <label for="su-pass">Password <span>(at least 6 characters)</span></label>
-      <input id="su-pass" name="password" type="password" autocomplete="new-password" minlength="6" required>
+      <div class="password-field">
+        <input id="su-pass" name="password" type="password" autocomplete="new-password" minlength="6" required>
+        <button class="password-toggle" type="button" data-password-toggle aria-controls="su-pass"
+          aria-label="Show password" title="Show password" aria-pressed="false">
+          <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+            <path class="bulb-glass" d="M12 2a7 7 0 0 0-4 12.75c.83.57 1.5 1.52 1.5 2.25h5c0-.73.67-1.68 1.5-2.25A7 7 0 0 0 12 2z"/>
+            <path d="M9 18h6m-5 3h4"/>
+            <path d="M12 5a4 4 0 0 0-4 4M12 1v1M4.2 4.2l.7.7M1 11h1m18 0h1m-1.9-6.8-.7.7"/>
+          </svg>
+        </button>
+      </div>
       <button type="submit">Sign up</button>
     </form>
     <p id="msg" class="auth-message" role="status" aria-live="polite"></p>
     <p class="auth-switch">Already have an account? <a href="login.html">Log in</a></p>
     <a class="auth-back-link" href="index.html">Back to LangSphere</a>
   </main>
+  <script src="password-toggle.js" defer></script>
   <script type="module" src="signup.js"></script>
 </body>
 </html>

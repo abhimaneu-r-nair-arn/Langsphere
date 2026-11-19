@@ -68,7 +68,17 @@
       <button id="delete-account-button" class="danger-button" type="button">Delete my account</button>
       <form id="delete-account-form" class="delete-account-form" hidden>
         <label for="delete-password">Confirm with your password</label>
-        <input id="delete-password" type="password" autocomplete="current-password" required>
+        <div class="password-field">
+          <input id="delete-password" type="password" autocomplete="current-password" required>
+          <button class="password-toggle" type="button" data-password-toggle aria-controls="delete-password"
+            aria-label="Show password" title="Show password" aria-pressed="false">
+            <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+              <path class="bulb-glass" d="M12 2a7 7 0 0 0-4 12.75c.83.57 1.5 1.52 1.5 2.25h5c0-.73.67-1.68 1.5-2.25A7 7 0 0 0 12 2z"/>
+              <path d="M9 18h6m-5 3h4"/>
+              <path d="M12 5a4 4 0 0 0-4 4M12 1v1M4.2 4.2l.7.7M1 11h1m18 0h1m-1.9-6.8-.7.7"/>
+            </svg>
+          </button>
+        </div>
         <div class="delete-confirm-actions">
           <button id="confirm-delete-button" class="danger-button" type="submit">Permanently delete</button>
           <button id="cancel-delete-button" type="button">Cancel</button>
@@ -77,6 +87,7 @@
       <p id="delete-message" class="auth-message" role="status" aria-live="polite"></p>
     </section>
   </main>
+  <script src="password-toggle.js" defer></script>
   <script type="module" src="profile.js"></script>
   <script type="module" src="auth-ui.js"></script>
 </body>

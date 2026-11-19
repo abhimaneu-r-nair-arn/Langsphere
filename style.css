@@ -2536,6 +2536,66 @@
             font: inherit;
         }
 
+        .password-field {
+            position: relative;
+            width: 100%;
+        }
+
+        .password-field input {
+            padding-right: 3.25rem;
+        }
+
+        .password-field .password-toggle {
+            position: absolute;
+            top: 50%;
+            right: 0.4rem;
+            width: auto;
+            height: 2rem;
+            display: grid;
+            place-items: center;
+            margin: 0;
+            padding: 0.3rem;
+            transform: translateY(-50%);
+            border: 0;
+            background: transparent;
+            color: var(--text-muted);
+            cursor: pointer;
+        }
+
+        .password-field .password-toggle svg {
+            width: 1.2rem;
+            height: 1.2rem;
+            fill: none;
+            stroke: currentColor;
+            stroke-width: 1.7;
+            stroke-linecap: round;
+            stroke-linejoin: round;
+        }
+
+        .password-field .password-toggle:hover,
+        .password-field .password-toggle:focus-visible {
+            color: var(--text-main);
+        }
+
+        .password-field .password-toggle[aria-pressed="true"] {
+            color: #ffd166;
+            filter: drop-shadow(0 0 4px rgba(255, 209, 102, 0.75));
+        }
+
+        .password-field .password-toggle:focus-visible {
+            outline: 2px solid var(--accent-default);
+            outline-offset: 2px;
+        }
+
+        .password-field .password-toggle svg .bulb-glass {
+            fill: transparent;
+            transition: fill 0.2s ease;
+        }
+
+        .password-field .password-toggle[aria-pressed="true"] svg .bulb-glass {
+            fill: rgba(255, 209, 102, 0.45);
+        }
+
         .auth-form-single button,
         .profile-form button {
             margin-top: 0.35rem;
